@@ -7,3 +7,5 @@ This is a comprehensive list of all exercises from the book.
 
 These exercises are here to help the self-learner; please make sure to 
 give dues when submitting to your professor or other resources. 
+
+In addition, this is a raw, editable latex file. I will post pdfs.
