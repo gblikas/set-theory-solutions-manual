@@ -1,0 +1,958 @@
+\documentclass{article}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsthm, amsmath, amsfonts, amssymb, mathrsfs,mathabx}
+\usepackage{chngcntr}
+\usepackage{mdframed}
+\usepackage{breqn}
+\usepackage{tikzsymbols}
+\setcounter{section}{+1}
+\DeclareMathOperator*{\Pwr}{\mathscr{P}}
+\DeclareMathOperator*{\Rcal}{\mathcal{R}}
+\newtheorem{exercise}{\underline{Exercise}}[section]
+\newtheorem{proposition}{\textit{Proposition}}[section]
+\renewcommand{\qedsymbol}{\BasicTree[3]{orange!95!black}{orange!80!black}{orange!70!black}{leaf}}
+\newtheorem{lemma}{\textit{Lemma}}[section]
+\newenvironment{Lemma}[1][Lemma]{\proof[#1]\leftskip=1cm\rightskip=1cm}{\endproof}
+
+
+
+
+\counterwithin*{equation}{section}
+\counterwithin*{equation}{subsection}
+
+
+
+
+\title{Set Theory Term Work}
+\author{Blikas }
+\date{September 2015}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\newpage
+\begin{mdframed}
+\section{Misc. Exersizes}
+\end{mdframed}
+
+\textbf{Logical Operators} We show that $\land$, $\lor$ are commutative. We do this via truth table. 
+\begin{proof} Consider the logical sentences $p$, $q$ and the following truth table: 
+
+\begin{center}
+\begin{tabular}{c|c|c|c}
+ $p$ & $q$ & $p \lor q$ & $q \lor p$\\
+ T & T & T & T \\
+ T & F & T & T \\
+ F & T & T & T \\
+ F & F & F & F 
+\end{tabular}
+\end{center}
+ Thus, $p \lor q \iff q \lor p $
+\end{proof}
+
+\begin{proof} Consider the logical sentences $p$ and $q$ and the following truth table: 
+\begin{center}
+\begin{tabular}{c|c|c|c}
+ $p$ & $q$ & $p \land q$ & $q \land p$\\
+ T & T & T & T \\
+ T & F & F & F \\
+ F & T & F & F \\
+ F & F & F & F 
+\end{tabular}
+\end{center}
+ Thus, $p \land q \iff q \land p$.
+\end{proof}
+
+$ $\newline
+\textbf{Logical Rules} We show that $p \lor p \iff p$ and $p \land p \iff p$, via truth table: 
+\begin{proof}
+Consider the logical sentence $p$ and the following truth table: 
+\begin{center}
+\begin{tabular}{c|c}
+ $p$ & $p \lor p$\\
+ T & T \\
+ F & F
+\end{tabular}
+\end{center}
+Thus, $p \lor p \iff p$
+\end{proof}
+
+
+\begin{proof} Consider the logical sentence $p$ and the following truth table: 
+\begin{center}
+\begin{tabular}{c|c}
+ $p$ & $p \land p$\\
+ T & T \\
+ F & F
+\end{tabular}
+\end{center}
+Thus, $p \iff p \land p$.
+\end{proof}
+
+$ $\newline
+We show that $p \Rightarrow p \lor q$ via truth table. 
+\begin{proof} Consider the logical sentences $p$ and $q$ and the following truth table: 
+\begin{center}
+\begin{tabular}{c|c|c}
+ $p$ & $q$ & $p \lor q$ \\
+ T & T & T  \\
+ T & F & T \\
+ F & T & T \\
+ F & F & F  
+\end{tabular}
+\end{center}
+Thus, if $p$ is true, $p \lor q$ is true, i.e. $p \Rightarrow p \lor q$.
+\end{proof}
+
+\newpage
+\begin{mdframed}
+\section{Unordered Pairs}
+\end{mdframed}
+
+\textbf{Exercise 3.1.0} Consider the sets $ \emptyset $, $ \lbrace \emptyset \rbrace $, $ \lbrace \lbrace \emptyset \rbrace \rbrace$, etc.; Consider all  the pairs such as $ \lbrace \emptyset, \lbrace \emptyset \rbrace \rbrace$, formed by two of them; consider the pairs formed by any such two pairs, or else mixed pairs formed by a singleton and any pair; and proceed \textit{ad infinitum}. Are all the sets obtained in this way distinct from one another? 
+ 
+ \bigbreak
+ Yes, all sets obtained in this way are distinct. 
+\begin{proof} 
+
+\end{proof}
+
+\newpage
+\begin{mdframed}
+\section{Unions and Intersections}
+\end{mdframed}
+Throughout these exercises we consider a arbitrary non-empty collection $\mathcal{C}$, of sets. For simplicity we will assume that $ \mathcal{C}= \{ A, B, C\}$ for arbitrary sets $A$, $B$, $C$ and will make liberal use of the notation $\{x: S(x)\}$, in-place of the more precises yet cumbersome notation $\{ \bigcup_{x} \{A,B,C\}: S(x) \}$. 
+$ $\newline
+$ $\newline
+\textbf{Exercise 4.1.0-4.1.4} We show the following: 
+$$A \cup \emptyset = A$$
+$$A \cup B = B \cup A$$
+$$A \cup (B \cup C) = (A \cup B) \cup C$$
+$$A \cup A = A$$
+$$A \subset B \iff A \cup B = B$$
+
+\begin{proof} ($\iff$) 
+\bigbreak
+Since $\emptyset$ has no elements, for all $a \in \bigcup \mathcal{C}$, $a \notin \emptyset$ and we have, $$x \in A \cup \emptyset = \lbrace x: x \in A \lor x \in \emptyset \rbrace \iff x \in A \lor x \in \emptyset= \lbrace \rbrace \iff x \in A$$ Thus, $A \cup \emptyset = A$.
+\end{proof}
+
+\begin{proof} ($\iff$)
+\bigbreak
+$$A \cup B = \lbrace x : x \in A \lor x \in B \rbrace = \lbrace x : x \in B \lor x \in A \rbrace = B \cup A$$
+\end{proof}
+
+\begin{proof} ($\iff$)
+\bigbreak
+\begin{equation*}
+\begin{split}
+x \in A \cup (B \cup C)  & \iff x \in A \lor x \in B \cup C \\
+&\iff x \in A \lor x \in B \lor x \in C \\
+& \iff x \in \lbrace x : x \in A \lor x \in B \rbrace \lor x \in C \\
+& \iff x \in A \cup B \lor x \in C \\
+& \iff x \in (A \cup B) \cup C
+\end{split}
+\end{equation*}
+
+\end{proof}
+
+\begin{proof} ($\iff$)
+\bigbreak
+$$ A \cup A = \lbrace x: x \in A \lor x \in A\rbrace = \lbrace x: x \in A \rbrace = A$$
+\end{proof}
+
+
+\begin{proof}
+$ $\newline
+($\Rightarrow$) We note that $A \subset B$ iff for all $x \in A$, $x \in B$. Thus, we have that $$x \in A \cup B = \{ x: x \in A \lor x \in B \} \Rightarrow x \in A \lor x \in B \Rightarrow x \in B$$ by the comments above. And likewise, $$x \in B \Rightarrow x \in B \lor x \in A \Rightarrow x \in \{ x: x \in A \lor x \in B \} \Rightarrow x \in A \cup B$$ That is, $A \cup B = B$.
+$ $\newline
+($\Leftarrow$)
+Suppose $A \cup B = B$. Then, $$x \in A \Rightarrow x \in \{ x : x \in A \cup x \in B\} = A \cup B = B$$ That is, $A \subset B$.
+\end{proof}
+
+$ $\newline
+\textbf{Exersize 4.2.0-4.2.4} We show the following: 
+\begin{equation}
+A \cap \emptyset = \emptyset
+\end{equation}
+\begin{equation}
+A \cap B = B \cap A
+\end{equation}
+\begin{equation}
+A \cap (B \cap C) = (A \cap B) \cap C
+\end{equation}
+\begin{equation}
+A \cap A = A
+\end{equation}
+\begin{equation}
+A \subset B \iff A \cap B = A
+\end{equation}
+
+\begin{proof} (1) Suppose that $A \neq \emptyset$, then
+\bigbreak
+$ $\newline
+($\Rightarrow$)
+\begin{align*}
+x \in A \cap \emptyset = \{ x: x\in A \land x \in \emptyset \} & \Rightarrow x \in \emptyset \land x \in A \\
+& \Rightarrow x \in \emptyset
+\end{align*}
+($\Leftarrow$)
+\begin{align*}
+x \in \emptyset & \Rightarrow \{ x \} \subset \emptyset \\
+& \Rightarrow \{ x \} = \emptyset \\
+& \Rightarrow (\emptyset \subset A) \land (\emptyset \subset \emptyset) \\
+& \Rightarrow \emptyset \in A \cap \emptyset \\
+& \Rightarrow \{ x \} \subset A \cap \emptyset
+\end{align*}
+Since the empty set contains no elements. 
+\end{proof}
+
+\begin{proof}(2) ($\iff$)
+\bigbreak
+$$A \cap B = \{ x: x\in A \land x\in B\} = \{ x: x \in B \land x \in A \} = B \cap A$$
+\end{proof}
+
+\begin{proof}(3) ($\iff$)
+$ $\newline
+\begin{align*}
+x \in A \cap (B \cap C) & \iff x \in A \land x \in B \cap C = \{ x: x \in B \land x \in C \} \\
+& \iff x \in A \land x \in B \land x \in C  \\
+& \iff x \in \{x: x \in A \land x\in B\} \land x \in C \\
+& \iff x \in A \cap B \land x \in C \\ 
+& \iff x \in (A \cap B) \cap C
+\end{align*}
+\end{proof}
+
+\begin{proof}(4) ($\iff$)
+$ $\newline
+$$A \cap A = \{x: x \in A \land x \in A \} = \{x: x \in A\} = A$$
+\end{proof}
+
+\begin{proof}(5)
+$ $\newline
+($\Rightarrow$) Suppose that $A,B \neq \emptyset$. We note that $A \subset B$ iff for all $x \in A$, $x \in B$; then,
+$$x \in A \Rightarrow x \in B \Rightarrow x \in A \land x \in B \Rightarrow x \in A \cap B$$ And likewise,
+$$x \in A \cap B = \{x: x\in A \land x \in B \} \Rightarrow x \in A \land x \in B \Rightarrow x \in A$$ That is, $A \cap B = A$. 
+$ $\newline
+($ \Leftarrow$)Suppose that $A \cap B = A$. Then, 
+$$x \in A \Rightarrow x \in A \cap B = \{ x: x \in A \land x \in B\} \Rightarrow x \in A \land x \in B \Rightarrow x \in B$$ That is, $A \subset B$.
+\end{proof}
+
+\setcounter{equation}{0}
+$ $\newline
+\textbf{Exercise 4.3.0} We wish show that $(A \cap B) \cup C = A \cap (B \cup C) \iff C \subset A$: We first show (1) in the following, noting that (2) was proved in the text;
+$ $\newline
+From page fifteen, 
+\begin{equation}
+A \cap (B \cup B) = (A \cap B) \cup (A \cap C)
+\end{equation}
+and,
+\begin{equation}
+A \cup (B \cap C) = (A \cup B) \cap (A \cup C)
+\end{equation}
+
+\begin{proof} ($\Rightarrow$) 
+\bigbreak
+$ $\newline
+Suppose that not all of $A$, $B$, $C$ are the emptyset. Then,
+$$x \in A \cap (B \cup C) \Rightarrow x \in A \land x \in B \cup C$$ Now, either $x \in B$ or $x \in C$: 
+\begin{equation*}
+x \in B \land x \in A \Rightarrow x \in A \cap B \Rightarrow (A \cap B) \cup (A \cap C)
+\end{equation*}
+
+\begin{equation*}
+x \in C \land x \in A \Rightarrow x \in A \cap C \Rightarrow (A \cap B) \cup (A \cap C)
+\end{equation*}
+$ $\newline
+Either way, $x \in (A \cap B) \cup (A \cap C)$. To prove the reverse inclusion, we note that similar logic holds; either $x \in A \cap B$ or $x \in A \cap C$.
+\end{proof}
+\bigbreak
+
+$ $\newline
+Now, we show that $(A \cap B) \cup C = A \cap (B \cup C) \iff C \subset A$:
+\begin{proof} 
+\bigbreak 
+$ $\newline 
+($\Leftarrow$) 
+\bigbreak
+$ $\newline
+Suppose that $C \subset A$. Then, for all $x \in C$, $x \in A$; By \textit{Exercise 4.1.5} and the proof above, we have the following:
+\begin{equation}
+(A \cap B) \cup C = (A \cup C) \cap (B \cup C) = A \cap (B \cup C) 
+\end{equation}
+
+$ $\newline 
+($\Rightarrow$)
+$ $\newline
+Suppose that $(A \cap B) \cup C = A \cap (B \cup C)$. Then, 
+\begin{equation*}
+\begin{split}
+x \in C & \Rightarrow x \in \{x: x \in A \cap B \lor x \in C \} \\
+& = (A \cap B) \cup C \\
+& = A \cap (B \cup C)
+\end{split}
+\end{equation*} by the assumption. Thus, 
+\begin{equation*}
+\begin{split}
+x \in C & \Rightarrow x \in A \cap (B \cup C) \\
+& \Rightarrow x \in A \land x \in B \cup C \\
+& \Rightarrow x \in A
+\end{split}
+\end{equation*}
+That is, $C \subset A$.
+\end{proof}
+
+\newpage
+\begin{mdframed}
+\section{Complements and Powers}
+\end{mdframed}
+
+$ $\newline
+Throughout these exercises we assume that "all sets are subsets of one and the same set $\mathcal{E}$, and that all complements (unless otherwise specified) are formed relative to that $\mathcal{E}$" (Halmos).
+
+$ $\newline
+\textbf{Exercise 5.1.0 - 5.1.5} We prove the following: 
+\begin{equation}
+A - B = A \cap B^{c}
+\end{equation}
+
+\begin{equation}
+A \subset B \iff A - B = \emptyset
+\end{equation}
+
+\begin{equation}
+A - ( A - B) = A \cap B
+\end{equation}
+
+\begin{equation}
+A \cap (A - C) = (A \cap B) - (A \cap C)
+\end{equation}
+
+\begin{equation}
+A \cap B \subset (A \cap C) \cup (B \cap C^{c})
+\end{equation}
+
+\begin{equation}
+(A \cup C) \cap (B \cup C^{c}) \subset A \cup B
+\end{equation}
+
+\begin{proof} (1) ($\iff$)
+\bigbreak
+\begin{equation*}
+\begin{split}
+A - B & = \{x \in \mathcal{E}: x \in A \land x \notin B \} \\
+& \iff x \in A \land x \notin B \\
+& \iff x \in A \land x \in B^c \\
+& \iff x \in A \cap B^c
+\end{split}
+\end{equation*}
+
+\end{proof}
+
+\begin{proof} (2)
+$ $\newline
+$ $\newline
+($\Rightarrow$) Suppose that $A - B \neq \emptyset$, but $A \subset B$; since $A \subset B$, if $x \in A$, $x \in B$. Thus, if $x \in A - B = \{ x \in \mathcal{E}: x \in A \land x \notin B\}$, $x \notin B$. However $x \in A$, which implies $x \in B$: A contradiction.  
+$ $\newline
+\bigbreak
+$ $\newline
+($\Leftarrow$) Suppose that $A - B = \emptyset$ and that there exists some $x \in A$ which is not in $B$, i.e. $A \not\subset B$. However this is a contradiction since $$x \in A \land x \notin B \Rightarrow x \in \{x \in \mathcal{E}: x \in A \land x \notin B \} = A - B$$ and yet $A -B = \emptyset$. 
+
+\end{proof}
+
+\begin{proof} (3) ($\iff$) 
+\bigbreak
+By the proof above, 
+\begin{equation*}
+\begin{split}
+A - (A - B) & = A - (A \cap B^c) = \{x \in \mathcal{E}: x \in A \land x \notin A \cap B^c\} \\
+& \iff x \in A \land x \notin A \cap B^c \\
+& \iff x \in A \land x \notin B^c \\
+& \iff x \in A \land x \in B \\
+& \iff x \in \{x \in \mathcal{E}: x \in A \land x \in B\} = A \cap B
+\end{split}
+\end{equation*}
+\end{proof}
+
+\begin{proof} (4) ($\iff$)
+\bigbreak
+\begin{equation*}
+\begin{split}
+x \in A \cap (B - C) & \iff x \in A \land x \in (B-C) \\
+& \iff x \in A \land x \in \{ x \in \mathcal{E}: x \in B \land x \notin C \} \\
+& \iff x \in A \land x \in B \land x \notin C \\
+& \iff x \notin \{ x \in \mathcal{E}: x \in A \land x \in C \} \land x \in A \cap B \\
+& \iff x \notin A \cap C \land x \in A \cap B \\
+& \iff x \in \{ x \in \mathcal{E}: x \notin A \cap C \land x \in A \cap B \} \\
+& \iff x \in (A \cap B) - (A \cap C) 
+\end{split}
+\end{equation*}
+\end{proof}
+
+\setcounter{equation}{0}
+\begin{proof} (5) ($\Rightarrow$) 
+\bigbreak
+Consider $C \in \bigcup \mathcal{C}$, as stated above. 
+\begin{equation}
+\begin{split}
+x \in A \cap B & \Rightarrow x \in \{ x \in \mathcal{E}: x \in A \land x \in B \} \\
+& \Rightarrow x \in A \land x \in B \\
+& \Rightarrow (x \in A \land x \in B) \land (x \in C \lor x \in C^c) 
+\end{split}
+\end{equation}
+
+\begin{equation}
+\begin{split}
+x \in C \land (1) & \Rightarrow x \in A \cap C \land x \in B \cap C
+\end{split}
+\end{equation}
+
+\begin{equation}
+\begin{split}
+x \in C^c \land (1) & \Rightarrow x \in A \cap C^c \land x \in B \cap C^c
+\end{split}
+\end{equation}
+
+$ $\newline
+Thus, either way, $x \in (A \cap C)$ or $x \in (B \cap C^c)$, i.e. $x \in (A \cap C) \cup (A \cap C^c)$
+
+\end{proof}
+
+\setcounter{equation}{0}
+\begin{proof} (6) ($\Rightarrow$)
+\bigbreak
+\begin{equation}
+\begin{split}
+x \in (A \cup C) \cap (B \cup C^c) & \Rightarrow x \in A \cup C \land x \in B \cup C^c \\
+&  \Rightarrow (x \in A \lor x \in C) \land (x \in B \lor x \in C^c) 
+\end{split}
+\end{equation}
+$ $\newline
+We note that either $x \in C$, or $x \in C^c$: 
+\begin{equation}
+\begin{split}
+x \in C \land (1) & \Rightarrow x \notin C^c \land (x \in B \lor x \in A) \\
+& \Rightarrow x \in A \cup B
+\end{split}
+\end{equation}
+
+\begin{equation}
+\begin{split}
+x \in C^c \land (1) & \Rightarrow x \notin C \land (x \in A \lor x \in B) \\
+&\Rightarrow x \in A \cup B
+\end{split}
+\end{equation}
+
+$ $\newline
+Either way, $x \in A \cup B$.
+\end{proof}
+
+$ $\newline
+\textbf{Exercise 5.2.0 - 5.2.7} 
+$ $\newline
+$ $\newline
+(\textit{5.2.0}) We show that $\mathscr{P}(E) \cap \mathscr{P}(F)= \mathscr{P}(E \cap F)$:
+\begin{proof}
+$ $\newline
+Let $E$, $F$ be sets such that $E$, $F \subset \mathcal{E}$ ; via \textit{Axiom of Powers}, $\mathscr{P}(E)$, $\mathscr{P}(F)$; specifically, from the discussion in Halmos\footnote{Halmos, P. "\textit{Naive Set Theory}". pg 19}, $\mathscr{P}(E) =  \{X: X \subset E\}$, and $\mathscr{P}(F) =  \{X: X \subset F\}$. Then, we have the following: 
+\setcounter{equation}{0}
+\begin{equation*}
+\begin{split}
+X \in \mathscr{P}(E) \cap \mathscr{P}(F) & \iff X \in \mathscr{P}(E) \land X \in \mathscr{P}(F) \\
+& \iff X \in \{Y: Y \subset E \land Y \subset F \} \\
+& \iff X \subset E \land X \subset F \\
+& \iff \forall x( x \in X \Rightarrow (x \in E \land x \in F) )\\
+& \iff \forall x \in X, x \in E \cap F \\
+& \iff X = \{x \in \mathcal{E}: x \in X \}  \subset E \cap F \\
+& \iff X \in \{Y: Y \subset E \cap F \} \\
+& = \mathscr{P}(E \cap F)
+\end{split}
+\end{equation*}
+\end{proof}
+
+$ $\newline
+\textit{(5.2.1)} We show that $\mathscr{P}(E) \cup \mathscr{P}(F) \subset \mathscr{P}(E \cup F)$:
+$ $\newline 
+\begin{proof}
+Let $E$, $F$ be given as in the discussion of proof \textit{5.2.0}. We first claim that if $A$, $B$ are sets, then ($x \subset A \lor x \subset B \Rightarrow x \subset A \cup B$). Indeed; if $x \subset A$, then $x \subset A \cup B$ and likewise, $x \subset B$ implies $x \subset B \cup A$. With this in mind, we have the following: 
+\begin{equation*}
+\begin{split}
+X \in \mathscr{P}(E) \cup \mathscr{P}(F) & = \{X: X \in \mathscr{P}(E) \lor X \in \mathscr{P}(F) \} \\
+& \iff X \in \mathscr{P}(E) \lor X \in \mathscr{P}(F) \\
+& \iff X \in \{Y: Y \subset E \} \lor X \in \{Y: Y \subset F \} \\
+& \iff X \in \{Y: Y \subset E \lor Y \subset F \} \\
+& \Rightarrow X \in \{Y: Y \subset E \cup F \} \\ 
+& = \mathscr{P}(E \cup F)
+\end{split}
+\end{equation*}
+\end{proof}
+
+$ $\newline
+(\textit{5.2.2}) We show that $\bigcap_{X \in \mathcal{C}} \mathscr{P}(X) = \mathscr{P}(\bigcap_{X \in \mathcal{C}} X)$:
+$ $\newline
+\begin{proof} Let $\mathcal{C}$ be a non-empty collection of sets. 
+\bigbreak
+($\Rightarrow$)
+$ $\newline
+\begin{equation*}
+\begin{split}
+z \in \bigcap_{X \in \mathcal{C}} \mathscr{P}(X) & \Rightarrow (\forall X \in \mathcal{C})(z \in \mathscr{P}(X)) \\
+& \Rightarrow (\forall X \in \mathcal{C})(\{z\} \subset \mathscr{P}(X)) \\
+& \Rightarrow (\forall X \in \mathcal{C})(z \in X) \\
+& \Rightarrow z \in \bigcap_{X \in \mathcal{C}} X \\
+& \Rightarrow \{z\} \subset \bigcap_{X \in \mathcal{C}} X \\
+& \Rightarrow z \in \mathscr{P} (\bigcap_{X \in \mathcal{C}} X)
+\end{split}
+\end{equation*}
+\bigbreak
+($\Leftarrow$)
+$ $\newline
+\begin{equation*}
+\begin{split}
+z \in \mathscr{P}(\bigcap_{X \in \mathcal{C}} X) & \Rightarrow z \in \{Y: Y \subset \bigcap_{X \in \mathcal{C}} X\} \\
+& \Rightarrow z \subset \bigcap_{X \in \mathcal{C}} X \\
+& \Rightarrow (\forall X \in \mathcal{C})(z \subset X) \\
+& \Rightarrow (\forall X \in \mathcal{C})(\forall v \in z)(v \in X) \\ 
+& \Rightarrow (\forall X \in \mathcal{C})(\forall v \in z)(\{v\} \subset \mathscr{P}(X))\\
+& \Rightarrow (\forall X \in \mathcal{C})(\forall v \in z)(v \in \mathscr{P}(X))\\
+& \Rightarrow (\forall X \in \mathcal{C})(z \in \mathscr{P}(X)) \\
+& \Rightarrow z  \in \bigcap_{X \in \mathcal{C}} \mathscr{P}(X)
+\end{split}
+\end{equation*}
+And this completes the proof. 
+\end{proof}
+\bigbreak 
+$ $\newline
+(\textit{5.2.3}) We show that $\bigcup_{X \in \mathcal{C}} \mathscr{P}(X) \subset \mathscr{P}(\bigcup_{X \in C} X)$:
+\begin{proof}
+Let $\mathcal{C}$ be a collection of sets. A common fact used in the following proof is that if $x \in \mathscr{P}(X)$, then $x \subset X$ for any set $X$. This is indeed true, since $\mathscr{P}(X)= \{Y: Y \subset X\}$. With this in mind, we have
+\begin{equation*}
+\begin{split}
+z \in \bigcup_{X \in \mathcal{C}} \mathscr{P}(X) & \Rightarrow (\exists Y \in \mathcal{C})(z \in \mathscr{P}(Y)) \\
+& \Rightarrow z \subset Y \in \mathcal{C} \\
+& \Rightarrow z \subset \{x: x \in X (\forall X \in \mathcal{C}) \} = \bigcup_{X \in \mathcal{C}}X \\
+& \Rightarrow (\forall s \in z)(s \in \bigcup_{X \in \mathcal{C}}X) \\
+& \Rightarrow (\forall s \in z)(s \in \mathscr{P}(\bigcup_{X \in \mathcal{C}}X)) \\ 
+& \Rightarrow z \in  \mathscr{P}(\bigcup_{X \in \mathcal{C}}X)
+\end{split}
+\end{equation*} 
+Which completes the proof.
+\end{proof}
+\bigbreak
+$ $\newline
+(\textit{5.2.4}) We show that $\bigcap_{X \in \mathscr{P}(E)}X = \emptyset$:
+\begin{proof}
+Let $E$ be a set and consider $\mathscr{P}(E) = \{Y: Y \subset E\}$. We note that this is non-empty because $\emptyset \in \Pwr (E)$, since $\emptyset$ is a subset of every set. We also note that the statement ($x \in \emptyset \Rightarrow x \in \bigcap_{X \in \mathscr{P}(E)}X$) is vacuously satisfied since $\emptyset$ has no elements. Thus, we only show the forward inclusion:
+\bigbreak
+($\Rightarrow$)
+\begin{equation*}
+\begin{split}
+x \in \bigcap_{X \in \mathscr{P}(E)}X & \Rightarrow (\forall X \in \Pwr(E))(x \in X) \\
+& \Rightarrow x \in \emptyset \in \Pwr (E)
+\end{split}
+\end{equation*} And this completes the proof.
+\end{proof}
+
+\bigbreak
+$ $\newline
+(\textit{5.2.5}) We show that ($E \subset F \Rightarrow \Pwr(E) \subset \Pwr(F)$):
+\begin{proof}
+Suppose that $E \subset F$ for sets $E$, $F$. Then, we have the following: 
+\begin{align*}
+e \in \Pwr (E) & \Rightarrow e \subset E &\\
+& \Rightarrow (\forall x \in e)(x \in E) &\\
+& \Rightarrow (\forall x \in e)(x \in F)  &(\text{by Assumption})\\ 
+& \Rightarrow e \subset F &\\
+& \Rightarrow e \in \Pwr(F) &(\text{by Definition}) \\
+\end{align*} Which completes the proof. 
+\end{proof}
+\bigbreak
+$ $\newline
+(\textit{5.2.6}) We show that $E = \bigcup \Pwr(E) = \bigcup_{X \in \Pwr(E)}X$:
+\begin{proof}
+Let $E$ be a set. Then, we have the following: 
+\bigbreak
+($\Leftarrow$)
+\begin{align*}
+x \in \bigcup \Pwr(E) & \Rightarrow (\exists Y \in \Pwr(E))(x \in Y) \\
+& \Rightarrow x \in Y \subset E \\ 
+& \Rightarrow x \in E 
+\end{align*}
+\bigbreak
+($\Rightarrow$)
+\begin{align*}
+x \in E & \Rightarrow \{x\} \in \Pwr(E) \\
+& \Rightarrow x \in \{x\} \in \Pwr(E) \\
+& \Rightarrow x \in \bigcup \{X: X \in \Pwr(E) \} \\
+& = \bigcup \Pwr(E) \\
+\end{align*}
+Which completes the proof. 
+\end{proof}
+\bigbreak
+$ $\newline
+(\textit{5.2.7}) We show that $\bigcup$
+
+\newpage
+\begin{mdframed}
+\section{Ordered Pairs}
+\end{mdframed}
+
+\setcounter{equation}{0}
+$ $\newline
+Throughout this section, we will consider $A$, $B$, $C$, $X$, $Y$ to be any sets, and will use the notation 
+$\{x: S(x)\}$ in place of the more accurate, yet cumbersome notation $\{x \in \bigcup \mathcal{C}: S(x)\}$.
+\bigbreak
+$ $\newline
+\textbf{Exercise 6.1.0} We show the following: 
+\begin{equation}
+(A \cup B) \times X = (A \times X) \cup (B \times X)
+\end{equation}
+\begin{equation}
+(A \cap B) \times (X \cap Y) =(A \times X) \cap (B \times Y)
+\end{equation}
+\begin{equation}
+(A - B) \times X = (A \times X) - (B \times X)
+\end{equation}
+\begin{equation}
+(A = \emptyset \lor B = \emptyset) \iff (A \times B = \emptyset)
+\end{equation}
+\begin{equation}
+(A \subset X) \land (B \subset Y) \iff (A \times X \subset X \times Y)
+\end{equation}
+\bigbreak
+
+\begin{proof} (1)
+\bigbreak ($\Rightarrow$)
+\begin{align*}
+(x,y) \in (A \cup B) \times X & \iff (x,y) \in \{(a,b): a \in A \cup B \land b \in X \} \\
+& \iff x \in A \cup B \land y \in X \\
+& \iff (x \in A \lor x \in B) \land y \in X \\
+(\text{by Distributivity}) \quad & \iff (x \in A \land y \in X) \lor (x\in B \land y\in X) \\
+& \Rightarrow (x \in A \cup X \land y \in A \cup X) \lor (x \in B \cup X \land y \in B \cup X) \\
+(\text{by Remarks in Text}) \quad & \Rightarrow  \{x, \{x,y\} \} \subset \mathscr{P}(A \cup X) 
+\lor \{x, \{x,y\} \} \subset \Pwr(B \cup X) \\
+& \iff (x,y) \in \Pwr(\Pwr(A \cup X)) \lor  (x,y) \in \Pwr(\Pwr(B \cup X)) \\
+(\text{by Remarks in Text}) \quad & \iff (x,y) \in (A \times X) \cup (B \times X) \\
+\end{align*}
+
+\bigbreak ($\Leftarrow$)
+\begin{align*}
+(x,y) \in (A \times X) \cup (B \times X)  & \iff (x,y) \in (A \times X) \lor (x,y) \in (B \times X) \\
+(\text{by Definition}) \quad & \Rightarrow (x \in A \land y \in X) \lor (x \in B \land y \in X) \\
+& \iff (x \in A \lor x \in B) \land y \in X \\
+& \iff x \in A \cup B \land y \in X \\
+& \Rightarrow x \in (A \cup B) \cup X \land y \in (A \cup B) \cup X \\
+& \Rightarrow \{ \{x\}, \{x,y\} \} \subset \Pwr((A \cup B) \cup X) \\
+& \iff  \{ \{x\}, \{x,y\} \} \in \Pwr(\Pwr((A \cup B) \cup X)) \\
+& \Rightarrow (x,y) \in (A \cup B) \times X\\
+\end{align*}
+Which completes the proof.
+\end{proof}
+\bigbreak
+
+\begin{proof}(2)
+\bigbreak
+($\Rightarrow$)
+\begin{align*}
+(c,d) \in (A \cap B) \times (X \cap Y) & \iff c \in A \cap B \land d \in X \cap Y \\
+& \iff (c \in A \land c \in B) \land (d \in X \land d \in Y) \\
+(\text{by Commutativity}) \quad & \iff (c \in A \land d \in X) \land (c \in B \land d \in Y) \\
+& \Rightarrow (c \in A \cup X \land d \in A \cup X) \land (c \in B \cup Y \land d \in B \cup Y)\\
+& \Rightarrow \{ \{c\},\{c,d\} \} \subset \Pwr(A \cup X) \land \{ \{c\},\{c,d\} \} \subset \Pwr(B \cup Y) \\
+& \iff (c,d) \in \Pwr(\Pwr(A \cup X)) \land (c,d) \in \Pwr(\Pwr(B \cup X)) \\
+& \iff (c,d) \in A \times X \land (c,d) \in B \times X \\
+& \iff (c,d) \in (A \times  X) \cap (B \times X) \\
+\end{align*}
+\bigbreak
+($\Leftarrow$)
+\begin{align*}
+(c,d) \in (A \times X) \cap (B \times X) & \iff (c,d) \in (A \times X) \land (c,d) \in (B \times X)\\
+& \iff (c \in A \land d \in X) \land (c \in B \land d \in X) \\
+(\text{by Commutativity}) \quad & \iff (c \in A \land c \in B) \land d \in X  \\
+& \iff (c \in (A \cap B)) \land d \in X \\
+& \Rightarrow c \in (A \cap B) \cup X \land d \in (A \cap B) \cup X \\
+& \Rightarrow \{ \{c\}, \{c,d\} \} \subset \Pwr((A \cap B) \cup X) \\
+& \Rightarrow (c,d) \in \Pwr(\Pwr((A \cap B) \cup X)) \\
+& \iff (c,d) \in (A \cap B) \times X \\
+\end{align*}
+Which completes the proof.
+\end{proof}
+\bigbreak
+
+\begin{proof}(3)
+\bigbreak ($\Rightarrow$)
+\begin{align*}
+(c,d) \in (A - B) \times X & \iff c \in (A-B) \land d \in X \\
+& \iff (c \in A \land c \notin B) \land d \in X \\
+& \iff (c \in A \land d \in X) \land (c \notin B \land d \in X) \\
+(\text{since $c \notin B$} ) \quad & \Rightarrow (c,d) \in A \times X \land (c,d) \notin B \times X\\
+& \iff (c,d) \in (A \times X)-(B \times X)\\
+\end{align*}
+\bigbreak ($\Leftarrow$)
+\begin{align*}
+(c,d) \in (A \times X)-(B \times X) & \iff (c,d) \in (A \times X) \land (c,d) \notin (B \times X)\\
+& \Rightarrow (c \in A \land d \in X) \land (c \notin B \lor d \notin X) \\
+(\text{since ($d \in X \land d \notin X$, $\rightarrow \leftarrow$)}) \quad & \Rightarrow (c \in A \land d \in X) \land (c \notin B) \\
+&\iff (c \in A \land c \notin B) \land d \in X \\
+& \iff c \in (A - B) \land d \in X\\
+& \Rightarrow \{ \{c\}, \{c,d\} \} \subset \Pwr((A - B) \cup X) \\
+& \iff \{ \{c\}, \{c,d\} \} \in \Pwr(\Pwr((A - B) \cup X)) \\
+& \iff (c,d) \in (A - B) \times X \\
+\end{align*}
+Which completes the proof. 
+\end{proof}
+\bigbreak
+
+\begin{proof}(4)
+\bigbreak ($\Rightarrow$) Suppose, without loss of generality, that $A = \emptyset$. Then, $A$ contains no elements. Consider $A \times B = \{(a,b): a \in A \land b \in B\}$. Then, since there are no $a \in A$, $\{(a,b): x \in A \land x \in B\} = \emptyset$.
+\bigbreak ($\Leftarrow$) Suppose to the contrary that $A\neq \emptyset$ and $B\neq \emptyset$, but $A \times X = \emptyset$. Since $A\neq \emptyset$ and $B\neq \emptyset$, there exists some $a \in A$ and $b \in B$. And so, $\{ \{a\}, \{a,b\}\} \subset \Pwr(A \cup B)$ and further we have $(a,b) \in A \times B$. However, this is a contradiction since we assumed $A \times B = \emptyset$.
+\end{proof}
+\bigbreak
+
+\begin{proof} (5)
+\bigbreak ($\Rightarrow$) 
+We show that if $A \subset X$ and $B \subset Y$, then $A \times B \subset X \times Y$. Since $A \subset X$, for all $a \in A$, $a \in X$ and likewise for $B$.
+\begin{align*}
+(c,d) \in A \times B & \iff c \in A \land d \in B \\
+(\text{by Assumption}) \quad & \Rightarrow c \in X \land d \in Y \\
+& \Rightarrow c \in X \cup Y \land d \in X \cup Y \\
+& \Rightarrow \{ \{c\}, \{c,d\}\} \subset \Pwr(X \cup Y) \\
+& \Rightarrow (c,d) \in \Pwr(\Pwr(X \cup Y)) \\
+& \iff (c,d) \in X \times Y \\
+\end{align*}
+\bigbreak ($\Leftarrow$) Suppose that $A \times X \neq \emptyset$. And that$A \times B \subset X \times Y$. We show that $A \subset X$ and $B \subset Y$.
+\begin{align*}
+a \in A \land b \in B & \Rightarrow \{ \{a\},\{a,b\}\} \in \Pwr(\Pwr(A \cup B)) \\
+& \iff (a,b) \in A \times B \\
+& \Rightarrow (a,b) \in X \times Y \\
+& \Rightarrow (a,b) \in \{(x,y): x \in X \land y \in Y\} \\
+& \Rightarrow a \in X \land b \in Y \\
+\end{align*}
+Which completes the proof.
+\end{proof}
+
+
+\newpage
+\begin{mdframed}
+\section{Relations}
+\end{mdframed}
+
+
+\begin{exercise} We show that for each of \textbf{symmetric}, \textbf{reflexive}, and \textbf{transitive} properties, there exists a relation that does not have that property but does have the other two. 
+\end{exercise}
+\begin{proof} Let $X$ be a set. We first show that if $X = \emptyset$, then any relation in $X$ is an equivalence relation: 
+    \begin{Lemma} \renewcommand{\qedsymbol}{} \normalfont Let $X = \emptyset$. Then, by a previous theorem, we have $X \times X =\emptyset$. And so, if $R$ is a relation in $X$, $R = \emptyset$. However, $R$ is an equivalence relation, since all statements are vacuously satisfied. 
+    \end{Lemma}
+$ $\newline Likewise, suppose that $X = \{a\}$; i.e. $X$ is a singleton. We claim, also that any relation in $X$ is an equivalence relation: 
+    \begin{Lemma} \renewcommand{\qedsymbol}{} \normalfont Let $X = \{a\}$. Then, by the comments of the previous section, we have $X \times X= \{(a,a)\}$. Thus, since $R$ is the set $\{(a,b): a \in X \land b \in X\}$ it follows that $R = \{(a,a)\}$ for any relation.\footnote{see Halmos pg. 27} It is easy to verify that the transitive condition is vacuously satisfied for $R$. And, it is symmetric, since $(a,a) = (a,a)$. And, clearly, $R$ is reflexive. Thus, $R$ is an equivalence relation.
+    \end{Lemma}
+$ $\newline We also show that for $X = \{a,b\}$ each of which is distinct, there does not exist a relation, which is symmetric, reflexive, but not transitive: 
+    \begin{Lemma} \renewcommand{\qedsymbol}{} \normalfont Let $X = \{a,b\}$. Then, the relation $\mathcal{R}$ in question must contain $\{(a,a),(b,b)\} = I$. However, it is easy to verify that this is an equivalence relation.\footnote{see the above lemma} Thus, we must add an element of $X \times X$ which maintains its symmetry, yet is not transitive. However, this is not possible since either way $(a,b)$, $(b,a)$ must be in $\mathcal{R}$ and so we would have $\mathcal{R} = \{(a,a), (b,b), (a,b), (b,a)\}$.And, this is an equivalence relation since $(x,x) \in \mathcal{R}$ for all $x \in X$ and, by the comments above, $ \mathcal{R}$ is symmetric, \textit{as well as} transitive.\footnote{this is left to the reader}
+    \end{Lemma}
+$ $\newline Thus, let $X = \{ a, b, c ....\}$, for distinct elements. We first show the relational properties which include reflexivity: \bigbreak
+Let $\mathcal{R}$ be a relation in $X$ which is reflexive. Then, we must have $I = \{(x,x): x \in X\} \subset \mathcal{R}$, by definition. Thus, we show a representation of $\mathcal{R}$ which is transitive, but not symmetric, and symmetric but not transitive:
+        \begin{itemize}
+        \item Consider $\mathcal{R} = I \cup \{(a,b), (b,a), (b,c), (c,b)\}$. Then, this relation is symmetric, since $(x,x) = (x,x)$ for all $x \in \mathcal{R}$ and $\{(a,b), (b,a), (b,c), (c,b)\} \subset \mathcal{R}$. However, $\mathcal{R}$ is not transitive, since $(a,b) \in \mathcal{R}$ and $(b,c) \in \mathcal{R}$ and yet $(a,c) \notin \mathcal{R}$.
+        \item Consider $\mathcal{R} = I \cup \{(a,b)\}$. Then, $\mathcal{R}$ is transitive; note, we only need to check $(a,b)$, $(a,a)$, $(b,b)$ for transitivity, since they are the only ordered pairs which share a first, or second coordinate, where only $(a,a)$, or $(a,b)$ come first. Correctly, $(a,b) \in \mathcal{R}$ and $(b,b) \in \mathcal{R}$ implies $(a,b) \in \mathcal{R}$; $(a,a) \in \mathcal{R}$ and $(a,b) \in \mathcal{R}$ implies $(a,b) \in \mathcal{R}$. However, $\mathcal{R}$ is not symmetric: $(a,b) \in \mathcal{R}$, however, $(b,a) \notin \mathcal{R}$.
+        \end{itemize}
+$ $\newline Finally, we show the relation in $X$ which is not reflexive. Let $X$ be given as above: 
+        \begin{itemize}
+        \item Consider $\mathcal{R} = \{(a,b), (b,a), (a,a), (b,b)\} \subset X \times X$. This is symmetric since $(x,x) = (x,x)$ for all $x \in X$ and $\{(a,b),(b,a)\} \subset \mathcal{R}$. It is, also, reflexive since $(a,b) \in \mathcal{R}$ and $(b,a) \in \mathcal{R}$ implies $(a,a) \in \mathcal{R}$; likewise, $(b,a) \in \mathcal{R}$ and $(a,b) \in \mathcal{R}$ implies $(b,b) \in \mathcal{R}$.\footnote{the others follow} However, $\mathcal{R}$ is not reflexive since $c \in X$, yet $(c,c) \notin \mathcal{R}$. 
+        \end{itemize}
+\end{proof}
+\bigbreak
+
+\begin{exercise} We show that the set of all equivalence classes, $X/\mathcal{R}$, is indeed a set. 
+\end{exercise}
+\begin{proof} Let $\mathcal{R}$ be an equivalence relation on a set $X$. We show that $X/ \Rcal \subset \mathscr{P}(X)$: 
+    \begin{align*}
+    z \in X/\Rcal & \Rightarrow (\exists x \in X)(z = \{x/\Rcal \} = \{y \in X: (x,y) \in \Rcal\} \subset X) \\
+    & \Rightarrow z \in \mathscr{P}(X) \\
+    \end{align*}
+Which completes the proof. 
+\end{proof}
+
+\newpage
+\begin{mdframed}
+\section{Functions}
+\end{mdframed}
+
+\begin{exercise} 
+We show the special cases in which the projections are 1-1.
+\end{exercise}
+    \begin{proof} Without loss of generality, we only consider $g:X \times Y \rightarrow Y$, the range projection. 
+        \begin{itemize}
+        \item We first note that if $X$, $Y$ have a pair or more of distinct elements, then $g$ is not 1-1:
+            \begin{lemma} Suppose $X$, $Y$, have more than a pair of distinct elements, then $g$ is not 1-1: To see this, let $\{a,b\} \subset X$, and $\{c,d\}\subset Y$, then $\{(a,c), (a,d), (b,c), (b,d)\} \subset X \times Y$. If we suppose $g$ is one-to-one, then $g((a,c)) = g((b,d))$ implies $(a,c) = (b,d)$. But this is a contradiction, since $a=b$ and yet $a$, $b$ are distinct. \end{lemma}
+        \item Next, if $X = \{x\}$ and $Y = \{y\}$, then we claim $g$ is 1-1.
+            \begin{lemma} Let $X = \{x\}$ and $Y = \{y\}$; then, $X \times Y = \{(x,y),(y,x)\}$. Upon inspection, we see that $g$ is 1-1: if $(x,y) \neq (y,x)$, then $y \neq x$ and $y = g((x,y)) \neq x = g((y,x)$. We note that this covers the case in which $x=y$.  
+            \end{lemma}
+        \item Next, we show that if either $X$ or $Y$ is a singleton and the other is an arbitrary set, $g$ is one-to-one. 
+            \begin{lemma}
+            Suppose, without loss of generality, that $X$ is the singleton. Then either $Y =\emptyset$ or $Y \neq \emptyset$. If $Y=\emptyset$, then $X \times Y = \emptyset$, by previous exercise; which is trivially 1-1. Else, we assume $Y$ has more than a pair of distinct elements. Since $X = \{x\}$ for some $x$, it follows that $\{(a,b): a\in X \land b \in Y\} = \{(x,b): b \in Y\}$, which means $g$ is 1-1. 
+            \end{lemma}
+        \item Lastly, if $X = Y = \emptyset$, then all conditions are vacuously satisfied, and so $g$ is 1-1. 
+        \end{itemize}
+    \end{proof}
+\begin{exercise} We show that $Y^{\emptyset}$ has exactly one element, namely $\emptyset$, whether $Y$ is empty or not; i.e. $Y^\emptyset = \{\emptyset \}$.
+\end{exercise}
+    \begin{proof} Suppose that $Y$ is a set. Consider $f = Y^\emptyset$. From page thirty, and by a previous theorem, we have $f \subset \mathscr{P}(\emptyset \times Y) = \mathscr{P}(\emptyset) = \{\emptyset\}$, where $f$ is a set of elements which are ordered pairs. From the comments in section seven, $\emptyset$ is a set of ordered pairs. It follows that $f = \{\emptyset\}$. 
+    \end{proof}
+
+\begin{exercise} We show that if $X \neq \emptyset$, then $\emptyset^X$ is empty; i.e. $\emptyset^X = \emptyset$.
+\end{exercise}
+    \begin{proof}
+    Suppose that there is some function $f \in \emptyset^X$. Then, for all $x \in X$, there exists some $b \in \emptyset$ such that $(x,b) \in f$. However, this is not true, since $\emptyset$ contains no elements. Thus, $\emptyset^X = \emptyset$.
+    \end{proof}
+
+\newpage
+\begin{mdframed}
+\section{Families}
+\end{mdframed}
+
+\begin{exercise} After the comments on page thirty-five, we formulate and prove a generalized version of the commutative law for unions.
+\end{exercise}
+    \begin{proposition} Let $K$ be an arbitrary, non-empty set, and let $p \in \normalfont\text{per}(K^K)$ be an element of the set of one-to-one and onto functions from $K$ to $K$. We note that in the current notation this means that $p$ is the family and $\{p_i\}$ denotes the values of $p$ evaluating some $i \in K$. Let $\{A_k\}$ be a family of functions with domain $K$. We claim that $\bigcup_{k \in K} A_k = \bigcup_{i \in K} A_{p_i}$.
+    \end{proposition}
+    
+\begin{proof} 
+\bigbreak $ $\newline  ($\Rightarrow$)
+    \begin{align*}
+    x \in \bigcup_{k \in K} A_k & \Rightarrow (\exists k_0 \in K)(x \in A_{k_0}) \\
+    (\text{since $p$ is onto}) \quad& \Rightarrow (x \in A_{k_0}) \land (\exists s \in K)(k_0 = p_s) \\
+    & \Rightarrow x \in A_{k_0} = A_{p_s} \\ 
+    & \Rightarrow x \in \bigcup_{i \in K} A_{p_i} \\
+    \end{align*}
+
+\bigbreak $ $\newline ($\Leftarrow$) 
+    \begin{align*}
+    x \in \bigcup_{i \in K} A_{p_i} & \Rightarrow (\exists s \in K)(x \in A_{p_s})\\
+    (\text{since $p_s \in K$ and onto}) \quad & \Rightarrow (x \in A_{p_s}) \land (\exists k_0 \in K)(p_s = k_0) \\
+    & \Rightarrow x \in A_{p_s} = A_{k_0}\\
+    & \Rightarrow x \in \bigcup_{k \in K} A_k \\
+    \end{align*}
+Which completes the proof.
+\end{proof}
+
+To illustrate the previous proof, consider $K = \{0,1\}$ and 
+$p_i = \begin{cases}
+1 & i = 0 \\
+0 & i = 1 \\
+\end{cases}$; it is easy to show that $p$ is 1-1 and onto. From the statement above, we have
+    \begin{align}
+    \bigcup_{k \in K} A_k & = A_0 \cup A_1 \\
+    \bigcup_{i \in K} A_{p_i} & = A_{p_0} \cup A_{p_1} = A_1 \cup A_0
+    \end{align}
+    
+\setcounter{equation}{0}    
+\begin{exercise} We show that if both $\{A_i\}$ and $\{B_i\}$ are families of sets, with domains $I$, $J$, then 
+    \begin{align}
+    \Big( \bigcup_i A_i \Big) \cap \Big(\bigcup_j B_j \Big) = \bigcup_{i,j}(A_i \cap B_j) \\
+    \Big( \bigcap_i A_i \Big) \cup \Big( \bigcap_j B_j \Big) = \bigcap_{i,j}(A_i \cup B_j)
+    \end{align}
+Where the symbols such as $\bigcap_{i,j}$ mean $\bigcap_{(i,j) \in I \times J}$
+\end{exercise}
+
+\begin{proof} (1) 
+\bigbreak $ $\newline ($\iff$)
+    \begin{align*}
+    x \in \Big( \bigcup_i A_i \Big) \cap \Big(\bigcup_j B_j \Big) & \iff x \in \Big( \bigcup_i A_i \Big) \land x \in \Big(\bigcup_j B_j \Big) \\
+    & \iff (\exists i_0 \in I)(x \in A_{i_0}) \land (\exists j_0 \in J)(x \in B_{j_0}) \\
+    & \iff (\exists (i_0,j_0) \in I \times J)(x \in (A_{i_0} \cap B_{j_0}) )\\
+    & \iff x \in \bigcup_{i,j}(A_i \cap B_j) \\ 
+    \end{align*}
+\end{proof}
+
+\begin{proof} (2) 
+\bigbreak $ $\newline ($\iff$)
+    \begin{align*}
+    x \in \Big( \bigcap_i A_i \Big) \cup \Big( \bigcap_j B_j \Big) & \iff x \in \Big( \bigcap_i A_i \Big) \lor x \in \Big( \bigcap_j B_j \Big) \\
+    & \iff (\forall i \in I)(x \in A_i) \lor (\forall j \in J)(x \in B_j) \\
+    & \iff (\forall i \in I)(\forall j \in J)(x \in A_i \lor x \in B_j) \\
+    & \iff (\forall i \in I)(\forall j \in J)(x \in A_i \cup x \in B_j) \\
+    & \iff (\forall (i,j) \in I\times J) (x \in (A_i \cup B_j)) \\
+    & \iff x \in \bigcap_{(i,j) \in I \times J} (A_i \cup B_j)\\
+    \end{align*}
+\end{proof}
+
+\setcounter{equation}{0}
+\begin{exercise} Let $\{A_i\}$, $\{B_j\}$ be families of sets with domains $I$, $J$, respectively. We show that 
+    \begin{align}
+    \Big( \bigcup_i A_i \Big) \times \Big( \bigcup_j B_j \Big) &= \bigcup_{i,j} (A_i \times B_j) \\
+    \Big( \bigcap_i A_i \Big) \times \Big( \bigcap_j B_j \Big) &= \bigcap_{i,j} (A_i \times B_j)
+    \end{align}
+\end{exercise}
+
+\begin{proof} (1)
+\bigbreak $ $\newline ($\iff$)
+    \begin{align*}
+    (a,b) \in \Big( \bigcup_i A_i \Big) \times \Big( \bigcup_j B_j \Big) & \iff a \in \bigcup_i A_i \land b \in \bigcup_j B_j \\
+    & \iff (\exists i_0 \in I)(\exists j_0 \in J)(a \in A_{i_0} \land b \in B_{j_0}) \\
+    & \iff (\exists (i_0,j_0) \in I \times J)((a,b) \in A_{i_0} \times B_{j_0}) \\
+    & \iff (a,b) \in \bigcup_{(i,j) \in I \times J} (A_i \times B_j) \\
+    \end{align*}
+\end{proof}
+
+\begin{proof} (2) Suppose that for each $i \in I$, $A_i \neq \emptyset$ and for each $j \in J$, $B_j \neq \emptyset$.
+\bigbreak $ $\newline ($\iff$)
+    \begin{align*}
+    (a,b) \in \Big( \bigcap_i A_i \Big) \times \Big( \bigcap_j B_j \Big) & \iff a \in \bigcap_i A_i \land b \in \bigcap_j B_j \\
+    & \iff (\forall i \in I)(a \in A_i) \land (\forall j \in J)(b \in B_j) \\
+    & \iff (\forall i \in I)(\forall j \in J)(a \in A_i \land b \in B_j)\\
+    & \iff (\forall i \in I)(\forall j \in J)( (a,b) \in A_i \times B_j ) \\
+    & \iff (\forall (i,j) \in I \times J)( (a,b) \in A_i \times B_j ) \\
+    & \iff (a,b) \in \bigcap_{i,j} A_i \times B_j \\
+    \end{align*}
+\end{proof}
+
+\begin{exercise} Suppose that for each $i \in I$, $X_i$ is non-empty, and that $J \subset I$. Consider the family of sets $\{X_i\}$ with domain $I$. We show that $\bigcap_i X_i \subset X_j \subset \bigcup_i X_i$ for each index $j$. 
+\end{exercise}
+
+\begin{proof} Let $\{X_i\}$ be stated as above. 
+    \begin{align*}
+    x \in \bigcap_i X_i & \Rightarrow (\forall i \in I)(x \in X_i) \\
+    (\text{since $J \subset I \Rightarrow (\forall j \in J)(j \in I)$}) \quad & \Rightarrow (\forall j \in J)(x \in X_j) \\
+    & \Rightarrow x \in X_j \\
+    \end{align*}
+    Which proves the first inclusion. For the second, we have the following: 
+    \begin{align*}
+    x \in X_j & \Rightarrow x \in \bigcup_j X_j \\
+    & \Rightarrow x \in \Big( \bigcup_j X_j \cup \bigcup_{z \in I-J} X_z \Big)\\
+    & \Rightarrow x \in \bigcup_{i} X_i \\
+    \end{align*}
+    Which prove the second inclusion. 
+\end{proof}
+
+\begin{exercise} We show the minimality condition of intersection and unions: (1) That is, if $X_j \subset Y$ for each index $j$ and some set $Y$, then $\bigcup_i X_i \subset Y$ and that it is unique; (2) Likewise, if $Y \subset \bigcap_j X_j$ for each index $j$ and some set $Y$, then $Y \subset \bigcap_i X_i$ and it is unique.
+\end{exercise}
+
+\begin{proof} (1) 
+    Suppose that $\{X_i\}$ is a family of sets with domain $I$, such that $\emptyset \neq J \subset I$. And let $Y$ be a set. Then, we have the following: 
+    \begin{align*}
+    (\forall j \in J)(X_j \subset Y) & \Rightarrow \bigcup_j X_j \subset Y \\
+    (\text{since $J$ was arbitrary, set $J = I$}) \quad & \Rightarrow \bigcup_i X_i \subset Y \\
+    \end{align*}
+\end{proof}
+
+\begin{proof} (2)
+    Suppose that $\{X_i\}$ is a family of sets with domain $I$, such that $\emptyset \neq J \subset I$. And let $Y$ be a set. Then, we have the following: 
+    \begin{align*}
+    (\forall j \in J)(Y \subset \bigcap_j X_j) & \Rightarrow Y \subset \bigcap_i X_i\\
+    \end{align*}
+    Since $J$ was arbitrary, we take $J=I$ and the result follows. 
+\end{proof}
+
+\newpage
+\begin{mdframed}
+\section{Inverses and Composites}
+\end{mdframed}
+
+\begin{exercise} We show that if $\{A_i\}$ is a family of subsets of $X$, then 
+$$f\Big( \bigcup_i A_i \Big) = \bigcup_i f(A_i)$$
+\end{exercise}
+
+
+
+
+\end{document}
