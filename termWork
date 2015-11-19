@@ -813,7 +813,7 @@ We show the special cases in which the projections are 1-1.
 
 \begin{exercise} After the comments on page thirty-five, we formulate and prove a generalized version of the commutative law for unions.
 \end{exercise}
-    \begin{proposition} Let $K$ be an arbitrary, non-empty set, and let $p \in \normalfont\text{per}(K^K)$ be an element of the set of one-to-one and onto functions from $K$ to $K$. We note that in the current notation this means that $p$ is the family and $\{p_i\}$ denotes the values of $p$ evaluating some $i \in K$. Let $\{A_k\}$ be a family of functions with domain $K$. We claim that $\bigcup_{k \in K} A_k = \bigcup_{i \in K} A_{p_i}$.
+    \begin{proposition} Let $K$ be an arbitrary, non-empty set, and let $p \in \normalfont\text{Aut}(K^K)$ be an element of the set of one-to-one and onto functions from $K$ to $K$. We note that in the current notation this means that $p$ is the family and $\{p_i\}$ denotes the values of $p$ evaluating some $i \in K$. Let $\{A_k\}$ be a family of functions with domain $K$. We claim that $\bigcup_{k \in K} A_k = \bigcup_{i \in K} A_{p_i}$.
     \end{proposition}
     
 \begin{proof} 
@@ -877,7 +877,7 @@ Where the symbols such as $\bigcap_{i,j}$ mean $\bigcap_{(i,j) \in I \times J}$
 \end{proof}
 
 \setcounter{equation}{0}
-\begin{exercise} Let $\{A_i\}$, $\{B_j\}$ be families of sets with domains $I$, $J$, respectively. We show that 
+\begin{exercise} Let $\{A_i\}$, $\{B_j\}$ be families of sets with domains $I \neq \emptyset$, $J \neq \emptyset$, respectively. We show that 
     \begin{align}
     \Big( \bigcup_i A_i \Big) \times \Big( \bigcup_j B_j \Big) &= \bigcup_{i,j} (A_i \times B_j) \\
     \Big( \bigcap_i A_i \Big) \times \Big( \bigcap_j B_j \Big) &= \bigcap_{i,j} (A_i \times B_j)
@@ -906,16 +906,15 @@ Where the symbols such as $\bigcap_{i,j}$ mean $\bigcap_{(i,j) \in I \times J}$
     \end{align*}
 \end{proof}
 
-\begin{exercise} Suppose that for each $i \in I$, $X_i$ is non-empty, and that $J \subset I$. Consider the family of sets $\{X_i\}$ with domain $I$. We show that $\bigcap_i X_i \subset X_j \subset \bigcup_i X_i$ for each index $j$. 
+\begin{exercise} Suppose that for each $i \in I$, $X_i$ is non-empty. Consider the family of sets $\{X_i\}$ with domain $I$. We show that $\bigcap_i X_i \subset X_j \subset \bigcup_i X_i$ for each index $j \in I$. 
 \end{exercise}
 
-\begin{proof} Let $\{X_i\}$ be stated as above. 
+\begin{proof} Let $\{X_i\}$ be stated as above, and let $j \in I$ be arbitrary. 
     \begin{align*}
     x \in \bigcap_i X_i & \Rightarrow (\forall i \in I)(x \in X_i) \\
-    (\text{since $J \subset I \Rightarrow (\forall j \in J)(j \in I)$}) \quad & \Rightarrow (\forall j \in J)(x \in X_j) \\
-    & \Rightarrow x \in X_j \\
+    & \Rightarrow x \in X_j \quad (\text{since $j \in I$})\\
     \end{align*}
-    Which proves the first inclusion. For the second, we have the following: 
+    Which proves the first inclusion. For the second, suppose $j \in I$ is arbitrary, then we have the following: 
     \begin{align*}
     x \in X_j & \Rightarrow x \in \bigcup_j X_j \\
     & \Rightarrow x \in \Big( \bigcup_j X_j \cup \bigcup_{z \in I-J} X_z \Big)\\
@@ -928,19 +927,18 @@ Where the symbols such as $\bigcap_{i,j}$ mean $\bigcap_{(i,j) \in I \times J}$
 \end{exercise}
 
 \begin{proof} (1) 
-    Suppose that $\{X_i\}$ is a family of sets with domain $I$, such that $\emptyset \neq J \subset I$. And let $Y$ be a set. Then, we have the following: 
+    Suppose that $\{X_i\}$ is a family of sets with domain $I$, such that $j \in I$, and let $Y$ be a set. Then, we have the following: 
     \begin{align*}
-    (\forall j \in J)(X_j \subset Y) & \Rightarrow \bigcup_j X_j \subset Y \\
-    (\text{since $J$ was arbitrary, set $J = I$}) \quad & \Rightarrow \bigcup_i X_i \subset Y \\
+    (\forall j)(X_j \subset Y) & \Rightarrow \bigcup_j X_j \subset Y \\
+    & \Rightarrow \bigcup_i X_i \subset Y \\
     \end{align*}
 \end{proof}
 
 \begin{proof} (2)
-    Suppose that $\{X_i\}$ is a family of sets with domain $I$, such that $\emptyset \neq J \subset I$. And let $Y$ be a set. Then, we have the following: 
+    Suppose that $\{X_i\}$ is a family of sets with domain $I$, such that $j \in I$. And let $Y$ be a set. Then, we have the following: 
     \begin{align*}
-    (\forall j \in J)(Y \subset \bigcap_j X_j) & \Rightarrow Y \subset \bigcap_i X_i\\
+    Y \subset \bigcap_j X_j & \Rightarrow Y \subset \bigcap_i X_i\\
     \end{align*}
-    Since $J$ was arbitrary, we take $J=I$ and the result follows. 
 \end{proof}
 
 \newpage
@@ -948,10 +946,15 @@ Where the symbols such as $\bigcap_{i,j}$ mean $\bigcap_{(i,j) \in I \times J}$
 \section{Inverses and Composites}
 \end{mdframed}
 
-\begin{exercise} We show that if $\{A_i\}$ is a family of subsets of $X$, then 
-$$f\Big( \bigcup_i A_i \Big) = \bigcup_i f(A_i)$$
+\begin{exercise} Suppose that $f: X \rightarrow Y$. Let $\{A_i\}$ be a family of subsets of $X$. Define $f': \mathscr{P}(X) \rightarrow \mathscr{P}(Y)$, as the mapping from each $A_i$ to the image subset, $f'(A_i)$, as stated in the text. We claim that $$f' \Big( \bigcup_i A_i\Big) = \bigcup_i f'(A_i) $$
 \end{exercise}
-
+    \begin{proof} After the comments on page thirty-four, we note that $A: I \rightarrow \mathscr{P}(X)$, for some index set $I \neq \emptyset$. Then, we have the following: 
+        \begin{align*}
+        x \in \bigcup_i f'(A_i) & \Rightarrow (\exists i_0 \in I)(x \in f'(A_{i_0}) ) \\
+        & \\
+        \end{align*}
+    \end{proof}
+    
 
 
 
