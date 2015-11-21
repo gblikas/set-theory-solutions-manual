@@ -949,13 +949,42 @@ Where the symbols such as $\bigcap_{i,j}$ mean $\bigcap_{(i,j) \in I \times J}$
 \begin{exercise} Suppose that $f: X \rightarrow Y$. Let $\{A_i\}$ be a family of subsets of $X$. Define $f': \mathscr{P}(X) \rightarrow \mathscr{P}(Y)$, as the mapping from each $A_i$ to the image subset, $f'(A_i)$, as stated in the text. We claim that $$f' \Big( \bigcup_i A_i\Big) = \bigcup_i f'(A_i) $$
 \end{exercise}
     \begin{proof} After the comments on page thirty-four, we note that $A: I \rightarrow \mathscr{P}(X)$, for some index set $I \neq \emptyset$. Then, we have the following: 
+    \bigbreak ($\Rightarrow$)
         \begin{align*}
-        x \in \bigcup_i f'(A_i) & \Rightarrow (\exists i_0 \in I)(x \in f'(A_{i_0}) ) \\
-        & \\
+        x \in \bigcup_i f'(A_i) & \Rightarrow (\exists i_0 \in I)(x \in f'(A_{i_0})) \\
+        (\text{since $A_{i_0} \subset \bigcup_i A_i$}) \quad & \Rightarrow x \in f'\Big(\bigcup_i A_i\Big) \\
         \end{align*}
+    \bigbreak ($\Leftarrow$)
+        \begin{align*}
+        x \in f' \Big( \bigcup_i A_i\Big) & \Rightarrow (\exists i_0 \in I)(x \in f'(A_{i_0})) \\
+        & \Rightarrow x \in \Big(\bigcup_{z \in I - \{i_0\}} f'(A_z) \Big) \cup f'(A_{i_0})  = \bigcup_i f'(A_i) \\
+        \end{align*}
+    And the result follows. 
+    \end{proof}
+
+\begin{exercise} We show that, in general, 
+$$f' \Big( \bigcap_i A_i\Big) = \bigcap_i f'(A_i) $$ 
+does not hold. 
+\end{exercise}
+The following proof was suggested by David. H.. 
+    \begin{proof} Consider $X = \{a,b,c\}$ and $Y = \{d,e\}$ and suppose all the elements are distinct. Then define $f': \Pwr(X) \rightarrow \Pwr(Y)$ as the following: 
+        \begin{align*}
+        f'(\emptyset) & = \emptyset \\
+        f'(\{a\}) & = \{d\} \\
+        f'(\{b\}) & = \{e\} \\
+        f'(\{c\}) & = \{d\} \\
+        f'(\{a,b\})& = \{d,e\} \\
+        f'(\{b,c\}) & = \{d\} \\
+        f'(\{a,c\}) & = \{e\} \\
+        f'(\{a,b,c\})& = \emptyset \\ 
+        \end{align*}
+    Then, let $\{A_i\}$ be a family of subsets of $X$ with domain $I = 2$, such that $A_0 = \{a\}$ and $A_1 = \{a,c\}$. Then, we have the following: 
+        \begin{align*}
+        f'\Big( \bigcap_i A_i\Big) & = f'(\{a\}) = \{d\} \\
+        \bigcap_i f'(A_i) & = f'(A_0) \cap f'(A_1)  = \{d\} \cap \{e\} = \emptyset \\
+        \end{align*}
+    Which completes the proof. 
     \end{proof}
     
-
-
 
 \end{document}
