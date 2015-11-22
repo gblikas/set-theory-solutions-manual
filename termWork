@@ -1033,15 +1033,19 @@ The following proof was suggested by David. H..
         \begin{align*}
         & f^{-1}f((X - A)) \subset f^{-1}(Y - \{f(x)\}) \\
         & \Rightarrow X - A = X - f^{-1}(\{f(x)\}) \\
-        & \Rightarrow X - A = X - \{x\} \\
+        & \Rightarrow X - \{x,y\} = X - \{x\} \\
         \end{align*}
     It follows that $\{x,y\} = \{x\}$ i.e. $y=x$. 
     \bigbreak ($\Leftarrow$)
-    Suppose that $f$ is 1-1. And let $y \in f(X - A)$ for any non-empty subset $A \subset X$. Then, there exists an $x_0 \in X - A$ such that $f(x_0) = y$. Suppose to the contrary that $y \notin Y - f(A)$. Then, $f(x_0) = y \in (Y -f(A))^c = f(A)$. However, this is a contradiction since $x_0 \in X - A $. 
+    Suppose that $f$ is 1-1. And let $y \in f(X - A)$ for any non-empty subset $A \subset X$. Then, there exists an $x_0 \in X - A$ such that $f(x_0) = y$. Suppose to the contrary that $y \notin Y - f(A)$. Then, $f(x_0) = y \in (Y -f(A))^c = f(A)$. This implies that there exists some $a \in A$ such that $f(x_0) = y = f(a)$. However, this is a contradiction since $f$ being 1-1 implies $a = x_0 \in A $.
 \end{proof}
 
 \bigbreak
-\begin{proof} 
+\begin{proof}(4): 
+    \bigbreak ($\Rightarrow$)
+    Let $y \in Y$ and consider an arbitrary subset $A$ of $X$. Now, either $y \in f(A)$ or it is not. If it is, we are done. So suppose that it is not. Then, $y \in Y - f(A) \subset f(X-A)$ and so, there exists some $x_0 \in X -A$ such that $y = f(x_0)$; and the result follows.
+    \bigbreak ($\Leftarrow$)
+    Let $A \subset X$ and suppose that $y \in Y - f(A)$. Since $f$ maps $X$ onto $Y$, there exists some $x \in X$ such that $y = f(x) \in Y - f(A)$. Thus, $x \notin A$ and so $x \in A^c = X - A$. It follows from he definition that $y=f(x) \in f(X-A)$ and the result follows.   
 \end{proof}
 
 \end{document}
