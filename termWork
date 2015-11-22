@@ -986,5 +986,38 @@ The following proof was suggested by David. H..
     Which completes the proof. 
     \end{proof}
     
+\begin{exercise} Let $f: X \rightarrow Y$. We show that $f$ maps $X$ onto $Y$ iff for every non-empty subset $B$ of $Y$, $f^{-1}(B) \neq \emptyset$.
+\end{exercise}
+    \begin{proof} 
+    \bigbreak $ $\newline ($\Rightarrow$) 
+    If $f$ maps $X$ onto $Y$, then for every $y \in Y$, there exists an $x \in X$ such that $f(x) = y$. Since this is the case, if $B$ is a non-empty subset of $Y$, then for any $b \in B$, $b \in Y$. And we have that there exists an $x_0 \in X$ such that $f(x_0) = b$; therefore, $f^{-1}(B) = \{x \in X: f(x) \in B\} \neq \emptyset$. 
+    \bigbreak $ $\newline ($\Leftarrow$)
+    Suppose that $f^{-1}(B) \neq \emptyset$ for any $B \subset Y$. In particular, for each $y \in Y$, $\{y\} \subset Y$ and $f^{-1}(\{y\}) = \{ x \in X: f(x) = y\} \neq \emptyset$. The result follows immediately. 
+    \end{proof}
+    
+\begin{exercise} In the context of page forty-one, $R := \text{"son"}$, $S := \text{"brother"}$, what do $R^{-1}$, $S^{-1}$, $RS$ and $R^{-1}S^{-1}$ mean? 
+\end{exercise}  
+    \begin{proof}
+    \bigbreak ($R^{-1}$): From the comments on page forty-one, $xRy$ implies that that $x$ is son-related to $y$. That is, $y$ is the father of $x$. Thus, $yR^{-1}x$ means that $y$ has the father relation to $x$.
+    \bigbreak ($S^{-1}$): Likewise, $xSy$ means that $x$ bears the brother-relation to $y$. That is, $x$ is the brother of $y$. Thus, $yS^{-1}x$ implies $y$ is the brother of $x$. 
+    \bigbreak ($T = R \circ S$): Also, by the previous comments, if $xTz$, then there exists $y$ such that $xSy$ and $yRz$. Thus, $x$ is the brother of $y$ and $z$ is the son to $y$. That is, $x$ is the uncle of $y$.
+    \bigbreak ($T = R^{-1} \circ S^{-1}$): Likewise, if $xTz$, then there exists a $y$ such that $xS^{-1}y$ and $yR^{-1}z$. Thus, $x$ is the brother of $y$ and $y$ is the father to $z$. Thus, $x$ is the uncle of $z$. 
+    \end{proof}
+    
+\begin{exercise} Assume that for each of the following $f: X \rightarrow Y$. We show the following: 
+    \begin{enumerate}
+    \item If $g: Y \rightarrow Z$ such that $g \circ f$ is the identity on $X$, then $f$ is 1-1 and $g$ maps $Y$ onto $X$.  
+    \item $f(A \cap B) = f(A) \cap f(B)$ for all $A,B \subset X$ iff $f$ is 1-1.  
+    \item $f(X - A)  \subset Y - f(A)$ for all subsets $A$ of $X$ iff $f$ is 1-1.
+    \item $Y - f(A) \subset f(X-A)$ for all subsets $A$ of $X$ iff $f$ maps $X$ onto $Y$. 
+    \end{enumerate}
+\end{exercise}
 
+\begin{proof} (1): Suppose that $g: Y \rightarrow Z$ such that $g \circ f$ is the identity on $X$. Since $g \circ f$ is the identity on $X$, for all $x \in X$, $g(f(x)) = x$. Thus, if $f(x_0) = f(x_1)$, then $x_0 = g(f(x_0)) = g(f(x_1) ) = x_1$ and $f$ is 1-1. To show that $g$ maps $Y$ onto $X$ let $x \in X$, then $x = g(f(x))$ where $f(x) \in Y$. Thus, $g$ maps $Y$ onto $X$. 
+\end{proof}
+
+\begin{proof}(2):  
+    \bigbreak $ $\newline ($\Rightarrow$)
+    Suppose that $f(A \cap B) = f(A) \cap f(B)$ for all $A,B \subset X$. And suppose that $f(x) = f(y)$ for some $x,y \in X$. Then, $\{x\}, \{y\} \subset X$ and $f(\{x\} \cap \{y\}) = f(\{x\}) \cap f(\{y\})$. 
+\end{proof}
 \end{document}
