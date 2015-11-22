@@ -1037,11 +1037,11 @@ The following proof was suggested by David. H..
         \end{align*}
     It follows that $\{x,y\} = \{x\}$ i.e. $y=x$. 
     \bigbreak ($\Leftarrow$)
-    Suppose that $f$ is 1-1. And let $y \in f(X - A)$ for any non-empty subset $A \subset X$. 
+    Suppose that $f$ is 1-1. And let $y \in f(X - A)$ for any non-empty subset $A \subset X$. Then, there exists an $x_0 \in X - A$ such that $f(x_0) = y$. Suppose to the contrary that $y \notin Y - f(A)$. Then, $f(x_0) = y \in (Y -f(A))^c = f(A)$. However, this is a contradiction since $x_0 \in X - A $. 
 \end{proof}
 
 \bigbreak
-\begin{proof}
+\begin{proof} 
 \end{proof}
 
 \end{document}
