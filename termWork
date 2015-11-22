@@ -1013,9 +1013,11 @@ The following proof was suggested by David. H..
     \end{enumerate}
 \end{exercise}
 
-\begin{proof} (1): Suppose that $g: Y \rightarrow Z$ such that $g \circ f$ is the identity on $X$. Since $g \circ f$ is the identity on $X$, for all $x \in X$, $g(f(x)) = x$. Thus, if $f(x_0) = f(x_1)$, then $x_0 = g(f(x_0)) = g(f(x_1) ) = x_1$ and $f$ is 1-1. To show that $g$ maps $Y$ onto $X$ let $x \in X$, then $x = g(f(x))$ where $f(x) \in Y$. Thus, $g$ maps $Y$ onto $X$. 
+\begin{proof} (1): 
+    Suppose that $g: Y \rightarrow Z$ such that $g \circ f$ is the identity on $X$. Since $g \circ f$ is the identity on $X$, for all $x \in X$, $g(f(x)) = x$. Thus, if $f(x_0) = f(x_1)$, then $x_0 = g(f(x_0)) = g(f(x_1) ) = x_1$ and $f$ is 1-1. To show that $g$ maps $Y$ onto $X$ let $x \in X$, then $x = g(f(x))$ where $f(x) \in Y$. Thus, $g$ maps $Y$ onto $X$. 
 \end{proof}
 
+\bigbreak
 \begin{proof}(2):
     \bigbreak ($\Rightarrow$)
     By assumption, we have that $f(A \cap B) = f(A) \cap f(B)$ for all $A,B \subset X$. Suppose that $f(x) = f(y)$ for some $x,y \in X$. If $x = y$, then we are done. So, suppose that $x \neq y$. Letting $A = \{x\}, B= \{y\}$, we have that $f(A \cap B) = \emptyset \neq \{f(x) = f(y)\} = f(A) \cap f(B)$, a contradiction.  
@@ -1024,8 +1026,22 @@ The following proof was suggested by David. H..
     \par Now take $y \in f(A) \cap f(B)$. Then $y \in f(A)$ so there is some $a \in A$ with $f(a) = y$. Also, $y \in f(B)$, so there is some $b \in B$ such that $y = f(b)$. Now $f(a) = y = f(b)$, so $f$ being 1-1 now implies $a = b$. Thus, $a \in A \cap B$ and $f(a) = y \in f(A \cap B)$.
 \end{proof}
 
+\bigbreak
 \begin{proof}(3):
     \bigbreak ($\Rightarrow$)
-    By assumption we have that $f(X - A) \subset Y - f(A)$ for all $A \subset X$. Suppose that $f(x)=f(y)$ for some 
+    Suppose that $f(x)=f(y)$ for some $x,y \in X$. Let $A = \{x,y\}$. Then, $f(X - \{x,y\}) \subset Y - f(\{x,y\}) = Y - \{f(x)=f(y)\} = Y - \{f(x)\}$.By the comments on page thirty-nine, we have that 
+        \begin{align*}
+        & f^{-1}f((X - A)) \subset f^{-1}(Y - \{f(x)\}) \\
+        & \Rightarrow X - A = X - f^{-1}(\{f(x)\}) \\
+        & \Rightarrow X - A = X - \{x\} \\
+        \end{align*}
+    It follows that $\{x,y\} = \{x\}$ i.e. $y=x$. 
+    \bigbreak ($\Leftarrow$)
+    Suppose that $f$ is 1-1. And let $y \in f(X - A)$ for any non-empty subset $A \subset X$. 
 \end{proof}
+
+\bigbreak
+\begin{proof}
+\end{proof}
+
 \end{document}
