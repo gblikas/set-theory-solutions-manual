@@ -1066,6 +1066,18 @@ The following proof was suggested by David. H..
 
 \begin{exercise} We prove that if $n \in \omega$ then $n \neq n^+$. 
 \end{exercise}
+    \begin{proof} Suppose, to the contarary, that $n = n^+$ for some $n \in \omega$. Then, from the axiom of extension we have that $n^+ \subset n$. However, then we would have that $n^+ = n \cup \{n\} \subset n$ implying that $n \in n$ which is a contradiction. 
+    \end{proof}
+    
+\begin{exercise} Let $n \in \omega$. We show that if $n \neq 0$, then $n = m^+$ for some $m \in \omega$. 
+\end{exercise}
+    \begin{proof} We proceed by mathematical induction: Let $S$ be that subset of $\omega$ for which if $n \neq 0$, then $n = m^+$ for some $m \in \omega$. We note that $1 \in S$, since $1 = 0^+$ and $0 \in \omega
+    $. Suppose that for some $n \in \omega$, $n = m^+$ for some $m \in \omega$; indeed, if $n^+ = m$ for some $m \in \omega$ we have $(n^+)^+ = m^+ = z$ for some $z \in \omega$ by the induction hypothesis.  This compeletes the proof.
+    \end{proof}
+    
+\begin{exercise} We prove that $\omega$ is transative. That is, if $x \in y$ and $y \in \omega$, then $y \in \omega$.
+\end{exercise}
     \begin{proof}
     \end{proof}
+    
 \end{document}
