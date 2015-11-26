@@ -1069,15 +1069,18 @@ The following proof was suggested by David. H..
     \begin{proof} Suppose, to the contarary, that $n = n^+$ for some $n \in \omega$. Then, from the axiom of extension we have that $n^+ \subset n$. However, then we would have that $n^+ = n \cup \{n\} \subset n$ implying that $n \in n$ which is a contradiction. 
     \end{proof}
     
-\begin{exercise} Let $n \in \omega$. We show that if $n \neq 0$, then $n = m^+$ for some $m \in \omega$. 
+\begin{exercise} Let $n \in \omega$. We show that if $n \neq 0$, then $n = m^+$ for some $m \in \omega$ --- We note that this show any element $n \in \omega$ has a predecessor.  
 \end{exercise}
     \begin{proof} We proceed by mathematical induction: Let $S$ be that subset of $\omega$ for which if $n \neq 0$, then $n = m^+$ for some $m \in \omega$. We note that $1 \in S$, since $1 = 0^+$ and $0 \in \omega
-    $. Suppose that for some $n \in \omega$, $n = m^+$ for some $m \in \omega$; indeed, if $n^+ = m$ for some $m \in \omega$ we have $(n^+)^+ = m^+ = z$ for some $z \in \omega$ by the induction hypothesis.  This compeletes the proof.
+    $. Suppose that for some $n \in \omega$, $n = m^+$ for some $m \in \omega$; indeed, if $n^+ = m$ for some $m \in \omega$ we have $(n^+)^+ = m^+ = z$ for some $z \in \omega$ by the induction hypothesis.  This completes the proof.
     \end{proof}
     
 \begin{exercise} We prove that $\omega$ is transitive. That is, if $x \in y$ and $y \in \omega$, then $x \in \omega$.
 \end{exercise}
-    \begin{proof} We proceed by mathematical induction. Let $S$ be the set of all $z \in \omega$ such that if $x \in z$, then $x \in \omega$. We note that $\{\} = 0 \in S$, vacuously. Thus, let $y \in S$. We show that $y^+ \in S$. That is, let $x$ be any element in $y^+$: $x \in y^+ = y \cup \{y\}$ . Then, either $x \in y$ or $x = y$. In the former cases, we that $x \in \omega$, by assumption; in the later case we have that $y = x \in S$. Thus, 
+    \begin{proof} We proceed by mathematical induction. Let $S$ be the set of all $z \in \omega$ such that if $x \in z$, then $x \in \omega$. We note that $\{\} = 0 \in S$, vacuously. Thus, let $y \in S$. We show that $y^+ \in S$. That is, let $x$ be any element in $y^+$: $x \in y^+ = y \cup \{y\}$ . Then, either $x \in y$ or $x = y$. In the former cases, we that $x \in \omega$, by assumption; in the later case we have that $y = x \in S$. Thus, $\omega = S$ and so $\omega$ is transitive. 
     \end{proof}
+    
+\begin{exercise} Let $E \subset n$ for some $n \in \omega$, such that $E \neq \emptyset$.We show that there exists an element $k \in E$ such that $k \in m$ whenever $m$ is an element of $E$ distinct from $k$ --- We note that this is show that there exist a lower bound. We proceed by mathematical induction. 
+\end{exercise}
     
 \end{document}
