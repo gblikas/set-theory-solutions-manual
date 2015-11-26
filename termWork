@@ -1065,3 +1065,8 @@ The following proof was suggested by David. H..
 \begin{mdframed}
 \section{Peano Axioms}
 \end{mdframed}
+
+\begin{exercise} We prove that if $n \in \omega$ then $n \neq n^+$. 
+\end{exercise}
+    \begin{proof}
+    \end{proof}
