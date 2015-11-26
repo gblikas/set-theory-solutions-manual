@@ -1085,9 +1085,9 @@ The following proof was suggested by David. H..
     \begin{proof} We proceed by mathematical induction. Let $S$ be the set of all $z \in \omega$ such that if $x \in z$, then $x \in \omega$. We note that $\{\} = 0 \in S$, vacuously. Thus, let $y \in S$. We show that $y^+ \in S$. That is, let $x$ be any element in $y^+$: $x \in y^+ = y \cup \{y\}$ . Then, either $x \in y$ or $x = y$. In the former cases, we that $x \in \omega$, by assumption; in the later case we have that $y = x \in S$. Thus, $\omega = S$ and so $\omega$ is transitive. 
     \end{proof}
     
-\begin{exercise} We show the following: if $E$ is non-empty subset of some natural number, then there exists an element $k\in E$ such that $k \in m$ whenever $m$ is an element of $E$ and distinct from $k$.
+\begin{exercise} We show the following: if $E$ is non-empty subset of some natural number, then there exists an element $k\in E$ such that $k \in m$ whenever $m$ is an element of $E$ and distinct from $k$ --- This says that any finite set has a lower bound, namely a greatest lower bound. 
 \end{exercise}
-    \begin{proof} We proceed by mathematical induction. Let $S$ be the set of $z \in \omega$ such that the above holds. We note that $\{\} = 0 \in S$, vacuously. Suppose that $n \in S$ for some $n \in \omega$; we show that $n^+ \in S$. Suppose that $E$ is a non-empty subset of $n^+ = n \cup \{n\}$. It follows that either $n \in E$ or $n \notin E$. If $n \notin E$, then the result follows from the induction hypothesis. If $n \in E$, 
+    \begin{proof} We proceed by mathematical induction. Let $S$ be the set of $z \in \omega$ such that the above holds. We note that $\{\} = 0 \in S$, vacuously. Suppose that $n \in S$ for some $n \in \omega$; we show that $n^+ \in S$. Suppose that $E$ is a non-empty subset of $n^+ = n \cup \{n\}$. If $E$ is a singleton, then we are done; the above is vacuously satisfied. We note that if $E = n$, then we are done, by the induction hypothesis. Thus, there exists some $k \in E$, as specified above. We claim that this $k$, so specified, will work even if $n \in E$; Indeed from a previous proof, we know that no element is equal to its successor and so it follows that for any $a \in E$, $a \in n$. In particular, this is true for $k$. Therefore, $S = \omega$. 
     \end{proof}
     
 \end{document}
