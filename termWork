@@ -1075,9 +1075,9 @@ The following proof was suggested by David. H..
     $. Suppose that for some $n \in \omega$, $n = m^+$ for some $m \in \omega$; indeed, if $n^+ = m$ for some $m \in \omega$ we have $(n^+)^+ = m^+ = z$ for some $z \in \omega$ by the induction hypothesis.  This compeletes the proof.
     \end{proof}
     
-\begin{exercise} We prove that $\omega$ is transative. That is, if $x \in y$ and $y \in \omega$, then $y \in \omega$.
+\begin{exercise} We prove that $\omega$ is transitive. That is, if $x \in y$ and $y \in \omega$, then $x \in \omega$.
 \end{exercise}
-    \begin{proof}
+    \begin{proof} We proceed by mathematical induction. Let $S$ be the set of all $z \in \omega$ such that if $x \in z$, then $x \in \omega$. We note that $\{\} = 0 \in S$, vacuously. Thus, let $y \in S$. We show that $y^+ \in S$. That is, let $x$ be any element in $y^+$: $x \in y^+ = y \cup \{y\}$ . Then, either $x \in y$ or $x = y$. In the former cases, we that $x \in \omega$, by assumption; in the later case we have that $y = x \in S$. Thus, 
     \end{proof}
     
 \end{document}
