@@ -1058,8 +1058,6 @@ The following proof was suggested by David. H..
 \end{exercise}
     \begin{proof} For all $i \in I$, $A_i$ is a successor set, and so $0 \in A_i$. This implies that $0 \in \bigcap_i A_i$. Likewise, suppose that $n \in \bigcap_i A_i$; then $n \in A_i$ for all $i \in I$ and so $n^+ \in A_i$ for each $i \in I$; from the definition of intersection $n^+ \in \bigcap_i A_i$. This completes the proof. 
     \end{proof}
-\end{document}
-
 
 \newpage
 \begin{mdframed}
@@ -1070,3 +1068,4 @@ The following proof was suggested by David. H..
 \end{exercise}
     \begin{proof}
     \end{proof}
+\end{document}
