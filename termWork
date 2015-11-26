@@ -1048,4 +1048,20 @@ The following proof was suggested by David. H..
     Let $A \subset X$ and suppose that $y \in Y - f(A)$. Since $f$ maps $X$ onto $Y$, there exists some $x \in X$ such that $y = f(x) \in Y - f(A)$. Thus, $x \notin A$ and so $x \in A^c = X - A$. It follows from he definition that $y=f(x) \in f(X-A)$ and the result follows.   
 \end{proof}
 
+
+\newpage 
+\begin{mdframed}
+\section{Numbers}
+\end{mdframed}
+
+\begin{exercise} Let $\{A_i\}$ be a family of non-empty successor sets for some non-empty domain $I$. We show that $$\bigcap_i A_i$$ is a successor set. 
+\end{exercise}
+    \begin{proof} For all $i \in I$, $A_i$ is a successor set, and so $0 \in A_i$. This implies that $0 \in \bigcap_i A_i$. Likewise, suppose that $n \in \bigcap_i A_i$; then $n \in A_i$ for all $i \in I$ and so $n^+ \in A_i$ for each $i \in I$; from the definition of intersection $n^+ \in \bigcap_i A_i$. This completes the proof. 
+    \end{proof}
 \end{document}
+
+
+\newpage
+\begin{mdframed}
+\section{Peano Axioms}
+\end{mdframed}
