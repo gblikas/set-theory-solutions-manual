@@ -1090,4 +1090,14 @@ The following proof was suggested by David. H..
     \begin{proof} We proceed by mathematical induction. Let $S$ be the set of $z \in \omega$ such that the above holds. We note that $\{\} = 0 \in S$, vacuously. Suppose that $n \in S$ for some $n \in \omega$; we show that $n^+ \in S$. Suppose that $E$ is a non-empty subset of $n^+ = n \cup \{n\}$. If $E$ is a singleton, then we are done; the above is vacuously satisfied. We note that if $E = n$, then we are done, by the induction hypothesis. Thus, there exists some $k \in E$, as specified above. We claim that this $k$, so specified, will work even if $n \in E$; Indeed from a previous proof, we know that no element is equal to its successor and so it follows that for any $a \in E$, $a \in n$. In particular, this is true for $k$. Therefore, $S = \omega$. 
     \end{proof}
     
+    
+\newpage
+\begin{mdframed}
+\section{Arithmetic}
+\end{mdframed}
+
+\begin{exercise} Prove that if $m < n$ for some natural numbers $m$, $n$, then $m + k < n + k$ for any $k \in \omega$. 
+\end{exercise}
+    \begin{proof} We proceed by mathematical induction. Suppose that for some natural numbers $m$, $n$, $m < n$. Let $S$ be the set of all $z \in \omega$ such that $m + z < n + z$. We show that $S = \omega$. Indeed; we note that since $m+0 = m$ and $n+0 = n$, it follows that $m = m+0 < n+0 = n$, and so, $0 \in S$. Now, suppose that $k \in S$ for some $k \in \omega$. We show that $k^+ \in S$. \par Note, $s_n(k^+) = (s_n(k))^+ = s_n(k) \cup \{s_n(k)\}$, and by the definition of $<$, and the induction hypothesis, we have that $\{s_n(k)\} \subset s_m(k) \subset (s_m(k) \cup \{s_m(k)\}) = s_m(k^+)$. This implies that $s_n(k^+) = s_n(k) \cup \{s_n(k)\} \subset s_m(k) \cup \{s_m(k)\} = s_m(k^+)$. That is, $S = \omega$
+    \end{proof}
 \end{document}
