@@ -1118,7 +1118,7 @@ The following proof was suggested by David. H..
     
 \begin{exercise} We prove that if $E$ is a non-empty set of natural numbers, then there exists an element $k \in E$ such that $k \leq m$ for all $m \in E$. --- This statement says that any non-empty subset in $\omega$ has a minimum. 
 \end{exercise}
-    \begin{proof} Let $E \subset \omega$ such that $E \neq \emptyset$. Since $E$ is non-empty, we can form the intersection of elements in $E$. Consider $$z = \bigcap_{x \in \omega} x$$
+    \begin{proof} Let $E \subset \omega$ such that $E \neq \emptyset$. Since $E$ is non-empty, we can form the intersection of elements in $E$. Consider $$z = \bigcap_{x \in E} x$$ It follows directly from the formulation of $z$ that $z \subset x$, for all $x \in E$: $z \leq x$. Thus, it is only necessary to prove that $z \in E$. 
     \end{proof}
 
 \end{document}
