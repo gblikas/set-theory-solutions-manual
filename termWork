@@ -1133,7 +1133,7 @@ The following proof was suggested by David. H..
         \bigbreak ($\Rightarrow$) \par
         Suppose that $m \in n$. We show that $m \subset n$: let $x \in m$, then by the lemma above, $x \in n$. Thus, $m \subset n$.
         \bigbreak ($\Leftarrow$) \par
-        Suppose that $m \subset n$.
+        Suppose that $m \subset n$. If $m = n$, then we are done. Otherwise, $m \neq n$. If this is the case, then $n \in m$ cannot happen (for them $m$ would be a subset of one of its elements), and therefor $m \in n$; this is by the comparability of  and $x,y \in \omega$.
     \end{proof}
         
 \begin{exercise} We prove that if $E$ is a non-empty set of natural numbers, then there exists an element $k \in E$ such that $k \leq m$ for all $m \in E$. --- This statement says that any non-empty subset in $\omega$ has a minimum. 
