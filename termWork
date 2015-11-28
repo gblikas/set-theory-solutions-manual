@@ -1122,14 +1122,23 @@ The following proof was suggested by David. H..
         We only note that (1),(2), and (3) follow from the inductive hypothesis and the previous exercise. Therefore, $S = \omega$.
     \end{proof}
     
+\begin{lemma} For any $n \in \omega$, $n$ is transitive. 
+\end{lemma}
+    \begin{proof} Suppose that $E = n \in \omega$ and $y \in E$. Since $y \in E$, $y$ is a proper subset of $E$. Now, if $x \in y$, then $x$ is a proper subset of $y$  and it follows directly that $x \subset y \subset E$. That is, $x$ is a proper subset of $E$. That is $x \in E$.
+    \end{proof}
+    
+\begin{lemma} If $m, n \in \omega$ such that $m \neq n$, then $m \in n$ iff $ m \subset n$
+\end{lemma}
+    \begin{proof} Let $m$, $n$ be stated as above. 
+        \bigbreak ($\Rightarrow$) \par
+        Suppose that $m \in n$. We show that $m \subset n$: let $x \in m$, then by the lemma above, $x \in n$. Thus, $m \subset n$.
+        \bigbreak ($\Leftarrow$) \par
+        Suppose that $m \subset n$.
+    \end{proof}
+        
 \begin{exercise} We prove that if $E$ is a non-empty set of natural numbers, then there exists an element $k \in E$ such that $k \leq m$ for all $m \in E$. --- This statement says that any non-empty subset in $\omega$ has a minimum. 
 \end{exercise}
-    \begin{proof} Let $E \subset \omega$ such that $E \neq \emptyset$. Since $E$ is non-empty, we can form the intersection of elements in $E$. Consider $$z = \bigcap_{x \in E} x$$ It follows directly from the formulation of $z$ that $z \subset x$, for all $x \in E$: $z \leq x$. Thus, it is only necessary to prove that $z \in E$. 
-    \begin{lemma} For any $n \in \omega$, $n$ is transitive. 
-    \end{lemma}
-        \begin{proof} Suppose that $E = n \in \omega$ and $y \in E$. Since $y \in E$, $y$ is a proper subset of $E$. Now, if $x \in y$, then $x$ is a proper subset of $y$  and it follows directly that $x \not\subset y \not\subset E$. That is, $x$ is a proper subset of $E$. That is $x \in E$.
-        \end{proof}
-    From the previous lemma we see that since $z \in x$ for all $x \in E$, and $x \in E$, that $z \in E$. The result follows. 
+    \begin{proof} Let $E \subset \omega$ such that $E \neq \emptyset$. Since $E$ is non-empty, we can form the intersection of elements in $E$. Consider $$z = \bigcap_{x \in E} x$$ It follows directly from the formulation of $z$ that $z \subset x$, for all $x \in E$: $z \leq x$. Thus, it is only necessary to prove that $z \in E$. From the previous lemma we see that since $z \in x$ for all $x \in E$, and $x \in E$, that $z \in E$. The result follows. 
     \end{proof}
  
 
