@@ -1104,7 +1104,20 @@ The following proof was suggested by David. H..
 \begin{exercise} Prove that if $m < n$ for some $m,n \in \omega$, and $k \neq 0$, then $m\cdot k < n \cdot k$.
 \end{exercise}
     \begin{proof}
-        We proceed by mathematical induction. Suppose that $m < n$ for some $m,n \in \omega$. Let $S$ be the set of $z \in \omega$, which satisfy the following statement: if $z \neq 0$, then $m \cdot z < n \cdot z$. We note that $0 \in S$, vacuously. Suppose that $k \in S$ for some $k \in \omega$; we show that $k^+ \in S$. Indeed: by definition of product, we have $p_m(k^+) = p_m (k) + m = s_m(p_m(k)) < s_m(p_n(k)) = p_n(k) + m < p_n(k) + n = p_n(k^+)$, by the inductive hypothesis. 
+        We proceed by mathematical induction. Suppose that $m < n$ for some $m,n \in \omega$. Let $S$ be the set of $z \in \omega$, which satisfy the following statement: if $z \neq 0$, then $m \cdot z < n \cdot z$. We note that $0 \in S$, vacuously. Suppose that $k \in S$ for some $k \in \omega$; we show that $k^+ \in S$. Indeed: by definition of product, we have the following: 
+            \begin{align}
+            p_m(k^+) & = p_m (k) + m \nonumber\\
+            & = s_m(p_m(k)) \\
+            & < s_m(p_n(k)) \\
+            & = p_n(k) + m  \nonumber\\
+            & < p_n(k) + n \\
+            & = p_n(k^+) \nonumber
+            \end{align}
+        We only note that (1),(2), and (3) follow from the inductive hypothesis and the previous exercise. Therefore, $S = \omega$.
     \end{proof}
+    
+\begin{exercise} We prove that if $E$ is a non-empty set of natural numbers, then there exists an element $k \in E$ such that $k \leq m$ for all $m \in E$. --- This statement says that any non-empty subset in $\omega$ has a minimum. 
+\end{exercise}
+
 \end{document}
  
