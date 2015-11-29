@@ -1141,6 +1141,39 @@ The following proof was suggested by David. H..
     \begin{proof} Let $E \subset \omega$ such that $E \neq \emptyset$. Since $E$ is non-empty, we can form the intersection of elements in $E$. Consider $$z = \bigcap_{x \in E} x$$ It follows directly from the formulation of $z$ that $z \subset x$, for all $x \in E$: $z \leq x$. Thus, it is only necessary to prove that $z \in E$. From the previous lemma we see that since $z \in x$ for all $x \in E$, and $x \in E$, that $z \in E$. The result follows. 
     \end{proof}
  
-
-\end{document}
+\begin{exercise} A set E is called finite if it is equivalent to some natural number; otherwise E is infinite. We use this definition to prove that $\omega$ is infinite. 
+\end{exercise}
+    \begin{proof} Suppose, to the contrary that $\omega$ is finite. Then, there exists a 1-1 and onto function, $f$, from $\omega$ to $n$ for some $n \in \omega$: $f \subset \omega \times n$. Since $f$ is 1-1 and onto, for ever $y \in n$, there exists a unique $x \in \omega$ such that $(x,y) \in f$. Let $g$ be the union of all such $x$, which is an element of $\omega$. Then, $g^+ = g \cup \{g\}$ is in $\omega$ but not in $g$. Since $f$ is a function, we must have $(g^+, y_1) \in f$ for some $y_1 \in n$; likewise since $f$ is onto, there exists some $x \in g$ such that $(x, y_1) \in f$. From here we see that we must have $(g^+, y_1) = (x, y_1)$, implying $g^+ = x$; which is  a contradiction since $g^+ \notin g$, whereas $x \in g$.
+    \end{proof}
+    
+\begin{exercise} If $A$ is a finite set, then $A$ is not equivalent to a proper subset of $A$. The contrastive of this statement is that if $A$ is equivalent to a proper subset of $A$, then $A$ is not finite (infinite). We use this definition to show that $\omega$ is infinite. 
+\end{exercise}
+    \begin{proof} We show that $\omega \sim A$, where $A = \omega - \{0\}$. First, it is clear that $A$ is a non-empty proper subset of $\omega$. Consider the map $f \subset \omega \times \omega$, given by $f(n) = n^+$. First, we show that $f$ is indeed a function, and then that it is 1-1 and onto:
+        \begin{itemize}
+        \item \textit{Well-Defined}: Suppose that $x = y$ for some $x, y \in \omega$. From a previous theorem, we have $x^+ = y^+$. This shows that $f$ is well-defined. 
+        \item \textit{Everywhere-Defined}: This follows directly from the definition of $\omega$ as being a successor set. This shows that $f$ is everywhere defined. 
+        \item \textit{1-1}: Suppose that $n^+=m^+$. Again, from a previous exercise (page 46), we have $n=m$. This shows that $f$ is 1-1.
+        \item \textit{Onto}: Suppose that $n \in A = \omega - \{0\}$. Then no $n \in A$ is $0$. Thus, by a previous theorem, we have that $n = m^+ = f(m)$ for some $m \in \omega$. This implies that $f$ is onto. 
+        \end{itemize}
+    \end{proof}
+    
+\begin{exercise} We prove that union of a finite set of finite sets is finite. 
+\end{exercise}
+    \begin{proof} We proceed by mathematical induction. Let $S$ be a finite set, such that $\#(S) = n$, for some $n \in \omega$. Let $B$ be the set of all $N \in \omega$ such that $\bigcup S$ is finite. 
+    \par Note, $0 \in B$, since if $\#(S) = 0$, then $S = \{\}$ and $\bigcup \{\} = \{\}$ (which is finite). Next, suppose that $k \in B$: that is, if $S$ is a finite set such that $\#(S) = k$, then $\bigcup S$ is finite. We show that $k^+ \in B$. Suppose that $\#(S) = k^+$. Then, there exists some 1-1 and onto function $f$ i.e. $f: k^+ \leftrightarrow S$. And we have the following: 
+        \begin{align*}
+        \bigcup S = \bigcup_{i \in k^+} f(i)  = \Big(\bigcup_{i \in k} f(i)\Big) \cup f(k)
+        \end{align*}
+    Thus, $k^+ \in B$, and so $B = \omega$.
+    \end{proof}
+    
+\begin{exercise} We prove the following: If $E$ is finite, then $\Pwr(E)$ is finite and, moreover, $\#(\Pwr(E)) = 2^{\#(E)}$.
+\end{exercise}
+    \begin{proof} It is only necessary to show that if $\#(E) = n$ for some $n \in \omega$, then $\#\Pwr(E) = 2^{\#(E)}$; we conclude that $2^{\#(E)} \in \omega$ by a previous exercise. 
+    \end{proof}
+    
+\begin{exercise} If $E$ is a non-empty finite set of natural numbers, then there exists and element $k \in E$ such that $m \leq k$ for all $m \in E$. 
+    \begin{proof}
+    \end{proof}
  
+\end{document}
