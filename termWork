@@ -1160,19 +1160,21 @@ The following proof was suggested by David. H..
 \begin{exercise} We prove that union of a finite set of finite sets is finite. 
 \end{exercise}
     \begin{proof} We proceed by mathematical induction. Let $S$ be a finite set, such that $\#(S) = n$, for some $n \in \omega$. Let $B$ be the set of all $N \in \omega$ such that $\bigcup S$ is finite. 
-    \par Note, $0 \in B$, since if $\#(S) = 0$, then $S = \{\}$ and $\bigcup \{\} = \{\}$ (which is finite). Next, suppose that $k \in B$: that is, if $S$ is a finite set such that $\#(S) = k$, then $\bigcup S$ is finite. We show that $k^+ \in B$. Suppose that $\#(S) = k^+$. Then, there exists some 1-1 and onto function $f$ i.e. $f: k^+ \leftrightarrow S$. And we have the following: 
+    \par Note $0 \in B$ since, if $\#(S) = 0$, then $S = \{\}$ and $\bigcup \{\} = \{\}$ (which is finite). Next, suppose that $k \in B$: that is, if $S$ is a finite set such that $\#(S) = k$, then $\bigcup S$ is finite. We show that $k^+ \in B$. Suppose that $\#(S) = k^+$. Then, there exists some 1-1 and onto function $f$ i.e. $f: k^+ \leftrightarrow S$. And we have the following: 
         \begin{align*}
         \bigcup S = \bigcup_{i \in k^+} f(i)  = \Big(\bigcup_{i \in k} f(i)\Big) \cup f(k)
         \end{align*}
-    Thus, $k^+ \in B$, and so $B = \omega$.
+    From the comments on page 53, and the induction hypothesis, we see that $k^+ \in B$. Thus, $B= \omega$. 
     \end{proof}
     
 \begin{exercise} We prove the following: If $E$ is finite, then $\Pwr(E)$ is finite and, moreover, $\#(\Pwr(E)) = 2^{\#(E)}$.
 \end{exercise}
-    \begin{proof} It is only necessary to show that if $\#(E) = n$ for some $n \in \omega$, then $\#\Pwr(E) = 2^{\#(E)}$; we conclude that $2^{\#(E)} \in \omega$ by a previous exercise. 
+    \begin{proof} It is only necessary to show that if $\#(E) = n$ for some $n \in \omega$, then $\#\Pwr(E) = 2^{\#(E)}$; we conclude that $2^{\#(E)} \in \omega$ by a previous exercise. We proceed by mathematical induction: 
+    \par Let $S$ be the set of all $N \in \omega$ such that $\#(E) = N$ and $\#\Pwr(E) = 2^{\#(E)}$. Note that $0 \in S$, since $\#(E) = 0$ implies $E = \{\}$ and $\#(\Pwr(E)) = \#(\{\emptyset, \{\emptyset\}\}) = 2 = 2^0$. Next, assuming that $k \in S$, we show that $k^+ \in S$. 
     \end{proof}
     
-\begin{exercise} If $E$ is a non-empty finite set of natural numbers, then there exists and element $k \in E$ such that $m \leq k$ for all $m \in E$. 
+\begin{exercise} If $E$ is a non-empty finite set of natural numbers, then there exists and element $k \in E$ such that $m \leq k$ for all $m \in E$.
+\end{exercise}
     \begin{proof}
     \end{proof}
  
