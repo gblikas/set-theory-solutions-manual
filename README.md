@@ -20,3 +20,7 @@ In addition, this is a raw, editable latex file. I will post pdfs.
 * Halmos. P.. "Naive Set Theory"-- Section 9
 * Halmos. P.. "Naive Set Theory"-- Section 10
 * Halmos. P.. "Naive Set Theory"-- Section 11
+* Halmos. P.. "Naive Set Theory"-- Section 12
+* Halmos. P.. "Naive Set Theory"-- Section 13
+* Halmos. P.. "Naive Set Theory"-- Section 14
+
