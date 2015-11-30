@@ -1186,8 +1186,36 @@ The following proof was suggested by David. H..
 \section{Order}
 \end{mdframed}
  
- \begin{exercise} We express the conditions of antisymmetry and totality for a relation $R$ by means of equations involving $R$ and its inverse. 
+ \begin{exercise} We express the conditions of antisymmetry and totality for a relation $R$ by means of equations involving $R$ and its inverse --- This exercise illustrates that we can determine a partial, or total order, by looking the the co(domains), of a relation.  
  \end{exercise}
-    \begin{proof} 
+    \begin{proof} From the comments on page 54 and the notation in section 10, we adopt the usual assumptions and notation. That is, assume that $R$ is a relation in $X$. And, we have the following: 
+    $ $\newline Antisymmetry: 
+        \begin{align*}
+        xRy \land yRx & \Rightarrow x = y \\
+        \text{iff} \quad (R(x) = y \land R^{-1}(x) = y) & \Rightarrow R(x) = R^{-1}(y) 
+        \end{align*}
+    $ $\newline Totality: 
+        \begin{align*}
+        (\forall x,y \in X)(xRy \lor yRx) & \iff (\forall x,y \in X)(R(x) = y \lor R^{-1}(x) = y) \\ 
+        \end{align*}
     \end{proof}
+
+
+\newpage
+\begin{mdframed}
+\section{Axiom of Choice}
+\end{mdframed}
+
+\begin{exercise} We prove that every relation includes a function with the same domain. 
+\end{exercise}
+    \begin{proof} Suppose that $X$ and $Y$ are sets and let $R$ be a relation from $X$ into $Y$. By definition, $R \subset X \times Y$, and so if $X$ or $Y$ is empty, the $X \times Y$ is empty and we are done. Otherwise, there exists at least an element in each of $X$, $Y$. Let $X_R$ be the subset of $X$ given by the first coordinates of $R$. Claim: there exists some function $f:X_R \rightarrow Y$. 
+    \par Let $y \in Y$ be arbitrary and consider $T_y = \{x \in X_R: xRy\}$. Let $I$ be the set of $z \in Y$ such that $T_z \neq \emptyset$. Then, define $T = \bigcup_{y \in I} \{T_y\} = \{T_i\}$. Assuming the axiom of choice, and by the comments on page sixty, $\{T_i\}$ is a family of non-empty sets indexed by $I$ and so, there exists a family $\{t_i\}$, $i \in I$ such that $t_i \in T_i$ for each $i \in I$. Since $R$ is a relation on $X_R$, so defined, it follows that $f = \{(t_i,b): i \in I \land b=R(t_i)\}$ is a candidate function. 
+    \par Indeed; we verify that $f$ is well-defined and everywhere defined: 
+        \begin{itemize}
+        \item \textit{Well-Defined}: Suppose that $t_i = t_j$ for some $i,j \in I$. By construction, and the previous supposition, we have that $T_{t_i} = \{x \in X_R: x R t_i\} = \{x \in X_R: x R t_j\} = T_{t_j}$. Thus, $(t_i, R(t_i)) = (t_j, R(t_j)) = f(t_i) = f(t_j)$. 
+        \item \textit{Every-Where Defined}: This is clear by construction. 
+        \end{itemize}
+    \end{proof}
+
+
 \end{document}
