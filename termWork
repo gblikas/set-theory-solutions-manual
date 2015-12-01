@@ -1261,6 +1261,21 @@ The following proof was suggested by David. H..
         \end{itemize}
     This completes the proof.
     \end{proof}
+    
+\begin{exercise} We show that the following statements are equivalent to the axiom of choice: (i) Every partially ordered set has a maximal chain --- This is the Hausdorff Maximality Principal (ii) Every chain in a partially ordered set is included in some maximal chain. (iii) Every partially ordered set in which each chain has a least upper bound has a maximal element. 
+\end{exercise}
+    \begin{proof} To do so, we show that $i \Rightarrow ii \Rightarrow iii \Rightarrow \textit{ZL} \Rightarrow i$, noting that \textit{Zorn's Lemma} is equivalent to the axiom of choice. Throughout these exercises, we assume that $(X, \leq)$ is the partially ordered set in discussion. 
+        \begin{itemize}
+        \item (i $\Rightarrow$ ii) Suppose that every partially ordered set has a maximal chain. Since $(X, \leq)$ is partially ordered, there exists some maximal chain $A \subset X$. We note that for chains, inclusion is the partial order. Thus, by definition, for all other chains $A' \subset X$, we must have $A' \subset A$, since otherwise, $A \subsetneq A'$, contradicting the maximality of $A$. 
+        \item (ii $\Rightarrow$ iii) Suppose that every chain in a partially ordered set is included in some maximal chain. Let $(X, \leq)$ be such a partially ordered set. Then, there exists some maximal chain $A$ such that $A' \subset A$ for all other chains $A' \subset X$. We show that each chain $A'$ of $X$ has a least upper bound:  
+            \begin{itemize}
+            \item Let $G$ be the set of all upper-bounds of some chain $A'$. Then, we have have $A' \leq g$ for all $g \in G$. Likewise $G \cap A' =  A'$ implying $A'$ is the least upper-bound of $A'$.
+            \end{itemize}
+        From the antecedent in (iii), we see that $A$ has a maximal element in $A$, call it $a$. We also note that $a$ is maximal in $X$: If not, then we can define $T = A \cup \{a\}$, which is a totally ordered set in which $A \subset T$; contradicting the maximality of $A$. 
+        \item (iii $\Rightarrow$ \textit{Zorn's Lemma}) Suppose that every partially ordered set in which each chain has a least upper bound has a maximal element. Let $X$ be such a set. Then for any chain $A \subset X$, $A$ has a l.u.b. call it $\delta_A$. In particular, $\delta_A$ is an upper-bound. By assumption $X$ has a maximal element.
+        \item (\textit{Zorn's Lemma} $\Rightarrow$ i) This was proved in the previous exercise. 
+        \end{itemize} 
+    \end{proof}
 
 
 \end{document}
