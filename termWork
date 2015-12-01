@@ -1231,8 +1231,17 @@ The following proof was suggested by David. H..
         (\forall A \in \dom f)(f(A) \in A)  
         \end{cases}
         \end{align*}
-    Next, consider the relation $\leq$, in $X$, given by the following: for all $f_1, f_2 \in \mathcal{F}$, $f_1 \leq f_2$ iff $f_2$ is an extension of $f_1$. As the comments on page 65 point out, $\leq$ is a partial ordering. We note that $(F, \leq)$ is a partially ordered set. Assuming \textit{Zorn's Lemma}, we show that $\mathcal{F}$ is a chain, and so there is some maximal element $f$:
-    \par Since $(F, \leq)$ is a partially ordered set, we only need to show that for any $f_1,f_2$, either $f_1 \leq f_2$ or $f_2 \leq f_1$.
+    Next, consider the relation $\leq$, in $X$, given by the following: for all $f_1, f_2 \in \mathcal{F}$, $f_1 \leq f_2$ iff $f_2$ is an extension of $f_1$ i.e. $f_1 \subset f_2$. As the comments on page 65 point out, $\leq$ is a partial ordering. We note that $(F, \leq)$ is a partially ordered set. Assuming \textit{Zorn's Lemma}, we show that there exists some maximal element $f \in \mathcal{F}$: 
+    \par $\mathcal{F}$ is already partially ordered. So, let $\mathscr{X}$ be a chain in $\mathcal{F}$. We claim that $\bigcup \mathscr{X}$ is the upper bound for $\mathscr{X}$; we show that $\bigcup \mathscr{X}$ is a function: 
+        \begin{itemize}
+        \item \textit{Function}: Suppose that $(a,x), (a,y) \in \bigcup \mathscr{X}$, then $(a,x) \in f$ for some $f \in \mathscr{X}$ and, likewise, $(a,y) \in g$ for some $g \in \mathscr{X}$. Then, since $\mathscr{X}$ is a chain, either $f \leq g$, $f = g$, $g \leq f$. Without loss of generality, we have $(a,x), (a,y) \in g$. Since $g$ is a function, we have $x = y$. The fact that $\bigcup \mathscr{X}$ is every-where defined is obvious. 
+        \item The rest of the properties follow by definition. 
+        \end{itemize}
+    By \textit{Zorn's Lemma}, there exists a maximal element in $\mathcal{F}$, call it $f$. To complete the proof, we show that $\dom f = \Pwr(X) - \{\emptyset\}$: 
+        \begin{itemize}
+        \item Suppose that $\dom f \neq \Pwr(X) - \{\emptyset\}$. Then, there exists some $a \in X$ such that $a \notin \dom f$. Let $g = f \cup \{(a, b)\}$, for any $b \in X$. It is clear that $g \in \mathcal{F}$ and that $g \geq f$. However, this contradicts the minimality of $f$. 
+        \end{itemize}
+    This completes the proof.
     \end{proof}
 
 
