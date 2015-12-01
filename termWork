@@ -1241,7 +1241,12 @@ The following proof was suggested by David. H..
         \begin{itemize}
         \item Suppose that $\dom f \neq \Pwr(X) - \{\emptyset\}$. Then, there exists some $a \in X$ such that $a \notin \dom f$. Let $g = f \cup \{(a, b)\}$, for any $b \in X$. It is clear that $g \in \mathcal{F}$ and that $g \geq f$. However, this contradicts the minimality of $f$. 
         \end{itemize}
-    This completes the proof.
+    We note that using the \textit{Axiom of Choice} to prove \textit{Zorn's Lemma} was shown in text. This completes the proof.  
+    \end{proof}
+    
+\begin{exercise} We prove that the following is equivalent to the axiom of choice: Every partially ordered set has a maximal chain (i.e., a chain that is not a proper subset of any other chain)
+\end{exercise}
+    \begin{proof}
     \end{proof}
 
 
