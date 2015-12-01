@@ -8,6 +8,8 @@
 \setcounter{section}{+1}
 \DeclareMathOperator*{\Pwr}{\mathscr{P}}
 \DeclareMathOperator*{\Rcal}{\mathcal{R}}
+\DeclareMathOperator*{\Ima}{Im}
+\DeclareMathOperator*{\dom}{dom}
 \newtheorem{exercise}{\underline{Exercise}}[section]
 \newtheorem{proposition}{\textit{Proposition}}[section]
 \renewcommand{\qedsymbol}{\Summertree[1]}
@@ -1215,6 +1217,22 @@ The following proof was suggested by David. H..
         \item \textit{Well-Defined}: Suppose that $t_i = t_j$ for some $i,j \in I$. By construction, and the previous supposition, we have that $T_{t_i} = \{x \in X_R: x R t_i\} = \{x \in X_R: x R t_j\} = T_{t_j}$. Thus, $(t_i, R(t_i)) = (t_j, R(t_j)) = f(t_i) = f(t_j)$. 
         \item \textit{Every-Where Defined}: This is clear by construction. 
         \end{itemize}
+    Thus, $f$ is a function. 
+    \end{proof}
+    
+\begin{exercise} We show that Zorn's Lemma is equivalent to the axiom of choice. 
+\end{exercise}
+    \begin{proof} Let $X$ be a set and define $\mathcal{F}$ to be the following set of functions: 
+        \begin{align*}
+        f \in \mathcal{F} \iff 
+        \begin{cases} 
+        \dom f \subset \Pwr(X) \\
+        \Ima f \subset X \\
+        (\forall A \in \dom f)(f(A) \in A)  
+        \end{cases}
+        \end{align*}
+    Next, consider the relation $\leq$, in $X$, given by the following: for all $f_1, f_2 \in \mathcal{F}$, $f_1 \leq f_2$ iff $f_2$ is an extension of $f_1$. As the comments on page 65 point out, $\leq$ is a partial ordering. We note that $(F, \leq)$ is a partially ordered set. Assuming \textit{Zorn's Lemma}, we show that $\mathcal{F}$ is a chain, and so there is some maximal element $f$:
+    \par Since $(F, \leq)$ is a partially ordered set, we only need to show that for any $f_1,f_2$, either $f_1 \leq f_2$ or $f_2 \leq f_1$.
     \end{proof}
 
 
