@@ -1232,7 +1232,7 @@ The following proof was suggested by David. H..
         \end{cases}
         \end{align*}
     Next, consider the relation $\leq$, in $X$, given by the following: for all $f_1, f_2 \in \mathcal{F}$, $f_1 \leq f_2$ iff $f_2$ is an extension of $f_1$ i.e. $f_1 \subset f_2$. As the comments on page 65 point out, $\leq$ is a partial ordering. We note that $(F, \leq)$ is a partially ordered set. Assuming \textit{Zorn's Lemma}, we show that there exists some maximal element $f \in \mathcal{F}$: 
-    \par $\mathcal{F}$ is already partially ordered. So, let $\mathscr{X}$ be a chain in $\mathcal{F}$. We claim that $\bigcup \mathscr{X}$ is the upper bound for $\mathscr{X}$; we show that $\bigcup \mathscr{X}$ is a function: 
+    \par $\mathcal{F}$ is already partially ordered. So, let $\mathscr{X}$ be a chain in $\mathcal{F}$. Note that $\mathscr{X}$ is a collection of ordered pairs, satisfying the above criterion. We claim that $\bigcup \mathscr{X}$ is the upper bound for $\mathscr{X}$; we only need to show that $\bigcup \mathscr{X}$ is a function: 
         \begin{itemize}
         \item \textit{Function}: Suppose that $(a,x), (a,y) \in \bigcup \mathscr{X}$, then $(a,x) \in f$ for some $f \in \mathscr{X}$ and, likewise, $(a,y) \in g$ for some $g \in \mathscr{X}$. Then, since $\mathscr{X}$ is a chain, either $f \leq g$, $f = g$, $g \leq f$. Without loss of generality, we have $(a,x), (a,y) \in g$. Since $g$ is a function, we have $x = y$. The fact that $\bigcup \mathscr{X}$ is every-where defined is obvious. 
         \item The rest of the properties follow by definition. 
@@ -1244,9 +1244,22 @@ The following proof was suggested by David. H..
     We note that using the \textit{Axiom of Choice} to prove \textit{Zorn's Lemma} was shown in text. This completes the proof.  
     \end{proof}
     
-\begin{exercise} We prove that the following is equivalent to the axiom of choice: Every partially ordered set has a maximal chain (i.e., a chain that is not a proper subset of any other chain)
+%\begin{lemma} We prove that if $(X, \leq)$ is a partially ordered set, and $A$ is a maximal chain (i.e. a chain that is not a proper subset of any other chain) in $X$, then $A$ has an upper-bound $x \in X$, moreover, $x \in A$.
+%\end{lemma}
+ %   \begin{proof} Let $X$, $A$, be stated as above. I claim that $x = \bigcup A$ is an upper bound. Indeed, for all $a \in A$, $a \leq x$. Now, if $x \notin A$, then we can form $F = A \cup \{x\}$, in which case, $A \subset F$, contradicting the maximality of $A$.  
+  %  \end{proof}
+    
+\begin{exercise} We prove that the following is equivalent to the axiom of choice: Every partially ordered set has a maximal chain --- This is the Hausdorff Maximality Principal (HMP). 
 \end{exercise}
-    \begin{proof}
+    \begin{proof} We show that \textit{HMP} is equivalent to \textit{Zorn's Lemma} and use the fact that \textit{Zorn's Lemma} is equivalent to the \textit{Axiom of Choice} to conclude. 
+        \begin{itemize}
+        \item ($\Rightarrow$) Suppose the \textit{HMP}. Let $(X,\leq)$ be the partially ordered set, and $A$ the maximal chain. By the assumptions of \textit{Zorn's Lemma}, $A$ has an upper-bound, call it $a$. Now, $a \in A$, since otherwise, we could form $B = A \cup \{a\}$, which is again a totally ordered set, containing $A$; for all $s \in B$, the elements of $A$ are comparably, likewise, $s \leq a$. To complete the proof in this direction, we note that if $z \in X$ is any element such that $z \geq a$, then $z$ is an upper-bound and must be in $A$, by the previous discussion. This implies that $a \geq z$ for all $z \in X$. Specifically, since $A$ is partially ordered, we have $a \leq z$ and $z \leq a$ implying $a = z$. Thus, $a$ is maximal.  
+        \item ($\Leftarrow$) Suppose \textit{Zorn's Lemma}. Let $(X, \leq)$ be a partially ordered set. Consider $\mathcal{F}$ be the set of all totally ordered subsets of $X$. The inclusion order on $\mathcal{F}$ is a partial order. Note that if $S$ is a maximal element in $\mathcal{F}$, then it will be a maximal chain in $X$. We show that any chain $A$ in $\mathcal{F}$ has an upper-bound:
+            \begin{itemize}
+            \item (The following was \href{http://www.auburn.edu/~harriga/mh7200/hints/hw2.pdf}{suggested by this example}): Indeed, consider $A' = \bigcup_{E \in A} E$. By definition, $A'$ contains all elements of $A$. We only show that $A' \in \mathcal{F}$: To show this take $x$ and $y$, elements of $A'$. Then there are sets $E_x$ and $E_y$, members of $A$, with $x \in E_x$ and $y \in E_y$. Since $A$ is partially ordered by inclusion, $E_x \subset E_y$ or $E_y \subset E_x$, that is, either $x, y \in E_y$ or $x, y \in E_x$. Since both $E_x$ and $E_y$ are linearly ordered in $X$ then either $x \leq y$ or $y \leq x$. This shows that $A'$ is a totally ordered set, and so a chain in $X$ i.e. $A' \in \mathcal{F}$.
+            \end{itemize}
+        \end{itemize}
+    This completes the proof.
     \end{proof}
 
 
