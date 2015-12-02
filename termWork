@@ -1313,6 +1313,10 @@ The following proof was suggested by David. H..
     Therefore, $f$ is a choice function. Hence, the axiom of choice holds. 
     \end{proof}
 
-\begin{exercise} We prove that if $R$ is a partial order in a set $X$, then there exists a total order $S$ in $X$ such that $R \subset S$; in other words, every partial order can be extended to a total order withought enlarging the domain. 
+\begin{exercise} We prove that if $R$ is a partial order in a set $X$, then there exists a total order $S$ in $X$ such that $R \subset S$; in other words, every partial order can be extended to a total order without enlarging the domain. 
 \end{exercise}
+    \begin{proof}
+    
+    \end{proof}
+
 \end{document}
