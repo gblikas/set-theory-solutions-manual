@@ -1302,4 +1302,17 @@ The following proof was suggested by David. H..
         ($\Leftarrow$) Suppose that $(X, \leq)$ is a partially ordered set and that for any $x \in X$ the strict initial segment $s(x)$ is well ordered. Let $J$ be a subset of $X$. Pick some $j_0 \in J$ and consider $s(j_0) = \{x \in X: x < j_0\}$. If $s(j_0) = \emptyset$, $j_0$ is the least element, and we are done. Otherwise, $s(j_0) \neq \emptyset$. But since $s(j_0)$ is well ordered, we have $J \cap s(j_0) \subset s(j_0)$ and $J \cap s(j_0) \subset J$. Implying that $J \cap s(j_0)$ has a lower bound $J$, call it $z$. We note that $z$ is the lower bound for $J$; Otherwise, there is some $x \in J$, $x \neq z$ such that $x \leq z < j$ for all $j \in J$ and in particular for $j_0$. This implies that $x \in s(j_0)$. However, then we must have $x \in J \cap s(j_0)$ and so $x = z$; a contradiction. 
     \end{proof}
 
+\begin{exercise} We prove that the well ordering theorem implies the \textit{Axiom of Choice}.
+\end{exercise}
+    \begin{proof} The following proof was adapted from \href{http://planetmath.org/wellorderingprincipleimpliesaxiomofchoice}{this website}: 
+    \par Let $C$ be a collection of nonempty sets. Then $\bigcup_{S \in C} S$ is a set. By the well-ordering principle, $\bigcup_{S \in C} S$ is well-ordered under some relation $<$. Since each $S$ is a nonempty subset of $\bigcup_{S \in C} S$, each $S$ has a least member $m_S$ with respect to the relation $<$. Define $f:C \rightarrow \bigcup_{S \in C} S$ by $f(S)=m_S$. We show that $f$ is a choice function:
+        \begin{itemize}
+        \item \textit{Well-Defined}: Suppose that $(a,x),(a,y) \in f$. Then, there exists some $S_1 \in C$ such that $x \in S_1$. Likewise, there exists some $S_2 \in C$ such that $y \in S_2$. Without loss of generality, it follows that $x,y \in S_2$, and so $x = y =m_{S_2}$.
+        \item \textit{Everywhere Defined}: This follows fromt he discussion above. 
+        \end{itemize}
+    Therefore, $f$ is a choice function. Hence, the axiom of choice holds. 
+    \end{proof}
+
+\begin{exercise} We prove that if $R$ is a partial order in a set $X$, then there exists a total order $S$ in $X$ such that $R \subset S$; in other words, every partial order can be extended to a total order withought enlarging the domain. 
+\end{exercise}
 \end{document}
