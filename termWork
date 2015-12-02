@@ -1296,11 +1296,10 @@ The following proof was suggested by David. H..
 \begin{exercise} We prove that a totally ordered set is well ordered iff the set of strict predecessor of each element is well ordered. 
 \end{exercise}
     \begin{proof}
-    $ $\newline
-        \begin{itemize}
-        \item ($\Rightarrow$) Suppose that we have a well ordered set $(X, \leq)$. Note that the set of strict predecessors of some $x \in X$ forms a subset. The rest follows from the definition.
-        \item ($\Leftarrow$) Suppose that $(X, \leq)$ is a partially ordered set and that for any $x \in X$ the strict initial segment $s(x)$ is well ordered.
-        \end{itemize}
+        $ $\newline 
+        ($\Rightarrow$) Suppose that we have a well ordered set $(X, \leq)$. Note that the set of strict predecessors of some $x \in X$ forms a subset. The rest follows from the definition.
+        $ $\newline
+        ($\Leftarrow$) Suppose that $(X, \leq)$ is a partially ordered set and that for any $x \in X$ the strict initial segment $s(x)$ is well ordered. Let $J$ be a subset of $X$. Pick some $j_0 \in J$ and consider $s(j_0) = \{x \in X: x < j_0\}$. If $s(j_0) = \emptyset$, $j_0$ is the least element, and we are done. Otherwise, $s(j_0) \neq \emptyset$. But since $s(j_0)$ is well ordered, we have $J \cap s(j_0) \subset s(j_0)$ and $J \cap s(j_0) \subset J$. Implying that $J \cap s(j_0)$ has a lower bound $J$, call it $z$. We note that $z$ is the lower bound for $J$; Otherwise, there is some $x \in J$, $x \neq z$ such that $x \leq z < j$ for all $j \in J$ and in particular for $j_0$. This implies that $x \in s(j_0)$. However, then we must have $x \in J \cap s(j_0)$ and so $x = z$; a contradiction. 
     \end{proof}
 
 \end{document}
