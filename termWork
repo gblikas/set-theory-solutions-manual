@@ -1276,6 +1276,31 @@ The following proof was suggested by David. H..
         \item (\textit{Zorn's Lemma} $\Rightarrow$ i) This was proved in the previous exercise. 
         \end{itemize} 
     \end{proof}
+    
+\newpage
+\begin{mdframed}
+\section{Well Ordering}
+\end{mdframed}
 
+\begin{exercise} A subset $A$ of a partially ordered set $X$ is \textit{cofinal} in $X$ in case for each element $x \in X$, there exists an element $a \in A$ such that $x \leq a$. We prove that every totally ordered set has a cofinal well ordered subset.
+\end{exercise}
+    \begin{proof} Let $(X, \leq)$ be a non-empty totally ordered set. If $X$ has a maximum element, then we are done. Thus, suppose that $X$ has no maximum. Let $\mathcal{F}$ be the set of all well ordered subsets of $X$ with the following order: for all $f,g \in \mathcal{F}$, $f\preceq g$ iff $f$ is an initial segment of $g$. We seek to apply \textit{Zorn's Lemma}.
+        \begin{itemize}
+        \item From the previous result, $\preceq$ is a partial order on $\mathcal{F}$.
+        \item Suppose that $Z$ is chain in $\mathcal{F}$. We show that $Z$ has an upper bound in $\mathcal{F}$. Consider $\bigcup Z$. It is clear that $Z \preceq \bigcup Z$. We show that $\bigcup Z$ is well ordered; Indeed, these are the comments on page 67. 
+        \end{itemize} 
+    We have satisfied the assumptions in \textit{Zorn's Lemma}, and so it follows that there exists some maximal element $M \in \mathcal{F}$. We claim that $M$ is a well ordered cofinal subset of $X$. 
+    \par First, it is a subset. Second, it is well ordered by the definition of $\mathcal{F}$. Next, if $x \in X$, then for any $m \in M$, either $m \leq x$, $x \leq m$ or $x = m$. But, since $M$ is maximal, if $m \leq x$, then $x \in M$; otherwise, we could form $N = M \cup \{x\}$ which is a contradiction to the maximality of $M$. Thus, $M$ is the well ordered cofinal subset of $X$. 
+    \end{proof}
+
+\begin{exercise} We prove that a totally ordered set is well ordered iff the set of strict predecessor of each element is well ordered. 
+\end{exercise}
+    \begin{proof}
+    $ $\newline
+        \begin{itemize}
+        \item ($\Rightarrow$) Suppose that we have a well ordered set $(X, \leq)$. Note that the set of strict predecessors of some $x \in X$ forms a subset. The rest follows from the definition.
+        \item ($\Leftarrow$) Suppose that $(X, \leq)$ is a partially ordered set and that for any $x \in X$ the strict initial segment $s(x)$ is well ordered.
+        \end{itemize}
+    \end{proof}
 
 \end{document}
