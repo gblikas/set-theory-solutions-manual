@@ -1219,6 +1219,11 @@ The following proof was suggested by David. H..
         \end{itemize}
     Thus, $f$ is a function. 
     \end{proof}
+
+\newpage
+\begin{mdframed}
+\section{Zorn's Lemma}
+\end{mdframed}
     
 \begin{exercise} We show that Zorn's Lemma is equivalent to the axiom of choice. 
 \end{exercise}
@@ -1293,6 +1298,11 @@ The following proof was suggested by David. H..
     \par First, it is a subset. Second, it is well ordered by the definition of $\mathcal{F}$. Next, if $x \in X$, then for any $m \in M$, either $m \leq x$, $x \leq m$ or $x = m$. But, since $M$ is maximal, if $m \leq x$, then $x \in M$; otherwise, we could form $N = M \cup \{x\}$ which is a contradiction to the maximality of $M$. Thus, $M$ is the well ordered cofinal subset of $X$. 
     \end{proof}
 
+\begin{exercise} Does nay such condition apply to partially ordered sets? 
+\end{exercise}
+    \begin{proof} 
+    \end{proof}
+
 \begin{exercise} We prove that a totally ordered set is well ordered iff the set of strict predecessor of each element is well ordered. 
 \end{exercise}
     \begin{proof}
@@ -1316,7 +1326,15 @@ The following proof was suggested by David. H..
 \begin{exercise} We prove that if $R$ is a partial order in a set $X$, then there exists a total order $S$ in $X$ such that $R \subset S$; in other words, every partial order can be extended to a total order without enlarging the domain. 
 \end{exercise}
     \begin{proof}
-    
+    Let $(R, \leq)$ be a partially ordered subset of $X$. Let $C$ be the set of all $A$ in $X \times X$ such that $A$ is a partial order with $\leq$. Let $(C, \subset)$ be the partial ordered set\footnote{This has been shown other exercises.}. Let $\mathscr{X}$ be the collection of all chains in $C$. Note that for all $y \in \mathscr{X}$ $y \leq \bigcup_{y \in \mathscr{X}} y$. Thus, every chain has an upper-bound. By \textit{Zorn's Lemma}, $C$ has a maximal element. Denote this by $c$. Claim: $c$ is  total order in $X$:
+        \begin{itemize}
+        \item Since $c \in C$, $c$ is a partial order in $X$. Since it is maximal, for all $c' \in C$, we have $c' \subset c$. Thus, for all $x,y \in X$, either $(x,y), (y,x) \in c$. Either way, we must have $x \leq y$, $y \leq x$ or $x = y$. 
+        \end{itemize}
     \end{proof}
+
+\newpage
+\begin{mdframed}
+\section{Transfinite Recursion}
+\end{mdframed}
 
 \end{document}
