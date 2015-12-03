@@ -1298,7 +1298,7 @@ The following proof was suggested by David. H..
     \par First, it is a subset. Second, it is well ordered by the definition of $\mathcal{F}$. Next, if $x \in X$, then for any $m \in M$, either $m \leq x$, $x \leq m$ or $x = m$. But, since $M$ is maximal, if $m \leq x$, then $x \in M$; otherwise, we could form $N = M \cup \{x\}$ which is a contradiction to the maximality of $M$. Thus, $M$ is the well ordered cofinal subset of $X$. 
     \end{proof}
 
-\begin{exercise} Does nay such condition apply to partially ordered sets? 
+\begin{exercise} Does any such condition apply to partially ordered sets? 
 \end{exercise}
     \begin{proof} 
     \end{proof}
@@ -1309,7 +1309,7 @@ The following proof was suggested by David. H..
         $ $\newline 
         ($\Rightarrow$) Suppose that we have a well ordered set $(X, \leq)$. Note that the set of strict predecessors of some $x \in X$ forms a subset. The rest follows from the definition.
         $ $\newline
-        ($\Leftarrow$) Suppose that $(X, \leq)$ is a partially ordered set and that for any $x \in X$ the strict initial segment $s(x)$ is well ordered. Let $J$ be a subset of $X$. Pick some $j_0 \in J$ and consider $s(j_0) = \{x \in X: x < j_0\}$. If $s(j_0) = \emptyset$, $j_0$ is the least element, and we are done. Otherwise, $s(j_0) \neq \emptyset$. But since $s(j_0)$ is well ordered, we have $J \cap s(j_0) \subset s(j_0)$ and $J \cap s(j_0) \subset J$. Implying that $J \cap s(j_0)$ has a lower bound $J$, call it $z$. We note that $z$ is the lower bound for $J$; Otherwise, there is some $x \in J$, $x \neq z$ such that $x \leq z < j$ for all $j \in J$ and in particular for $j_0$. This implies that $x \in s(j_0)$. However, then we must have $x \in J \cap s(j_0)$ and so $x = z$; a contradiction. 
+        ($\Leftarrow$) Suppose that $(X, \leq)$ is a partially ordered set and that for any $x \in X$ the strict initial segment $s(x)$ is well ordered. Let $J$ be a subset of $X$. Pick some $j_0 \in J$ and consider $s(j_0) = \{x \in X: x < j_0\}$. If $s(j_0) = \emptyset$, $j_0$ is the least element, and we are done. Otherwise, $s(j_0) \neq \emptyset$. But since $s(j_0)$ is well ordered, we have $J \cap s(j_0) \subset s(j_0)$ and $J \cap s(j_0) \subset J$. Implying that $J \cap s(j_0)$ has a least element in $J$, call it $z$. We note that $z$ is the least element for $J$; Otherwise, there is some $x \in J$, $x \neq z$ such that $x < z < j$ for all $j \in J$ and in particular for $j_0$. This implies that $x \in s(j_0)$. However, then we must have $x \in J \cap s(j_0)$ and so $x = z$; a contradiction. 
     \end{proof}
 
 \begin{exercise} We prove that the well ordering theorem implies the \textit{Axiom of Choice}.
@@ -1326,7 +1326,7 @@ The following proof was suggested by David. H..
 \begin{exercise} We prove that if $R$ is a partial order in a set $X$, then there exists a total order $S$ in $X$ such that $R \subset S$; in other words, every partial order can be extended to a total order without enlarging the domain. 
 \end{exercise}
     \begin{proof}
-    Let $(R, \leq)$ be a partially ordered subset of $X$. Let $C$ be the set of all $A$ in $X \times X$ such that $A$ is a partial order with $\leq$. Let $(C, \subset)$ be the partial ordered set\footnote{This has been shown other exercises.}. Let $\mathscr{X}$ be the collection of all chains in $C$. Note that for all $y \in \mathscr{X}$ $y \leq \bigcup_{y \in \mathscr{X}} y$. Thus, every chain has an upper-bound. By \textit{Zorn's Lemma}, $C$ has a maximal element. Denote this by $c$. Claim: $c$ is  total order in $X$:
+    Let $(R, \leq)$ be a partially ordered subset of $X$. Let $C$ be the set of all $A$ in $R$ of partial orders, with respect to $\leq$. Let $(C, \subset)$ be the partial ordered set\footnote{This has been shown other exercises.}. Let $\mathscr{X}$ be the collection of all chains in $C$. Note that for all $y \in \mathscr{X}$ $y \leq \bigcup_{y \in \mathscr{X}} y$. Thus, every chain has an upper-bound. By \textit{Zorn's Lemma}, $C$ has a maximal element. Denote this by $c$. Claim: $c$ is a total order in $X$:
         \begin{itemize}
         \item Since $c \in C$, $c$ is a partial order in $X$. Since it is maximal, for all $c' \in C$, we have $c' \subset c$. Thus, for all $x,y \in X$, either $(x,y), (y,x) \in c$. Either way, we must have $x \leq y$, $y \leq x$ or $x = y$. 
         \end{itemize}
@@ -1337,4 +1337,38 @@ The following proof was suggested by David. H..
 \section{Transfinite Recursion}
 \end{mdframed}
 
+\begin{exercise} We prove that a similarity preserves $\prec$ (in the same sense in which the definition demands the preservation of $\leq$).
+\end{exercise}
+    \begin{proof} Let $(X, \preceq)$, $(Y, \leq)$ be two partially ordered sets and that there exists some function $f:X \rightarrow Y$, 1-1 and onto. $f$  has the property that for all $a,b \in X$ with $a \preceq b$ iff $f(a) \leq f(b)$, for all $f(a), f(b) \in Y$. 
+    \par Suppose, to the contrary, that $a \prec b$ and $f(a) \geq f(b)$. However, this is a contradiction, since, by definition, we must have $b \preceq a$. Thus $f$ preserves strict order. 
+    \end{proof}
+
+\begin{exercise} We prove the following statement: A 1-1 function, $f$ that maps one partially ordered set onto another is a similarity iff $f$ preserves $<$ (strict order). 
+\end{exercise}
+    \begin{proof} Throughout this exercise, we assume that $(X, \preceq)$ and $(Y, \leq)$ are partially ordered sets and $f: X \rightarrow Y$ is 1-1 and onto. 
+        \begin{itemize}
+        \item ($\Rightarrow$): Suppose that $f$ is a similarity, then the previous exercise prove this conclusion. 
+        \item ($\Leftarrow$): Suppose that $f$ is as stated above, such that for any $a,b \in X$ we have $a \prec b$ iff $f(a) < f(b)$. To show that $f$ is a similarity, we show that $a = b$ iff $f(a) = f(b)$:
+            \begin{itemize}
+            \item ($\Leftarrow$): Since $f$ is 1-1, then $f(a) = f(b)$ implies $a = b$.
+            \item ($\Rightarrow$): Suppose, to the contrary, that $a = b$ and, (without loss generality) $f(a) < f(b)$. Since $f$ preserves strict order, we must have $a \prec b$. However, this is a contradiction. 
+            \end{itemize}
+        \end{itemize}
+    This completes the proof. 
+    \end{proof}
+
+\begin{exercise} We prove that each subset of a well-ordered set $X$ is similar either to $X$, or an initial segment of $X$. 
+\end{exercise}
+    \begin{proof} Suppose that $(X, \preceq)$ is a well-ordered set. If $X = \emptyset$, then every subset of $X$ is equivalent to $X$. So, suppose $X \neq \emptyset$, and let $S$ be a non-empty subset of $X$. Since $X \subset X$, $X$ has a least element, call it $x$. Likewise, $S$ has a least element, $s$. Consider the map $f$ given by $f(s) = x$. And then, since $X - \{x\} \subset X$ it has a least element, call it $x'$. Likewise, $S - \{s\}$ has a least element, call it $s'$ and define $f(s') = x'$ ... \textit{Ad infinitum}. Now, either this process terminates, or it does not. If it does, then it terminates at some $x^*$, $s^*$ i.e. $f(s^*) = x^*$. Claim: $S \cong s(x^*)$. 
+        \begin{itemize}
+        \item The fact that $f$ is a function is clear by previous definition. It only need to be shown that $f$ is 1-1, onto and preserves $\prec$. The fact that $f$ is 1-1 is clear. Thus, if $\bar{x} \prec x^*$, then by construction, $s(\bar{x}) = f(t)$ for some $t \in S$. 
+        \item $f$ preserves $\prec$: This follows from the definition of initial segments give on page 65, 78. 
+        \end{itemize}
+    \par Otherwise, the process does not terminate. In this case, the claim is that $S \cong X$. The fact that $f$ is a 1-1 and onto function is shown similarly as before. Likewise for $\prec$. 
+    \end{proof}
+
+\begin{exercise} We prove that if $(X, \prec)$, $(Y, \leq)$ are well ordered sets, and $X \cong Y$, then the similarity maps the least upper bound (if any) of each subset of $X$ onto the least upper bound of the image of that subset. 
+\end{exercise}
+    \begin{proof} Let $X, Y$ be stated as above. And suppose that $S \subset X$ has a least upper bound, $s^*$. This implies that for all $s \in S$, $s \leq s^*$ and for any other upper bound $x \in X$, $x \leq s^*$ implies $x = s^*$. Suppose, to the contrary, that $f(s^*)$ was not the least upper-bound of $f(S)$. Since $f$ is order preserving, we have that $f(s^*)$ is an upper-bound for $f(S)$. Let $\alpha \neq f(s^*)$ be the l.u.b. of $f(S)$ (since $f$ is onto there exists some $x \in X$ such that $\alpha = f(x)$. Thus from here, $\alpha = f(x)$); for all $f(s) \in f(S)$, we have $f(s) \leq f(x)$, and that for any other upper-bound $z$ of $f(S)$, $z \leq f(x)$ implies $z = f(x)$, in particular, this implies that $s^* \geq x$. But then, since $f$ is order-preserving, we have that $f(s) \leq f(x)$ implies that $s \leq x$ for all $s \in S$. But since $s^*$ is the l.u.b. for $S$, we must have  $s^* \leq x$. Since $X$, and consequently $S$ is well-ordered, it is partially ordered, and so $s^* = x$, a contradiciton.
+    \end{proof}
 \end{document}
