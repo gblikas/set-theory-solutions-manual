@@ -1397,23 +1397,31 @@ The following proof was suggested by David. H..
 \section{The Schr\"oder-Bernstein Theorem}
 \end{mdframed}
 
-\begin{exercise} Let $X$, and $Y$ be sets. Suppose that $f: X \rightarrow Y$, is a function, and $g: Y \rightarrow X$, is a function. We prove that there exist subsets $A \subset X$, $B \subset Y$ such that $f(A) = B$, and $g(Y-B) = X - A$. (This statement is used to probe the Schr\"oder-Bernstein theorem.)
+\begin{exercise} Let $X$, and $Y$ be sets. Suppose that $f: X \rightarrow Y$, is a function, and $g: Y \rightarrow X$, is a function. We prove that there exist subsets $A \subset X$, $B \subset Y$ such that $f(A) = B$, and $g(Y-B) = X - A$. (This statement is used to prove the Schr\"oder-Bernstein theorem.)
 \end{exercise}
     \begin{proof} Let $X$, $Y$, $f$ and $g$ be stated as above. Throughout this exercise, we will use $f[A]$ instead of the more common, yet less accurate, $f(A)$. We look at four cases: 
         \begin{itemize}
-        \item $f$ onto, and $g$ is not: In this cases, we have $f[X] = Y$, and $g[Y-f(X)]= g[Y - Y] = g[\emptyset] = \{\} = X - X$. Thus, choosing $A = X \subset X$ and $B = \{\} \subset Y$, the result follows. 
-        \item $g$ onto, and $f$ is not: In this cases, we have $f[\emptyset] = \emptyset$, and $g[Y - \emptyset] = g(Y) = X = X- \{\}$. Thus, choosing $A = \{\} \subset X$, and $B = \{\} \subset Y$, the result follows. 
-        \item $f$ onto, $g$ onto: Again, in this cases, letting $A = \emptyset \subset X$ we have $f[\emptyset] = \emptyset$, and $g[Y- \emptyset] = g[Y] = X = X -\emptyset$; the result follows. 
-        \item $f$ not onto, $g$ not onto: We point out that since neither $f$ nor $g$ is onto, there exists some $\bar{x} \in X$ such that the fiber of $\bar{x}$ under $g$ is empty. Likewise, there exists some $\bar{y} \in Y$ such that the fiber of $\bar{y}$ under $f$ is empty. Let $F_{\{\}}$ be the set of all such $x \in X$. For any $x \in X$ such that the fiber of $x$ under $g$ is not empty, there are two cases: either, $f(x)$ is in the fiber or it is not. Let $F_{f(x)}$ be the set of all $x \in X$ such that $f^{-1}[\{x\}] \neq \emptyset$ and $f(x) \in f^{-1}[\{x\}]$, and $F_a$ be the set for all $x \in X$ such that $f^{-1}[\{x\}] \neq \emptyset$  and $f(x) \notin f^{-1}[\{x\}]$.
-        \par From construction, we have that $X = F_{\{\}} \cup F_a \cup F_{f(x)}$.\footnote{Note that is the canonical partitioning of $X$ suggested in the section on relations. Thus, this is valid partitioning of $X$.} We do the same for $Y$ under $g$ i.e. $Y = G_{\{\}} \cup G_a \cup G_{g(x)}$. The claim is that the desired subset $A$ of $X$ is $F_{\{\}}$ with the set of all $x \in X$ for which $f^{-1}[\{x\}] = \{f(x)\}$. Let $F_{\{f(x)\}}$ be that set. Then, $F_{\{f(x)\}} \subset F_{f(x)}$. The set has the property that if $x \in F_{\{f(x)\}}$, then $g(f(x)) = x$. For the next piece, we point out that if $g[F_{\{\}}] = \{\}$, this follows from the fact that $g$ does not map any element of $F_{\{\}}$.
-        \par Consider $f[F_{\{f(x)\}} \cup  F_{\{\}}] = f[F_{\{f(x)\}}] \cup f[F_{\{\}}]$. Applying $g$ to this, we have 
-        $$g\big[f[F_{\{f(x)\}}] \cup f[F_{\{\}}]\big] = g\big[f[F_{\{f(x)\}}]\big] \cup g\big[f[F_{\{\}}]\big]$$
-        From the comments above we conclude that 
-        $$g\big[f[F_{\{f(x)\}}]\big] \cup g\big[f[F_{\{\}}]\big] = F_{\{f(x)\}} \cup \emptyset = $$
+        \item $f$ onto, and $g$ is not: In this case, we have $f[X] = Y$, and $g[Y-f(X)]= g[Y - Y] = g[\emptyset] = \{\} = X - X$. Thus, choosing $A = X \subset X$ and $B = \{\} \subset Y$, the result follows. 
+        \item $g$ onto, and $f$ is not: In this case, we have $f[\emptyset] = \emptyset$, and $g[Y - \emptyset] = g(Y) = X = X- \{\}$. Thus, choosing $A = \{\} \subset X$, and $B = \{\} \subset Y$, the result follows. 
+        \item $f$ onto, $g$ onto: Again, in this case, letting $A = \emptyset \subset X$ we have $f[\emptyset] = \emptyset$, and $g[Y- \emptyset] = g[Y] = X = X -\emptyset$; the result follows. 
+        \item $f$ not onto, $g$ not onto: We point out that since neither $f$ nor $g$ is onto, there exists some $\bar{x} \in X$ such that the fiber of $\bar{x}$ under $g$ is empty. Likewise, there exists some $\bar{y} \in Y$ such that the fiber of $\bar{y}$ under $f$ is empty. Let $F_{\{\}}$ be the set of all such $\bar{x} \in X$. 
+        \par For any $x \in X$ such that the fiber of $x$ under $g$ is not empty, either $g^{-1}[x] = \{f(x)\}$ or $f(x) \in g^{-1}[x]$, and $g^{-1}[x] \neq \{f(x)\}$. In the first case, let $F_{\{f(x)\}}$ be the set of all $x \in X$ such that $g^{-1}[x] = \{f(x)\}$ and then let $F_x$ be the set of all $x \in X$ for which $f(x) \in g^{-1}[x]$, and $g^{-1}[x] \neq \{f(x)\}$. From the section on relations, we have that $X$ is partitioned by $F_{\{\}}$, $F_x$ and $F_{\{f(x)\}}$. That is, these sets are pairwise disjoint, and their union is $X$. 
+        \par These sets have some interesting properties. Namely $g[ Y- f[F_{\{\}}]]= g [f[F_x] \cup f[F_{\{f(x)\}}]]$. This is from the fact that $F_{\{\}}$, $F_x$, and $F_{\{f(x)\}}$ partition $X$ and that if $g$ is not mapping from to the set $F_{\{\}}$, then it must map to the other two.  Likewise, $g[ Y- f[F_{\{f(x)\}}]] = g [f[F_x] \cup f[F_{\{ \}}]]$.
+        \par The claim is that the subset $A$ of $X$, so desired is, $F_{\{\}} \cup F_{\{f(x)\}}$. We compute: 
+            \begin{align}
+            g \Big[ Y - \big( f[F_{\{\}}] \cup f[F_{\{f(x)\}}] \big) \Big] & = g \Big[ Y- f[F_{\{\}}]\Big] \cup g\Big[Y - f[F_{\{f(x)\}}] \Big] \nonumber \\
+            & = g\Big[ f[F_{x}] \cup f[F_{\{f(x)\}}]\Big] \cup g\Big[ f[F_{x}] \cup f[F_{\{\}}]\Big] \nonumber \\
+            & = g\Big[f[F_x]\Big] \cup g\Big[f[F_{\{\}}]\Big] \nonumber \\ 
+            & = g\Big[f[F_x]\Big] \cup \emptyset \\
+            & = g\Big[f[F_x]\Big] \nonumber \\
+            & = F_x \nonumber
+            \end{align}
+        Where the second line follows form the comments above, and (1) is from the construction of $F_{}$. Indeed, from the comments above, $X - (F_{\{\}} \cup F_{\{f(x)\}}) = F_x$. 
         \end{itemize}
     \end{proof}
 
-
-
-
+\begin{exercise} We prove the Schr\"oder-Bernstein theorem using the above exercise. 
+\end{exercise}
+    \begin{proof} Suppose that $X \precsim Y$, and $Y \precsim X$. Then, there exist some $f: $
+    \end{proof}
 \end{document}
