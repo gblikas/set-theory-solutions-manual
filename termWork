@@ -1244,7 +1244,7 @@ The following proof was suggested by David. H..
         \end{itemize}
     By \textit{Zorn's Lemma}, there exists a maximal element in $\mathcal{F}$, call it $f$. To complete the proof, we show that $\dom f = \Pwr(X) - \{\emptyset\}$: 
         \begin{itemize}
-        \item Suppose that $\dom f \neq \Pwr(X) - \{\emptyset\}$. Then, there exists some $a \in X$ such that $a \notin \dom f$. Let $g = f \cup \{(a, b)\}$, for any $b \in X$. It is clear that $g \in \mathcal{F}$ and that $g \geq f$. However, this contradicts the minimality of $f$. 
+        \item Suppose that $\dom f \neq \Pwr(X) - \{\emptyset\}$. Then, there exists some $a \in P(X)$ such that $a \notin \dom f$. Let $g = f \cup \{(a, b)\}$, for any $b \in X$. It is clear that $g \in \mathcal{F}$ and that $g \geq f$. However, this contradicts the minimality of $f$. 
         \end{itemize}
     We note that using the \textit{Axiom of Choice} to prove \textit{Zorn's Lemma} was shown in text. This completes the proof.  
     \end{proof}
@@ -1357,9 +1357,14 @@ The following proof was suggested by David. H..
     This completes the proof. 
     \end{proof}
 
+\begin{exercise} We show that a subset $Y$ of a well ordered set $X$ is, again, well ordered. 
+\end{exercise}
+    \begin{proof} Let $(X, \leq)$ be a well-ordered set, and $Y \subset X$. If $Y=X$ or $Y =\emptyset$, then $Y$ is clearly a well-order. Thus, suppose that $Y$ is proper subset of $X$. Suppose that $Y$ was \textit{not} well-ordered. Then, some subset, $Z$ of $Y$ does not have a least element. However, $Z \subset X$, and so by definition of a well-ordered set, it has a least element. A contradiction. 
+    \end{proof}
+
 \begin{exercise} We prove that each subset of a well-ordered set $X$ is similar either to $X$, or an initial segment of $X$. 
 \end{exercise}
-    \begin{proof} Suppose that $(X, \preceq)$ is a well-ordered set. If $X = \emptyset$, then every subset of $X$ is equivalent to $X$. So, suppose $X \neq \emptyset$, and let $S$ be a non-empty subset of $X$. Since $X \subset X$, $X$ has a least element, call it $x$. Likewise, $S$ has a least element, $s$. Consider the map $f$ given by $f(s) = x$. And then, since $X - \{x\} \subset X$ it has a least element, call it $x'$. Likewise, $S - \{s\}$ has a least element, call it $s'$ and define $f(s') = x'$ ... \textit{Ad infinitum}. Now, either this process terminates, or it does not. If it does, then it terminates at some $x^*$, $s^*$ i.e. $f(s^*) = x^*$. Claim: $S \cong s(x^*)$. 
+    \begin{proof} Suppose that $(X, \preceq)$ is a well-ordered set. If $X = \emptyset$, then every subset of $X$ is equivalent to $X$. So, suppose $X \neq \emptyset$, and let $S$ be a non-empty subset of $X$. Since $X \subset X$, $X$ has a least element, call it $x$. Likewise, $S$ has a least element, $s$. Consider the map $f$ given by $f(s) = x$. And then, since $X - \{x\} \subset X$ it has a least element, call it $x'$. Likewise, $S - \{s\}$ has a least element, call it $s'$ and define $f(s') = x'$, and so on. We show that $f$ is a sequence of type $S$ in $X$. Now, either this process terminates, or it does not. If it does, then it terminates at some $x^*$, $s^*$ i.e. $f(s^*) = x^*$. Claim: $S \cong s(x^*)$. 
         \begin{itemize}
         \item The fact that $f$ is a function is clear by previous definition. It only need to be shown that $f$ is 1-1, onto and preserves $\prec$. The fact that $f$ is 1-1 is clear. Thus, if $\bar{x} \prec x^*$, then by construction, $s(\bar{x}) = f(t)$ for some $t \in S$. 
         \item $f$ preserves $\prec$: This follows from the definition of initial segments give on page 65, 78. 
@@ -1371,4 +1376,44 @@ The following proof was suggested by David. H..
 \end{exercise}
     \begin{proof} Let $X, Y$ be stated as above. And suppose that $S \subset X$ has a least upper bound, $s^*$. This implies that for all $s \in S$, $s \leq s^*$ and for any other upper bound $x \in X$, $x \leq s^*$ implies $x = s^*$. Suppose, to the contrary, that $f(s^*)$ was not the least upper-bound of $f(S)$. Since $f$ is order preserving, we have that $f(s^*)$ is an upper-bound for $f(S)$. Let $\alpha \neq f(s^*)$ be the l.u.b. of $f(S)$ (since $f$ is onto there exists some $x \in X$ such that $\alpha = f(x)$. Thus from here, $\alpha = f(x)$); for all $f(s) \in f(S)$, we have $f(s) \leq f(x)$, and that for any other upper-bound $z$ of $f(S)$, $z \leq f(x)$ implies $z = f(x)$, in particular, this implies that $s^* \geq x$. But then, since $f$ is order-preserving, we have that $f(s) \leq f(x)$ implies that $s \leq x$ for all $s \in S$. But since $s^*$ is the l.u.b. for $S$, we must have  $s^* \leq x$. Since $X$, and consequently $S$ is well-ordered, it is partially ordered, and so $s^* = x$, a contradiciton.
     \end{proof}
+    
+\newpage
+\begin{mdframed}
+\section{Ordinal Numbers}
+\end{mdframed}
+
+\newpage
+\begin{mdframed}
+\section{Sets Of Ordinal Numbers}
+\end{mdframed}
+
+\newpage
+\begin{mdframed}
+\section{Ordinal Arithmetic}
+\end{mdframed}
+
+\newpage
+\begin{mdframed}
+\section{The Schr\"oder-Bernstein Theorem}
+\end{mdframed}
+
+\begin{exercise} Let $X$, and $Y$ be sets. Suppose that $f: X \rightarrow Y$, is a function, and $g: Y \rightarrow X$, is a function. We prove that there exist subsets $A \subset X$, $B \subset Y$ such that $f(A) = B$, and $g(Y-B) = X - A$. (This statement is used to probe the Schr\"oder-Bernstein theorem.)
+\end{exercise}
+    \begin{proof} Let $X$, $Y$, $f$ and $g$ be stated as above. Throughout this exercise, we will use $f[A]$ instead of the more common, yet less accurate, $f(A)$. We look at four cases: 
+        \begin{itemize}
+        \item $f$ onto, and $g$ is not: In this cases, we have $f[X] = Y$, and $g[Y-f(X)]= g[Y - Y] = g[\emptyset] = \{\} = X - X$. Thus, choosing $A = X \subset X$ and $B = \{\} \subset Y$, the result follows. 
+        \item $g$ onto, and $f$ is not: In this cases, we have $f[\emptyset] = \emptyset$, and $g[Y - \emptyset] = g(Y) = X = X- \{\}$. Thus, choosing $A = \{\} \subset X$, and $B = \{\} \subset Y$, the result follows. 
+        \item $f$ onto, $g$ onto: Again, in this cases, letting $A = \emptyset \subset X$ we have $f[\emptyset] = \emptyset$, and $g[Y- \emptyset] = g[Y] = X = X -\emptyset$; the result follows. 
+        \item $f$ not onto, $g$ not onto: We point out that since neither $f$ nor $g$ is onto, there exists some $\bar{x} \in X$ such that the fiber of $\bar{x}$ under $g$ is empty. Likewise, there exists some $\bar{y} \in Y$ such that the fiber of $\bar{y}$ under $f$ is empty. Let $F_{\{\}}$ be the set of all such $x \in X$. For any $x \in X$ such that the fiber of $x$ under $g$ is not empty, there are two cases: either, $f(x)$ is in the fiber or it is not. Let $F_{f(x)}$ be the set of all $x \in X$ such that $f^{-1}[\{x\}] \neq \emptyset$ and $f(x) \in f^{-1}[\{x\}]$, and $F_a$ be the set for all $x \in X$ such that $f^{-1}[\{x\}] \neq \emptyset$  and $f(x) \notin f^{-1}[\{x\}]$.
+        \par From construction, we have that $X = F_{\{\}} \cup F_a \cup F_{f(x)}$.\footnote{Note that is the canonical partitioning of $X$ suggested in the section on relations. Thus, this is valid partitioning of $X$.} We do the same for $Y$ under $g$ i.e. $Y = G_{\{\}} \cup G_a \cup G_{g(x)}$. The claim is that the desired subset $A$ of $X$ is $F_{\{\}}$ with the set of all $x \in X$ for which $f^{-1}[\{x\}] = \{f(x)\}$. Let $F_{\{f(x)\}}$ be that set. Then, $F_{\{f(x)\}} \subset F_{f(x)}$. The set has the property that if $x \in F_{\{f(x)\}}$, then $g(f(x)) = x$. For the next piece, we point out that if $g[F_{\{\}}] = \{\}$, this follows from the fact that $g$ does not map any element of $F_{\{\}}$.
+        \par Consider $f[F_{\{f(x)\}} \cup  F_{\{\}}] = f[F_{\{f(x)\}}] \cup f[F_{\{\}}]$. Applying $g$ to this, we have 
+        $$g\big[f[F_{\{f(x)\}}] \cup f[F_{\{\}}]\big] = g\big[f[F_{\{f(x)\}}]\big] \cup g\big[f[F_{\{\}}]\big]$$
+        From the comments above we conclude that 
+        $$g\big[f[F_{\{f(x)\}}]\big] \cup g\big[f[F_{\{\}}]\big] = F_{\{f(x)\}} \cup \emptyset = $$
+        \end{itemize}
+    \end{proof}
+
+
+
+
 \end{document}
