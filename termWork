@@ -1446,6 +1446,18 @@ The following proof was suggested by David. H..
     
 \begin{exercise} We prove that if every countable subset of a totally ordered set $X$ is well ordered, then $X$ itself is well ordered. 
 \end{exercise}
-    \begin{proof} 
+    \begin{proof} Let $A \subset X$ be an arbitrary countable subset. Then, $A$ is well-ordered, and every subset $a$ of $A$ is well-ordered, so they have least elements. Let $\bigcup_n A_n$ be the union of all countable subsets of $X$. Since $\bigcup_n A_n$ is the union of well-ordered sets, it is well-ordered. The claim is that $\bigcup_n A_n = X$: 
+    \par Suppose otherwise; Since $\bigcup_n A_n \subset X$, it follows that $X = \bigcup_n A_n \cup (X - \bigcup_n A_n) = \bigcup_n A_n \cup Y$. Since $\bigcup_n A_n$ is the union of all countable subsets of $X$, $Y$ must be finite; otherwise, we have missed a countable subset. But, since $Y$ is finite, $Y$ is included in some countable subset of $X$. Thus, 
+    $$X = \bigcup_n A_n \cup Y = \bigcup_n A_n$$
+    This contradiction concludes the proof. 
     \end{proof}
+    
+\newpage
+\begin{mdframed}
+\section{Cardinal Arithmetic} 
+\end{mdframed}
+
+\begin{exercise} We prove that if $a,b,c$ and $d$ are cardinal numbers such that $a \leq b$ and $c \leq d$, then $a + c \leq b + d$. 
+\end{exercise}
+    
 \end{document}
