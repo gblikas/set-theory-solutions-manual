@@ -1466,9 +1466,22 @@ The following proof was suggested by David. H..
     
 \begin{exercise} We prove that if $a,b,c$ and $d$ are cardinal numbers such that $a \leq b$ and $c \leq d$, then $ac \leq bd$. 
 \end{exercise}
-    \begin{proof} We proceed in a fashion similar to exercise $24.1$. Let $a,b,c,d$ be stated as given. By definition, there exists sets $A,B,C,D$ (without loss of generality, pairwise disjoint) with cardinality $a,b,c,d$, respectively. Using the stated conditions, we have $A \precsim B$, $C \precsim D$. Thus, there exists $B' \subset B$, and $D' \subset D$ such that $A \sim B'$ and $C \sim D'$ i.e. $\card A = \card B'$ and $\card C = \card D'$. Thus, $ab = \card (A \times B) = \card(B' \times D')$. From a previous exercise and the comments on page 94, we have $B' \times D' \subset B \times D$, and so it follows that $\card(B' \times D') \leq \card(B \times D)$.  
+    \begin{proof} We proceed in a fashion similar to exercise $24.1$. Let $a,b,c,d$ be stated as given. By definition, there exists sets $A,B,C,D$ (without loss of generality, pairwise disjoint) with cardinality $a,b,c,d$, respectively. Using the stated conditions, we have $A \precsim B$, $C \precsim D$. Thus, there exists $B' \subset B$, and $D' \subset D$ such that $A \sim B'$ and $C \sim D'$ i.e. $\card A = \card B'$ and $\card C = \card D'$. Thus, $ab = \card (A \times B) = \card(B' \times D')$. From a previous exercise and the comments on page 94, we have $B' \times D' \precsim B \times D$, and so it follows that $\card(B' \times D') \leq \card(B \times D)$.  
     \end{proof}
     
 \begin{exercise} We prove that if $\{a_i\}$ $(i \in I)$ and $\{b_i\}$ $(i \in I)$ are families of cardinal numbers such that $a_i < b_i$ for each $i \in I$, then $\sum_i a_i \leq \prod_i b_i$.
 \end{exercise}
+    \begin{proof} The following proof was suggested to me by Sophie. 
+    \par Note, 
+    $$\sum_i a_i = a_0 + a_1 + \dots \leq a_0 \times a_1 \times \dots = \prod_i a_i $$
+    We proceed by mathematical induction. 
+        \begin{itemize}
+        \item \textit{Initial Case}: $a_0 < b_0$ --- By assumption.
+        \item \textit{Hypothesis}: Suppose that $\prod_{0 \leq i \leq n} a_i < \prod_{0 \leq i \leq n}b_i$
+        \item \textit{Step}: $\prod_{0 \leq i \leq n} a_i + a_{n+1} < \prod_{0 \leq i \leq n}b_i \times b_{n+1}$ for $a_{n+1} < b_{n+1}$. Therefore, $\prod_{0 \leq i \leq n+1} a_i < \prod_{0 \leq i \leq n+1}b_i$
+        \end{itemize}
+    From the above, we have $\sum_{i} a_i \leq \prod_i a_i < \prod_{i}b_i$. Which completes the proof. 
+    \end{proof}
+
+
 \end{document}
