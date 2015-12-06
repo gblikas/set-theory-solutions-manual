@@ -10,6 +10,7 @@
 \DeclareMathOperator*{\Rcal}{\mathcal{R}}
 \DeclareMathOperator*{\Ima}{Im}
 \DeclareMathOperator*{\dom}{dom}
+\DeclareMathOperator*{\card}{card}
 \newtheorem{exercise}{\underline{Exercise}}[section]
 \newtheorem{proposition}{\textit{Proposition}}[section]
 \renewcommand{\qedsymbol}{\Summertree[1]}
@@ -21,6 +22,7 @@
 \expandafter\patchcmd\csname\string\corollary\endcsname
   {\normalparindent}{0pt }{}{}
 \newcommand{\bij}{\mathrel{\hookrightarrow\hspace{-1.8ex}\to}}
+
 
 
 
@@ -1459,5 +1461,14 @@ The following proof was suggested by David. H..
 
 \begin{exercise} We prove that if $a,b,c$ and $d$ are cardinal numbers such that $a \leq b$ and $c \leq d$, then $a + c \leq b + d$. 
 \end{exercise}
+    \begin{proof} Let $a,b,c,d$ be stated as given. By definition, there exists sets $A,B,C,D$ (without loss of generality, pairwise disjoint) with cardinality $a,b,c,d$, respectively. Using the stated conditions, we have $A \precsim B$, $C \precsim D$. Thus, there exists $B' \subset B$, and $D' \subset D$ such that $A \sim B'$ and $C \sim D'$ i.e. $\card A = \card B'$ and $\card C = \card D'$. Then, $a + b = b' + d' \leq b + d$. 
+    \end{proof}
     
+\begin{exercise} We prove that if $a,b,c$ and $d$ are cardinal numbers such that $a \leq b$ and $c \leq d$, then $ac \leq bd$. 
+\end{exercise}
+    \begin{proof} We proceed in a fashion similar to exercise $24.1$. Let $a,b,c,d$ be stated as given. By definition, there exists sets $A,B,C,D$ (without loss of generality, pairwise disjoint) with cardinality $a,b,c,d$, respectively. Using the stated conditions, we have $A \precsim B$, $C \precsim D$. Thus, there exists $B' \subset B$, and $D' \subset D$ such that $A \sim B'$ and $C \sim D'$ i.e. $\card A = \card B'$ and $\card C = \card D'$. Thus, $ab = \card (A \times B) = \card(B' \times D')$. From a previous exercise and the comments on page 94, we have $B' \times D' \subset B \times D$, and so it follows that $\card(B' \times D') \leq \card(B \times D)$.  
+    \end{proof}
+    
+\begin{exercise} We prove that if $\{a_i\}$ $(i \in I)$ and $\{b_i\}$ $(i \in I)$ are families of cardinal numbers such that $a_i < b_i$ for each $i \in I$, then $\sum_i a_i \leq \prod_i b_i$.
+\end{exercise}
 \end{document}
