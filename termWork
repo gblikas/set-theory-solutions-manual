@@ -20,6 +20,8 @@
 \usepackage{etoolbox}
 \expandafter\patchcmd\csname\string\corollary\endcsname
   {\normalparindent}{0pt }{}{}
+\newcommand{\bij}{\mathrel{\hookrightarrow\hspace{-1.8ex}\to}}
+
 
 
 \counterwithin*{equation}{section}
@@ -1422,6 +1424,15 @@ The following proof was suggested by David. H..
 
 \begin{exercise} We prove the Schr\"oder-Bernstein theorem using the above exercise. 
 \end{exercise}
-    \begin{proof} Suppose that $X \precsim Y$, and $Y \precsim X$. Then, there exist some $f: $
+    \begin{proof} Suppose that $X \precsim Y$, and $Y \precsim X$. Then, there exist some $f:X \rightarrow Y$ such that $f$ is 1-1 and onto a subset $Y'$ of $Y$. Likewise, there exists some $g: Y \rightarrow X$ which is 1-1 and onto a subset $X'$ of $X$. We note that if either $X' = X$ or $Y' = Y$, then we are done. So, suppose that $X' \neq X$ and $Y' \neq Y$. Likewise, if either $X'$ or $Y'$ was the empty set, then we are done, since it is trivially true that $X \sim Y$.So, suppose that $X' \subsetneq X$, such that $X' \neq \emptyset$, and $Y' \subsetneq Y$ and $Y' \neq Y$.
+    \par So, consider $f|_{X - X'}$ and $g|_{Y - Y'}$. From the previous theorem, there exists a subset $X'' \subset X - X'$ and some $Y'' \subset Y - Y'$ such that $f|_{X -X'}[X''] = Y''$ and $g|_{Y - Y'}[(Y - Y') - Y''] = (X -X') - X''$.  We claim that $\emptyset = (X - X') - X''$ i.e. $X '' = X - X'$; if not, then $g|_{Y - Y'}[(Y - Y') - Y''] \neq \emptyset$ and so there is some $g(y) \in X'$ such that $y \in (Y - Y') - Y''$. But then, we have $f(g(y)) \in Y' \not\subset (Y - Y') - Y''$; this implies that $y \in Y'$, a contradiction. Thus, $X'' = X - X'$.
+    \par Since this is the case, $f|_{X -X'}[X''] \subset Y'$. But then, $g|_{Y - Y'}[(Y-Y') - f|_{X -X'}[X''] ] = g|_{Y - Y'}[Y-Y'] = (X - X') - X'' = \emptyset$. This implies that $Y - Y' = \emptyset$, or in other words, $Y = Y'$. A contradiction. 
     \end{proof}
+
+\newpage
+\begin{mdframed}
+\section{Countable Sets}
+\end{mdframed}
+
+
 \end{document}
