@@ -1434,5 +1434,18 @@ The following proof was suggested by David. H..
 \section{Countable Sets}
 \end{mdframed}
 
-
+\begin{exercise} We prove that the set of all finite subsets of a countable set is countable. 
+\end{exercise}
+    \begin{proof} The following proof was suggested  \href{https://proofwiki.org/wiki/Set_of_Finite_Subsets_of_Countable_Set_is_Countable}{ by this website:} 
+    \par Let $A(n)$ be the set of subsets of $A$ with no more than $n$ elements. Thus, $A(0)= \{a\}$, $A(1)=A(0) \cup \{\{a\}: a \in A\}$ and for all $n \geq 0$:
+    $$A(n+1) = \{a(n) \cup a(1): a(n) \in A(n) \land a(1) \in A(1)\}$$ We verify, by induction, that each $A(n)$ is countable. Let $A$ be countable. Then, $A(1)$ is countable, by construction. Suppose $A(n)$ is countable. Then by since the union of countable sets is countable, $A(n+1)$ is also countable.
+    \par Denote with $A_f$ as the set of finite subsets of $A$. It is apparent that every finite subset is in some $A(n)$, and so:
+    $$A_f = \bigcup_{n \in \mathbb{N}}A(n)$$
+    And since the union of countable subsets is countable, $A_f$ is countable. 
+    \end{proof}
+    
+\begin{exercise} We prove that if every countable subset of a totally ordered set $X$ is well ordered, then $X$ itself is well ordered. 
+\end{exercise}
+    \begin{proof} 
+    \end{proof}
 \end{document}
