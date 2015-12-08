@@ -53,7 +53,6 @@
 \bigbreak
 \textbf{Logical Operators} 
 
-    \addcontentsline{toc}{section}{exercise}
     \begin{exercise}We show that $\land$, $\lor$ are commutative. We do this via truth table. 
     \end{exercise}
     
@@ -134,9 +133,10 @@ Thus, if $p$ is true, $p \lor q$ is true, i.e. $p \Rightarrow p \lor q$.
  
  \bigbreak
  Yes, all sets obtained in this way are distinct. 
-\begin{proof} 
-
-\end{proof}
+    \begin{proof} 
+    Via the \textit{Axiom of Pairing}, we can create sets $A = \{a, a'\}$, and $B = \{b, b'\}$ as specified. Further, by the \textit{Axiom of Specification}, they are the only such sets which contain their elements. 
+    \par Suppose, to the contrary, that $A$ and $B$ were not distinct. Then, we must have $A = B$. Then, $a,a' \in B$ and $b,b' \in A$. Without loss of generality, we have $a = b$, $a' = b'$. But then, $A$ and $B$ were formed from the same elements; a contradiction. Thus, $A$ and $B$ are distinct. 
+    \end{proof}
 
 \newpage
 \begin{mdframed}
