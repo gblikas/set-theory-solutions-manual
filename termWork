@@ -5,12 +5,16 @@
 \usepackage{mdframed}
 \usepackage{breqn}
 \usepackage{tikzsymbols}
+
 \setcounter{section}{+1}
+
 \DeclareMathOperator*{\Pwr}{\mathscr{P}}
 \DeclareMathOperator*{\Rcal}{\mathcal{R}}
 \DeclareMathOperator*{\Ima}{Im}
 \DeclareMathOperator*{\dom}{dom}
 \DeclareMathOperator*{\card}{card}
+\DeclareMathOperator*{\ord}{ord}
+
 \newtheorem{exercise}{\underline{Exercise}}[section]
 \newtheorem{proposition}{\textit{Proposition}}[section]
 \renewcommand{\qedsymbol}{\Summertree[1]}
@@ -1471,7 +1475,7 @@ The following proof was suggested by David. H..
     
 \begin{exercise} We prove that if $\{a_i\}$ $(i \in I)$ and $\{b_i\}$ $(i \in I)$ are families of cardinal numbers such that $a_i < b_i$ for each $i \in I$, then $\sum_i a_i \leq \prod_i b_i$.
 \end{exercise}
-    \begin{proof} The following proof was suggested to me by Sophie. 
+    \begin{proof} The following proof was suggested to me by Sophie C.. 
     \par Note, 
     $$\sum_i a_i = a_0 + a_1 + \dots \leq a_0 \times a_1 \times \dots = \prod_i a_i $$
     We proceed by mathematical induction. 
@@ -1483,5 +1487,83 @@ The following proof was suggested by David. H..
     From the above, we have $\sum_{i} a_i \leq \prod_i a_i < \prod_{i}b_i$. Which completes the proof. 
     \end{proof}
 
+\begin{exercise} We prove that if $a,b$ and $c$ are cardinal numbers such that $a \leq b$, then $a^c \leq b^c$.
+\end{exercise}
+    \begin{proof} The following proof was suggested by Sophie C.. We take the definition of $a^c$ as multiply $a$ by itself $c$ times. And likewise for $b^c$. We proceed by mathematical induction: 
+        \begin{itemize}
+        \item \textit{Initial Case}: $a^1 \leq b^1$.
+        \item \textit{Inductive Hypothesis}: Suppose that $\prod_{i \in I} a_i \leq \prod_{i \in I} b_i$ such that $\card I = C$. 
+        \item \textit{Step}: If $\prod_{i \in I} a_i \leq \prod_{i \in I} b_i$, then $\prod_{i \in I} a_i \times a \leq \prod_{i \in I} b_i \times b$, since $a \leq b$.
+        \end{itemize}
+    Thus, $\prod_{i \in I} a_i \leq \prod_{i \in I} b_i$ where $\card I = C + 1$. And so, $a^c \leq b^c$
+    \end{proof}
 
+\begin{exercise}Prove that if $a$ and $b$ are finite, greater than $1$, and if $c$ is infinite, then $a^c = b^c$. 
+\end{exercise}
+    \begin{proof} The following proof was suggested by Sophie C..  We take the definition of $a^c$ as multiply $a$ by itself $c$ times. And likewise for $b^c$. If $c$ is countable then, $a^c, b^c$ are countable, and if $c$ is uncountable, then $a^c, b^c$ are uncountable. Thus, $a^c = b^c$
+    \end{proof}
+
+\begin{exercise} We prove that if $a$ and $b$ are cardinal numbers at least one of which is infinite, then $a+b = ab$. 
+\end{exercise}
+    \begin{proof} The following proof was suggest by Sophie C.. Suppose that $a,b$ are given as stated. Without loss of generality, there exists sets $A,B$ such that $\card A = a, \card B = b$, and $A \sim B'$, for some $B' \subset B$. Thus, $a + b = \card A \sim \card B' \cup \card B = \card (A \cup B) \sim \card (B' \cup B) = \card B = b = ab$. Therefore, $a+b=ab$.
+    \par Suppose that $a$ and $b$ are both infinite, then as above, we have $a + b = a + a = a$ and $ab = aa = a$. Therefore, $a+b = ab$. 
+    \par Suppose, without loss of generality, that $a$, and $b$ are both infinite such that $\card A < \card B$. Then, $a + b = b$ and $ab = b$, thus, $a + b = ab$.
+    \end{proof}
+
+\begin{exercise} We prove that if $a$ and $b$ are cardinal numbers such that $a$ is infinite and $b$ is finite, then $a^b = a$. 
+\end{exercise}
+    \begin{proof} The following proof was suggested by Sophie C.. Suppose that $a,b$ are given, as above. Then, $a^b = \prod_{i \in I} a_i$ where $\card I = b$ and where $a_i = a$, for all $ i \in I$. Then, we have the following: 
+        \begin{align*}
+        a^b & = \card (A \times A \times \dots \times A) \quad \text{where $\card A = a$} \\
+        & = a \times a \times \dots \times a \quad \text{$b$ times} \\
+        & = a \times a \times \dots \times a \quad \text{$b/2$ times, since $a \times a = a$} \\
+        & = a \times a \times \dots \times a \quad \text{$b/4$ times, since $a \times a = a$} \\
+        & \vdots \\
+        & = a
+        \end{align*}
+    This completes the proof. 
+    \end{proof}
+
+\newpage 
+\begin{mdframed}
+\section{Cardinal Numbers}
+\end{mdframed}
+
+\begin{exercise} We prove that each infinite cardinal number is a limit number. 
+\end{exercise} 
+    \begin{proof} This proof was inspired from \href{http://euclid.colorado.edu/~monkd/m6730/gradsets06.pdf}{this website.}
+    \par Suppose to the contrary that $k$ is an infinite cardinal which was not a limit number. Then, $k = a^+$ for some ordinal $a^+$. If $a$ is finite, we are done. Otherwise, we proceed to show that $k = a$. 
+    \par Not that since $k$ is infinite, $\omega \precsim k$, and in particular, $\omega \precsim a$. Thus, consider $\phi: a \rightarrow k$ given by $\phi(0) = a$, and $\phi(m^+) = m$ (if $m \in \omega$), and $\phi(x) = x$ (if $x \in a - \omega$). We show that $\phi$ is a 1-1 and onto function:
+        \begin{itemize}
+        \item \textit{Well-Defined}: Since no ordinal is equivalent to its successor, it follows that $\phi$ is well-defined. 
+        \item \textit{Everywhere Defined}: By construction, this is clear. 
+        \item \textit{1-1}: If $\phi(x) = \phi(y)$, then in any of the cases, we have $x = y$. 
+        \item \textit{Onto}: Let $k_1 \in k$. Then, either $k_1 \in a$, or $k_1 = a$. In either case, there exists a $\ell \in a$ for which $\phi ( \ell) = a$.
+        \end{itemize}
+    Thus $k = a$, a contradiction. 
+    \end{proof}
+
+\begin{exercise} We answer a few questions: If $\card A = a$, what is the cardinal number of the set of all 1-1 and onto in $A$? What is the cardinal number of the set of all countably infinite subsets of $A$? 
+\end{exercise}
+    \begin{proof} If $A$ is infinite, then $\omega \precsim A$ and we can consider the infinitely manly maps $f_i$, such that $i \in \omega$, given by $f_i(x) = x + 1$ (if $x \in \omega$), and $f_i(x) = x$ (if $x \in A - \omega$). However, if $A$ is finite, then a simple counting argument show that the number is the multiplication of all predecessors of $a$, except zero. 
+    \par This answer was suggested by \href{http://math.stackexchange.com/questions/184746/the-cardinality-of-the-set-of-countably-infinite-subsets-of-an-infinite-set}{this website}: "$A$ has $a^{\omega}$ countably infinite subsets, and there’s not much more that you can say unless you know something about the cardinal $a$. For example, $2 \leq a \leq 2^{\omega}$, then $a^{\omega} = 2^{\omega}$. If cf $a ={\omega}$, i.e., if $a$ has cofinality $\omega$, then $a^{\omega} > a$."
+    \end{proof}
+    
+\begin{exercise} We prove that if $\alpha, \beta$ are ordinal numbers, then $\card (\alpha + \beta) = \card \alpha + \card \beta$ and $\card \alpha \beta = \card \alpha \card \beta$. We use the ordinal interpretation of the operations on the left side and the cardinal interpretation on the right. 
+\end{exercise}
+    \begin{proof}The following proof was suggested by Sophie C.. We compute: 
+        \begin{itemize}
+        \item $\card \alpha \beta = \card (\ord A \ord B) = \card( \ord (A \times B)) = \card (A \times B)$
+        \item $(\card \alpha)( \card \beta) = (\card(\ord A))(\card(\ord B)) = \newline
+        \card(A) \card(B) = \card(A \times B)$
+        \end{itemize}
+    Thus, $\card \alpha \beta = (\card \alpha)( \card \beta)$
+    \end{proof}
+    
+    \begin{proof} The following proof was suggest by Sophie C.. We compute: 
+        \begin{itemize}
+        \item $\card(\alpha + \beta) = \card (\ord A + \ord B) = \card( \ord(A \cup B)) = \ord (A \cup B) = \ord(A) + \ord(B) = \card(\ord(A)) + \card(\ord(B)) = \card \alpha + \card \beta$.
+        \end{itemize}
+    Thus, $\card(\alpha + \beta) = \card \alpha + \card \beta$.
+    \end{proof}
 \end{document}
