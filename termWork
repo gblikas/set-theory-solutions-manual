@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[titlepage]{article}
 \usepackage[utf8x]{inputenc}
 \usepackage{amsthm, amsmath, amsfonts, amssymb, mathrsfs,mathabx}
 \usepackage{chngcntr}
@@ -51,24 +51,24 @@
 \end{mdframed}
 
 \bigbreak
-\textbf{Logical Operators} 
+\subsection{Logical Operators}
 
     \begin{exercise}We show that $\land$, $\lor$ are commutative. We do this via truth table. 
     \end{exercise}
     
-\begin{proof} Consider the logical sentences $p$, $q$ and the following truth table: 
+    \begin{proof} Consider the logical sentences $p$, $q$ and the following truth table: 
 
-\begin{center}
-\begin{tabular}{c|c|c|c}
- $p$ & $q$ & $p \lor q$ & $q \lor p$\\
- T & T & T & T \\
- T & F & T & T \\
- F & T & T & T \\
- F & F & F & F 
-\end{tabular}
-\end{center}
- Thus, $p \lor q \iff q \lor p $
-\end{proof}
+        \begin{center}
+        \begin{tabular}{c|c|c|c}
+        $p$ & $q$ & $p \lor q$ & $q \lor p$\\
+        T & T & T & T \\
+        T & F & T & T \\
+        F & T & T & T \\
+         F & F & F & F 
+        \end{tabular}
+        \end{center}
+    Thus, $p \lor q \iff q \lor p $
+    \end{proof}
 
 \begin{proof} Consider the logical sentences $p$ and $q$ and the following truth table: 
 \begin{center}
@@ -83,78 +83,96 @@
  Thus, $p \land q \iff q \land p$.
 \end{proof}
 
-$ $\newline
-\textbf{Logical Rules} We show that $p \lor p \iff p$ and $p \land p \iff p$, via truth table: 
-\begin{proof}
-Consider the logical sentence $p$ and the following truth table: 
-\begin{center}
-\begin{tabular}{c|c}
- $p$ & $p \lor p$\\
- T & T \\
- F & F
-\end{tabular}
-\end{center}
-Thus, $p \lor p \iff p$
-\end{proof}
+\newpage 
+\subsection{Logical Rules}
+ 
+
+\begin{exercise}We show that $p \lor p \iff p$ and $p \land p \iff p$, via truth table. 
+\end{exercise}
+
+    \begin{proof}
+    Consider the logical sentence $p$ and the following truth table: 
+        \begin{center}
+        \begin{tabular}{c|c}
+        $p$ & $p \lor p$\\
+        T & T \\
+        F & F
+        \end{tabular}
+        \end{center}
+    Thus, $p \lor p \iff p$
+    \end{proof}
 
 
-\begin{proof} Consider the logical sentence $p$ and the following truth table: 
-\begin{center}
-\begin{tabular}{c|c}
- $p$ & $p \land p$\\
- T & T \\
- F & F
-\end{tabular}
-\end{center}
-Thus, $p \iff p \land p$.
-\end{proof}
+    \begin{proof} Consider the logical sentence $p$ and the following truth table: 
+    \begin{center}
+        \begin{tabular}{c|c}
+        $p$ & $p \land p$\\
+        T & T \\
+        F & F
+        \end{tabular}
+        \end{center}
+        Thus, $p \iff p \land p$.
+    \end{proof}
 
-$ $\newline
+\begin{exercise}
 We show that $p \Rightarrow p \lor q$ via truth table. 
-\begin{proof} Consider the logical sentences $p$ and $q$ and the following truth table: 
-\begin{center}
-\begin{tabular}{c|c|c}
- $p$ & $q$ & $p \lor q$ \\
- T & T & T  \\
- T & F & T \\
- F & T & T \\
- F & F & F  
-\end{tabular}
-\end{center}
-Thus, if $p$ is true, $p \lor q$ is true, i.e. $p \Rightarrow p \lor q$.
-\end{proof}
+\end{exercise}
+    \begin{proof} Consider the logical sentences $p$ and $q$ and the following truth table: 
+        \begin{center}
+        \begin{tabular}{c|c|c}
+        $p$ & $q$ & $p \lor q$ \\
+         T & T & T  \\
+         T & F & T \\
+         F & T & T \\
+         F & F & F  
+        \end{tabular}
+        \end{center}
+    Thus, if $p$ is true, $p \lor q$ is true, i.e. $p \Rightarrow p \lor q$.
+    \end{proof}
 
 \newpage
 \begin{mdframed}
 \section{Unordered Pairs}
 \end{mdframed}
 
-\textbf{Exercise 3.1.0} Consider the sets $ \emptyset $, $ \lbrace \emptyset \rbrace $, $ \lbrace \lbrace \emptyset \rbrace \rbrace$, etc.; Consider all  the pairs such as $ \lbrace \emptyset, \lbrace \emptyset \rbrace \rbrace$, formed by two of them; consider the pairs formed by any such two pairs, or else mixed pairs formed by a singleton and any pair; and proceed \textit{ad infinitum}. Are all the sets obtained in this way distinct from one another? 
- 
+\begin{exercise} Consider the sets $ \emptyset $, $ \lbrace \emptyset \rbrace $, $ \lbrace \lbrace \emptyset \rbrace \rbrace$, etc.; Consider all  the pairs such as $ \lbrace \emptyset, \lbrace \emptyset \rbrace \rbrace$, formed by two of them; consider the pairs formed by any such two pairs, or else mixed pairs formed by a singleton and any pair; and proceed \textit{ad infinitum}. Are all the sets obtained in this way distinct from one another? 
+\end{exercise}
+
  \bigbreak
  Yes, all sets obtained in this way are distinct. 
     \begin{proof} 
-    Via the \textit{Axiom of Pairing}, we can create sets $A = \{a, a'\}$, and $B = \{b, b'\}$ as specified. Further, by the \textit{Axiom of Specification}, they are the only such sets which contain their elements. 
-    \par Suppose, to the contrary, that $A$ and $B$ were not distinct. Then, we must have $A = B$. Then, $a,a' \in B$ and $b,b' \in A$. Without loss of generality, we have $a = b$, $a' = b'$. But then, $A$ and $B$ were formed from the same elements; a contradiction. Thus, $A$ and $B$ are distinct. 
+    By the axiom of pairing, we can form $A$ and $B$ as given, and by the axiom of specification, they are the only such sets which contain their elements.  Suppose, to the contrary, that $A=B$. 
+    \par If $A=B$, then for all $a \in A$, $a \in B$, and for all $b \in B$, $b \in A$. Now, either $A$ and $B$ are singletons, or they are pairs.
+        \begin{itemize}
+        \item \textit{$A$ and $B$ are singletons:} Say, $A = \{a\}$, and $B = \{b\}$. Thus, by the \textit{Axiom of Extension}, we have $a = b$. Implying that $A$ and $B$ were formed in the same way. 
+        \item \textit{$A$ and $B$ are pairs:} Let $A = \{a, a'\}$, $B = \{b,b'\}$. Without loss of generality, suppose that $a = b$, and $a' = b'$. If this is the case, then by the \textit{Axiom of Extension}, again, we have that $a,b$ were obtained in the same fashion, as well as $a',b'$. But in this case, $A$ and $B$ were constructed in the same manner. 
+        \end{itemize}
+    Either way, we have a contradiction. Thus, $A$ and $B$ are formed distinctly. 
     \end{proof}
 
 \newpage
 \begin{mdframed}
 \section{Unions and Intersections}
 \end{mdframed}
-Throughout these exercises we consider a arbitrary non-empty collection $\mathcal{C}$, of sets. For simplicity we will assume that $ \mathcal{C}= \{ A, B, C\}$ for arbitrary sets $A$, $B$, $C$ and will make liberal use of the notation $\{x: S(x)\}$, in-place of the more precises yet cumbersome notation $\{ \bigcup_{x} \{A,B,C\}: S(x) \}$. 
-$ $\newline
-$ $\newline
-\textbf{Exercise 4.1.0-4.1.4} We show the following: 
-$$A \cup \emptyset = A$$
-$$A \cup B = B \cup A$$
-$$A \cup (B \cup C) = (A \cup B) \cup C$$
-$$A \cup A = A$$
-$$A \subset B \iff A \cup B = B$$
+Throughout these exercises we consider a arbitrary non-empty collection $\mathcal{C}$, of sets. For simplicity we will assume that $ \mathcal{C}= \{ A, B, C\}$ for arbitrary non-empty sets (unless specified) $A$, $B$, $C$ and will make liberal use of the notation $\{x: S(x)\}$, in-place of the more precises yet cumbersome notation $\{x \in \bigcup \mathcal{C}: S(x) \}$. 
+
+\begin{exercise} We show the following: 
+    \begin{align}
+    A \cup \emptyset & = A \\
+    A \cup B & = B \cup A \\
+    A \cup (B \cup C) & = (A \cup B) \cup C\\
+    A \cup A & = A \\
+    A \subset B \iff A \cup B & = B 
+    \end{align}
+\end{exercise}
 
 \begin{proof} ($\iff$) 
-\bigbreak
-Since $\emptyset$ has no elements, for all $a \in \bigcup \mathcal{C}$, $a \notin \emptyset$ and we have, $$x \in A \cup \emptyset = \lbrace x: x \in A \lor x \in \emptyset \rbrace \iff x \in A \lor x \in \emptyset= \lbrace \rbrace \iff x \in A$$ Thus, $A \cup \emptyset = A$.
+Since $\emptyset$ has no elements, for all $a \in \bigcup \mathcal{C}$, $a \notin \emptyset$ and we have, 
+    \begin{align*}
+    x \in A \cup \emptyset  = \lbrace x: x \in A \lor x \in \emptyset \rbrace & \iff x \in A \lor x \in \emptyset = \lbrace \rbrace \\
+    & \iff x \in A 
+    \end{align*}
+Thus, $A \cup \emptyset = A$
 \end{proof}
 
 \begin{proof} ($\iff$)
@@ -190,41 +208,32 @@ $ $\newline
 Suppose $A \cup B = B$. Then, $$x \in A \Rightarrow x \in \{ x : x \in A \cup x \in B\} = A \cup B = B$$ That is, $A \subset B$.
 \end{proof}
 
-$ $\newline
-\textbf{Exersize 4.2.0-4.2.4} We show the following: 
-\begin{equation}
-A \cap \emptyset = \emptyset
-\end{equation}
-\begin{equation}
-A \cap B = B \cap A
-\end{equation}
-\begin{equation}
-A \cap (B \cap C) = (A \cap B) \cap C
-\end{equation}
-\begin{equation}
-A \cap A = A
-\end{equation}
-\begin{equation}
-A \subset B \iff A \cap B = A
-\end{equation}
+\setcounter{equation}{0}
+\begin{exercise} We show the following: 
+    \begin{align}
+    A \cap \emptyset & = \emptyset \\
+    A \cap B & = B \cap A \\
+    A \cap (B \cap C) & = (A \cap B) \cap C \\
+    A \cap A & = A \\
+    A \subset B \iff A \cap B & = A \\
+    \end{align}
+\end{exercise}
 
 \begin{proof} (1) Suppose that $A \neq \emptyset$, then
 \bigbreak
 $ $\newline
 ($\Rightarrow$)
-\begin{align*}
-x \in A \cap \emptyset = \{ x: x\in A \land x \in \emptyset \} & \Rightarrow x \in \emptyset \land x \in A \\
-& \Rightarrow x \in \emptyset
-\end{align*}
+    \begin{align*}
+    x \in A \cap \emptyset = \{ x: x\in A \land x \in \emptyset \} & \Rightarrow x \in \emptyset \land x \in A \\
+    & \Rightarrow x \in \emptyset
+    \end{align*}
+
+$ $\newline
 ($\Leftarrow$)
-\begin{align*}
-x \in \emptyset & \Rightarrow \{ x \} \subset \emptyset \\
-& \Rightarrow \{ x \} = \emptyset \\
-& \Rightarrow (\emptyset \subset A) \land (\emptyset \subset \emptyset) \\
-& \Rightarrow \emptyset \in A \cap \emptyset \\
-& \Rightarrow \{ x \} \subset A \cap \emptyset
-\end{align*}
-Since the empty set contains no elements. 
+    \begin{align*}
+    & (\emptyset \subset A) \land (\emptyset \subset \emptyset) \\
+    & \Rightarrow \emptyset \subset A \cap \emptyset \\
+    \end{align*}
 \end{proof}
 
 \begin{proof}(2) ($\iff$)
@@ -259,17 +268,17 @@ $$x \in A \Rightarrow x \in A \cap B = \{ x: x \in A \land x \in B\} \Rightarrow
 \end{proof}
 
 \setcounter{equation}{0}
-$ $\newline
-\textbf{Exercise 4.3.0} We wish show that $(A \cap B) \cup C = A \cap (B \cup C) \iff C \subset A$: We first show (1) in the following, noting that (2) was proved in the text;
+\begin{exercise} We wish show that $(A \cap B) \cup C = A \cap (B \cup C) \iff C \subset A$: We first show (1) in the following, noting that (2) was proved in the text;
 $ $\newline
 From page fifteen, 
-\begin{equation}
-A \cap (B \cup B) = (A \cap B) \cup (A \cap C)
-\end{equation}
+    \begin{equation}
+    A \cap (B \cup B) = (A \cap B) \cup (A \cap C)
+    \end{equation}
 and,
-\begin{equation}
-A \cup (B \cap C) = (A \cup B) \cap (A \cup C)
-\end{equation}
+    \begin{equation}
+    A \cup (B \cap C) = (A \cup B) \cap (A \cup C)
+    \end{equation}
+\end{exercise}
 
 \begin{proof} ($\Rightarrow$) 
 \bigbreak
@@ -328,33 +337,20 @@ That is, $C \subset A$.
 \end{mdframed}
 
 $ $\newline
-Throughout these exercises we assume that "all sets are subsets of one and the same set $\mathcal{E}$, and that all complements (unless otherwise specified) are formed relative to that $\mathcal{E}$" (Halmos).
+Throughout these exercises we assume that "all sets are subsets of one and the same set $\mathcal{E}$, and that all complements (unless otherwise specified) are formed relative to that $\mathcal{E}$" (Halmos). Likewise, we will often use the more convenient, yet less accurate notation $\{x: S(x)\}$ in place of $\{x \in \mathcal{E}: S(x)\}$
 
-$ $\newline
-\textbf{Exercise 5.1.0 - 5.1.5} We prove the following: 
-\begin{equation}
-A - B = A \cap B^{c}
-\end{equation}
+\setcounter{equation}{0}
+\begin{exercise}We prove the following: 
+    \begin{align}
+    A - B & = A \cap B^{c} \\ 
+    A \subset B & \iff A - B  = \emptyset \\
+    A - ( A - B) & = A \cap B \\
+    A \cap (A - C) & = (A \cap B) - (A \cap C)\\
+    A \cap B & \subset (A \cap C) \cup (B \cap C^{c}) \\
+    (A \cup C) \cap (B \cup C^{c}) & \subset A \cup B \\
+    \end{align}
+\end{exercise}
 
-\begin{equation}
-A \subset B \iff A - B = \emptyset
-\end{equation}
-
-\begin{equation}
-A - ( A - B) = A \cap B
-\end{equation}
-
-\begin{equation}
-A \cap (A - C) = (A \cap B) - (A \cap C)
-\end{equation}
-
-\begin{equation}
-A \cap B \subset (A \cap C) \cup (B \cap C^{c})
-\end{equation}
-
-\begin{equation}
-(A \cup C) \cap (B \cup C^{c}) \subset A \cup B
-\end{equation}
 
 \begin{proof} (1) ($\iff$)
 \bigbreak
@@ -467,180 +463,173 @@ $ $\newline
 Either way, $x \in A \cup B$.
 \end{proof}
 
-$ $\newline
-\textbf{Exercise 5.2.0 - 5.2.7} 
-$ $\newline
-$ $\newline
-(\textit{5.2.0}) We show that $\mathscr{P}(E) \cap \mathscr{P}(F)= \mathscr{P}(E \cap F)$:
-\begin{proof}
-$ $\newline
-Let $E$, $F$ be sets such that $E$, $F \subset \mathcal{E}$ ; via \textit{Axiom of Powers}, $\mathscr{P}(E)$, $\mathscr{P}(F)$; specifically, from the discussion in Halmos\footnote{Halmos, P. "\textit{Naive Set Theory}". pg 19}, $\mathscr{P}(E) =  \{X: X \subset E\}$, and $\mathscr{P}(F) =  \{X: X \subset F\}$. Then, we have the following: 
-\setcounter{equation}{0}
-\begin{equation*}
-\begin{split}
-X \in \mathscr{P}(E) \cap \mathscr{P}(F) & \iff X \in \mathscr{P}(E) \land X \in \mathscr{P}(F) \\
-& \iff X \in \{Y: Y \subset E \land Y \subset F \} \\
-& \iff X \subset E \land X \subset F \\
-& \iff \forall x( x \in X \Rightarrow (x \in E \land x \in F) )\\
-& \iff \forall x \in X, x \in E \cap F \\
-& \iff X = \{x \in \mathcal{E}: x \in X \}  \subset E \cap F \\
-& \iff X \in \{Y: Y \subset E \cap F \} \\
-& = \mathscr{P}(E \cap F)
-\end{split}
-\end{equation*}
-\end{proof}
+\begin{exercise} We show that $\mathscr{P}(E) \cap \mathscr{P}(F)= \mathscr{P}(E \cap F)$:
+\end{exercise}
 
-$ $\newline
-\textit{(5.2.1)} We show that $\mathscr{P}(E) \cup \mathscr{P}(F) \subset \mathscr{P}(E \cup F)$:
-$ $\newline 
-\begin{proof}
-Let $E$, $F$ be given as in the discussion of proof \textit{5.2.0}. We first claim that if $A$, $B$ are sets, then ($x \subset A \lor x \subset B \Rightarrow x \subset A \cup B$). Indeed; if $x \subset A$, then $x \subset A \cup B$ and likewise, $x \subset B$ implies $x \subset B \cup A$. With this in mind, we have the following: 
-\begin{equation*}
-\begin{split}
-X \in \mathscr{P}(E) \cup \mathscr{P}(F) & = \{X: X \in \mathscr{P}(E) \lor X \in \mathscr{P}(F) \} \\
-& \iff X \in \mathscr{P}(E) \lor X \in \mathscr{P}(F) \\
-& \iff X \in \{Y: Y \subset E \} \lor X \in \{Y: Y \subset F \} \\
-& \iff X \in \{Y: Y \subset E \lor Y \subset F \} \\
-& \Rightarrow X \in \{Y: Y \subset E \cup F \} \\ 
-& = \mathscr{P}(E \cup F)
-\end{split}
-\end{equation*}
-\end{proof}
+    \begin{proof} 
+    Let $E$, $F$ be sets such that $E$, $F \subset \mathcal{E}$ ; via \textit{Axiom of Powers}, $\mathscr{P}(E)$, $\mathscr{P}(F)$; specifically, from the discussion in Halmos\footnote{Halmos, P. "\textit{Naive Set Theory}". pg 19}, $\mathscr{P}(E) =  \{X: X \subset E\}$, and $\mathscr{P}(F) =  \{X: X \subset F\}$. Then, we have the following: 
+        \setcounter{equation}{0}
+        \begin{equation*}
+            \begin{split}
+            X \in \mathscr{P}(E) \cap \mathscr{P}(F) & \iff X \in \mathscr{P}(E) \land X \in \mathscr{P}(F) \\
+            & \iff X \in \{Y: Y \subset E \land Y \subset F \} \\
+            & \iff X \subset E \land X \subset F \\
+            & \iff \forall x( x \in X \Rightarrow (x \in E \land x \in F) )\\
+            & \iff \forall x \in X, x \in E \cap F \\
+            & \iff X = \{x \in \mathcal{E}: x \in X \}  \subset E \cap F \\
+            & \iff X \in \{Y: Y \subset E \cap F \} \\
+            & = \mathscr{P}(E \cap F)
+            \end{split}
+        \end{equation*}
+    \end{proof}
 
-$ $\newline
-(\textit{5.2.2}) We show that $\bigcap_{X \in \mathcal{C}} \mathscr{P}(X) = \mathscr{P}(\bigcap_{X \in \mathcal{C}} X)$:
-$ $\newline
-\begin{proof} Let $\mathcal{C}$ be a non-empty collection of sets. 
-\bigbreak
-($\Rightarrow$)
-$ $\newline
-\begin{equation*}
-\begin{split}
-z \in \bigcap_{X \in \mathcal{C}} \mathscr{P}(X) & \Rightarrow (\forall X \in \mathcal{C})(z \in \mathscr{P}(X)) \\
-& \Rightarrow (\forall X \in \mathcal{C})(\{z\} \subset \mathscr{P}(X)) \\
-& \Rightarrow (\forall X \in \mathcal{C})(z \in X) \\
-& \Rightarrow z \in \bigcap_{X \in \mathcal{C}} X \\
-& \Rightarrow \{z\} \subset \bigcap_{X \in \mathcal{C}} X \\
-& \Rightarrow z \in \mathscr{P} (\bigcap_{X \in \mathcal{C}} X)
-\end{split}
-\end{equation*}
-\bigbreak
-($\Leftarrow$)
-$ $\newline
-\begin{equation*}
-\begin{split}
-z \in \mathscr{P}(\bigcap_{X \in \mathcal{C}} X) & \Rightarrow z \in \{Y: Y \subset \bigcap_{X \in \mathcal{C}} X\} \\
-& \Rightarrow z \subset \bigcap_{X \in \mathcal{C}} X \\
-& \Rightarrow (\forall X \in \mathcal{C})(z \subset X) \\
-& \Rightarrow (\forall X \in \mathcal{C})(\forall v \in z)(v \in X) \\ 
-& \Rightarrow (\forall X \in \mathcal{C})(\forall v \in z)(\{v\} \subset \mathscr{P}(X))\\
-& \Rightarrow (\forall X \in \mathcal{C})(\forall v \in z)(v \in \mathscr{P}(X))\\
-& \Rightarrow (\forall X \in \mathcal{C})(z \in \mathscr{P}(X)) \\
-& \Rightarrow z  \in \bigcap_{X \in \mathcal{C}} \mathscr{P}(X)
-\end{split}
-\end{equation*}
-And this completes the proof. 
-\end{proof}
-\bigbreak 
-$ $\newline
-(\textit{5.2.3}) We show that $\bigcup_{X \in \mathcal{C}} \mathscr{P}(X) \subset \mathscr{P}(\bigcup_{X \in C} X)$:
-\begin{proof}
-Let $\mathcal{C}$ be a collection of sets. A common fact used in the following proof is that if $x \in \mathscr{P}(X)$, then $x \subset X$ for any set $X$. This is indeed true, since $\mathscr{P}(X)= \{Y: Y \subset X\}$. With this in mind, we have
-\begin{equation*}
-\begin{split}
-z \in \bigcup_{X \in \mathcal{C}} \mathscr{P}(X) & \Rightarrow (\exists Y \in \mathcal{C})(z \in \mathscr{P}(Y)) \\
-& \Rightarrow z \subset Y \in \mathcal{C} \\
-& \Rightarrow z \subset \{x: x \in X (\forall X \in \mathcal{C}) \} = \bigcup_{X \in \mathcal{C}}X \\
-& \Rightarrow (\forall s \in z)(s \in \bigcup_{X \in \mathcal{C}}X) \\
-& \Rightarrow (\forall s \in z)(s \in \mathscr{P}(\bigcup_{X \in \mathcal{C}}X)) \\ 
-& \Rightarrow z \in  \mathscr{P}(\bigcup_{X \in \mathcal{C}}X)
-\end{split}
-\end{equation*} 
-Which completes the proof.
-\end{proof}
-\bigbreak
-$ $\newline
-(\textit{5.2.4}) We show that $\bigcap_{X \in \mathscr{P}(E)}X = \emptyset$:
-\begin{proof}
-Let $E$ be a set and consider $\mathscr{P}(E) = \{Y: Y \subset E\}$. We note that this is non-empty because $\emptyset \in \Pwr (E)$, since $\emptyset$ is a subset of every set. We also note that the statement ($x \in \emptyset \Rightarrow x \in \bigcap_{X \in \mathscr{P}(E)}X$) is vacuously satisfied since $\emptyset$ has no elements. Thus, we only show the forward inclusion:
-\bigbreak
-($\Rightarrow$)
-\begin{equation*}
-\begin{split}
-x \in \bigcap_{X \in \mathscr{P}(E)}X & \Rightarrow (\forall X \in \Pwr(E))(x \in X) \\
-& \Rightarrow x \in \emptyset \in \Pwr (E)
-\end{split}
-\end{equation*} And this completes the proof.
-\end{proof}
+\begin{exercise} We show that $\mathscr{P}(E) \cup \mathscr{P}(F) \subset \mathscr{P}(E \cup F)$:
+\end{exercise}
 
-\bigbreak
-$ $\newline
-(\textit{5.2.5}) We show that ($E \subset F \Rightarrow \Pwr(E) \subset \Pwr(F)$):
-\begin{proof}
-Suppose that $E \subset F$ for sets $E$, $F$. Then, we have the following: 
-\begin{align*}
-e \in \Pwr (E) & \Rightarrow e \subset E &\\
-& \Rightarrow (\forall x \in e)(x \in E) &\\
-& \Rightarrow (\forall x \in e)(x \in F)  &(\text{by Assumption})\\ 
-& \Rightarrow e \subset F &\\
-& \Rightarrow e \in \Pwr(F) &(\text{by Definition}) \\
-\end{align*} Which completes the proof. 
-\end{proof}
-\bigbreak
-$ $\newline
-(\textit{5.2.6}) We show that $E = \bigcup \Pwr(E) = \bigcup_{X \in \Pwr(E)}X$:
-\begin{proof}
-Let $E$ be a set. Then, we have the following: 
-\bigbreak
-($\Leftarrow$)
-\begin{align*}
-x \in \bigcup \Pwr(E) & \Rightarrow (\exists Y \in \Pwr(E))(x \in Y) \\
-& \Rightarrow x \in Y \subset E \\ 
-& \Rightarrow x \in E 
-\end{align*}
-\bigbreak
-($\Rightarrow$)
-\begin{align*}
-x \in E & \Rightarrow \{x\} \in \Pwr(E) \\
-& \Rightarrow x \in \{x\} \in \Pwr(E) \\
-& \Rightarrow x \in \bigcup \{X: X \in \Pwr(E) \} \\
-& = \bigcup \Pwr(E) \\
-\end{align*}
-Which completes the proof. 
-\end{proof}
-\bigbreak
-$ $\newline
-(\textit{5.2.7}) We show that $\bigcup$
+    \begin{proof}
+    Let $E$, $F$ be given as in the discussion of proof \textit{5.2.0}. We first claim that if $A$, $B$ are sets, then ($x \subset A \lor x \subset B \Rightarrow x \subset A \cup B$). Indeed; if $x \subset A$, then $x \subset A \cup B$ and likewise, $x \subset B$ implies $x \subset B \cup A$. With this in mind, we have the following: 
+        \begin{equation*}
+            \begin{split}
+            X \in \mathscr{P}(E) \cup \mathscr{P}(F) & = \{X: X \in \mathscr{P}(E) \lor X \in \mathscr{P}(F) \} \\
+            & \iff X \in \mathscr{P}(E) \lor X \in \mathscr{P}(F) \\
+            & \iff X \in \{Y: Y \subset E \} \lor X \in \{Y: Y \subset F \} \\
+            & \iff X \in \{Y: Y \subset E \lor Y \subset F \} \\
+            & \Rightarrow X \in \{Y: Y \subset E \cup F \} \\ 
+            & = \mathscr{P}(E \cup F)
+            \end{split}
+        \end{equation*}
+    \end{proof}
+
+\begin{exercise} We show that $\bigcap_{X \in \mathcal{C}} \mathscr{P}(X) = \mathscr{P}(\bigcap_{X \in \mathcal{C}} X)$:
+\end{exercise}
+
+    \begin{proof} Let $\mathcal{C}$ be a non-empty collection of sets. 
+        \bigbreak
+        ($\Rightarrow$)
+            \begin{equation*}
+                \begin{split}
+                z \in \bigcap_{X \in \mathcal{C}} \mathscr{P}(X) & \Rightarrow (\forall X \in \mathcal{C})(z \in \mathscr{P}(X)) \\
+                & \Rightarrow (\forall X \in \mathcal{C})(\{z\} \subset \mathscr{P}(X)) \\
+                & \Rightarrow (\forall X \in \mathcal{C})(z \in X) \\
+                & \Rightarrow z \in \bigcap_{X \in \mathcal{C}} X \\
+                & \Rightarrow \{z\} \subset \bigcap_{X \in \mathcal{C}} X \\
+                & \Rightarrow z \in \mathscr{P} (\bigcap_{X \in \mathcal{C}} X)
+                \end{split}
+            \end{equation*}
+    \bigbreak
+    ($\Leftarrow$)
+            \begin{equation*}
+                \begin{split}
+                z \in \mathscr{P}(\bigcap_{X \in \mathcal{C}} X) & \Rightarrow z \in \{Y: Y \subset \bigcap_{X \in \mathcal{C}} X\} \\
+                & \Rightarrow z \subset \bigcap_{X \in \mathcal{C}} X \\
+                & \Rightarrow (\forall X \in \mathcal{C})(z \subset X) \\
+                & \Rightarrow (\forall X \in \mathcal{C})(\forall v \in z)(v \in X) \\ 
+                & \Rightarrow (\forall X \in \mathcal{C})(\forall v \in z)(\{v\} \subset \mathscr{P}(X))\\
+                & \Rightarrow (\forall X \in \mathcal{C})(\forall v \in z)(v \in \mathscr{P}(X))\\
+                & \Rightarrow (\forall X \in \mathcal{C})(z \in \mathscr{P}(X)) \\
+                & \Rightarrow z  \in \bigcap_{X \in \mathcal{C}} \mathscr{P}(X)
+                \end{split}
+            \end{equation*}
+    And this completes the proof. 
+    \end{proof}
+
+\begin{exercise}We show that $\bigcup_{X \in \mathcal{C}} \mathscr{P}(X) \subset \mathscr{P}(\bigcup_{X \in C} X)$:
+\end{exercise}
+
+    \begin{proof}
+    Let $\mathcal{C}$ be a collection of sets. A common fact used in the following proof is that if $x \in \mathscr{P}(X)$, then $x \subset X$ for any set $X$. This is indeed true, since $\mathscr{P}(X)= \{Y: Y \subset X\}$. With this in mind, we have
+        \begin{equation*}
+                \begin{split}
+                z \in \bigcup_{X \in \mathcal{C}} \mathscr{P}(X) & \Rightarrow (\exists Y \in \mathcal{C})(z \in \mathscr{P}(Y)) \\
+                & \Rightarrow z \subset Y \in \mathcal{C} \\
+                & \Rightarrow z \subset \{x: x \in X (\forall X \in \mathcal{C}) \} = \bigcup_{X \in \mathcal{C}}X \\
+                & \Rightarrow (\forall s \in z)(s \in \bigcup_{X \in \mathcal{C}}X) \\
+                & \Rightarrow (\forall s \in z)(s \in \mathscr{P}(\bigcup_{X \in \mathcal{C}}X)) \\ 
+                & \Rightarrow z \in  \mathscr{P}(\bigcup_{X \in \mathcal{C}}X)
+                \end{split}
+        \end{equation*} 
+    Which completes the proof.
+    \end{proof}
+
+\begin{exercise}We show that $\bigcap_{X \in \mathscr{P}(E)}X = \emptyset$:
+\end{exercise}
+
+    \begin{proof}
+    Let $E$ be a set and consider $\mathscr{P}(E) = \{Y: Y \subset E\}$. We note that this is non-empty because $\emptyset \in \Pwr (E)$, since $\emptyset$ is a subset of every set. We also note that the statement ($x \in \emptyset \Rightarrow x \in \bigcap_{X \in \mathscr{P}(E)}X$) is vacuously satisfied since $\emptyset$ has no elements. Thus, we only show the forward inclusion:
+    \bigbreak
+    ($\Rightarrow$)
+        \begin{equation*}
+            \begin{split}
+                x \in \bigcap_{X \in \mathscr{P}(E)}X & \Rightarrow (\forall X \in \Pwr(E))(x \in X) \\
+                & \Rightarrow x \in \emptyset \in \Pwr (E)
+            \end{split}
+        \end{equation*} And this completes the proof.
+    \end{proof}
+
+
+\begin{exercise}We show that ($E \subset F \Rightarrow \Pwr(E) \subset \Pwr(F)$):
+\end{exercise}
+
+    \begin{proof}
+    Suppose that $E \subset F$ for sets $E$, $F$. Then, we have the following: 
+        \begin{align*}
+        e \in \Pwr (E) & \Rightarrow e \subset E &\\
+        & \Rightarrow (\forall x \in e)(x \in E) &\\
+        & \Rightarrow (\forall x \in e)(x \in F)  &(\text{by Assumption})\\ 
+        & \Rightarrow e \subset F &\\
+        & \Rightarrow e \in \Pwr(F) &(\text{by Definition}) \\
+        \end{align*} Which completes the proof. 
+    \end{proof}
+
+\begin{exercise}We show that $E = \bigcup \Pwr(E) = \bigcup_{X \in \Pwr(E)}X$:
+\end{exercise}
+
+    \begin{proof}
+    Let $E$ be a set. Then, we have the following: 
+    \bigbreak
+    ($\Leftarrow$)
+        \begin{align*}
+        x \in \bigcup \Pwr(E) & \Rightarrow (\exists Y \in \Pwr(E))(x \in Y) \\
+        & \Rightarrow x \in Y \subset E \\ 
+        & \Rightarrow x \in E 
+        \end{align*}
+    \bigbreak
+    ($\Rightarrow$)
+        \begin{align*}
+        x \in E & \Rightarrow \{x\} \in \Pwr(E) \\
+        & \Rightarrow x \in \{x\} \in \Pwr(E) \\
+        & \Rightarrow x \in \bigcup \{X: X \in \Pwr(E) \} \\
+        & = \bigcup \Pwr(E) \\
+        \end{align*}
+    Which completes the proof. 
+    \end{proof}
+
+\begin{exercise} We show that $\mathscr{P}\Big(\bigcup E\Big)$ is a set that includes $E$, typically, as a proper subset. 
+\end{exercise}
+    \begin{proof} Indeed, $\mathscr{P}\Big(\bigcup E\Big) = \mathscr{P}(E) = \{X \in E: X \subset E\}$. If $E$ is non-empty, then it is clear that $E \subsetneq \mathscr{P}(E)$. However, if $E = \emptyset$, then $\Pwr(E) = \emptyset$ and $E = \Pwr(E)$. 
+    \end{proof}
+
 
 \newpage
 \begin{mdframed}
 \section{Ordered Pairs}
 \end{mdframed}
 
-\setcounter{equation}{0}
-$ $\newline
 Throughout this section, we will consider $A$, $B$, $C$, $X$, $Y$ to be any sets, and will use the notation 
 $\{x: S(x)\}$ in place of the more accurate, yet cumbersome notation $\{x \in \bigcup \mathcal{C}: S(x)\}$.
 \bigbreak
-$ $\newline
-\textbf{Exercise 6.1.0} We show the following: 
-\begin{equation}
-(A \cup B) \times X = (A \times X) \cup (B \times X)
-\end{equation}
-\begin{equation}
-(A \cap B) \times (X \cap Y) =(A \times X) \cap (B \times Y)
-\end{equation}
-\begin{equation}
-(A - B) \times X = (A \times X) - (B \times X)
-\end{equation}
-\begin{equation}
-(A = \emptyset \lor B = \emptyset) \iff (A \times B = \emptyset)
-\end{equation}
-\begin{equation}
-(A \subset X) \land (B \subset Y) \iff (A \times X \subset X \times Y)
-\end{equation}
-\bigbreak
 
+\begin{exercise} We show the following: 
+    \setcounter{equation}{0}
+    \begin{align}
+    (A \cup B) \times X & = (A \times X) \cup (B \times X) \\
+    (A \cap B) \times (X \cap Y) & = (A \times X) \cap (B \times Y) \\
+    (A - B) \times X & = (A \times X) - (B \times X)\\
+    (A = \emptyset \lor B = \emptyset) & \iff (A \times B = \emptyset)\\
+    (A \subset X) \land (B \subset Y) & \iff (A \times X \subset X \times Y) 
+    \end{align}
+
+\end{exercise}
 \begin{proof} (1)
 \bigbreak ($\Rightarrow$)
 \begin{align*}
@@ -1073,6 +1062,7 @@ The following proof was suggested by David. H..
 \section{Numbers}
 \end{mdframed}
 
+
 \begin{exercise} Let $\{A_i\}$ be a family of non-empty successor sets for some non-empty domain $I$. We show that $$\bigcap_i A_i$$ is a successor set. 
 \end{exercise}
     \begin{proof} For all $i \in I$, $A_i$ is a successor set, and so $0 \in A_i$. This implies that $0 \in \bigcap_i A_i$. Likewise, suppose that $n \in \bigcap_i A_i$; then $n \in A_i$ for all $i \in I$ and so $n^+ \in A_i$ for each $i \in I$; from the definition of intersection $n^+ \in \bigcap_i A_i$. This completes the proof. 
@@ -1109,6 +1099,7 @@ The following proof was suggested by David. H..
 \begin{mdframed}
 \section{Arithmetic}
 \end{mdframed}
+In many of these exercises, we use induction. As pointed out in the \textit{Axiom of Substitution}, and the conversation I had with S. Bleiler, and later sections, it is still valid to start induction at some $x \in \omega$; we have used this fact a couple times. 
 
 \begin{exercise} Prove that if $m < n$ for some natural numbers $m$, $n$, then $m + k < n + k$ for any $k \in \omega$. 
 \end{exercise}
@@ -1120,7 +1111,7 @@ The following proof was suggested by David. H..
 \begin{exercise} Prove that if $m < n$ for some $m,n \in \omega$, and $k \neq 0$, then $m\cdot k < n \cdot k$.
 \end{exercise}
     \begin{proof}
-        We proceed by mathematical induction. Suppose that $m < n$ for some $m,n \in \omega$. Let $S$ be the set of $z \in \omega$, which satisfy the following statement: if $z \neq 0$, then $m \cdot z < n \cdot z$. We note that $0 \in S$, vacuously. Suppose that $k \in S$ for some $k \in \omega$; we show that $k^+ \in S$. Indeed: by definition of product, we have the following: 
+        We proceed by mathematical induction. Suppose that $m < n$ for some $m,n \in \omega$. Let $S$ be the set of $z \in \omega$, which satisfy the following statement: if $z \neq 0$, then $m \cdot z < n \cdot z$. We note that $1 \in S$. Suppose that $k \in S$ for some $k \in \omega$; we show that $k^+ \in S$. Indeed: by definition of product, we have the following: 
             \begin{align}
             p_m(k^+) & = p_m (k) + m \nonumber\\
             & = s_m(p_m(k)) \\
@@ -1389,16 +1380,19 @@ The following proof was suggested by David. H..
 \begin{mdframed}
 \section{Ordinal Numbers}
 \end{mdframed}
+This page was intentionally left blank; there were not specified exercises for this section. 
 
 \newpage
 \begin{mdframed}
 \section{Sets Of Ordinal Numbers}
 \end{mdframed}
+This page was intentionally left blank; there were not specified exercises for this section. 
 
 \newpage
 \begin{mdframed}
 \section{Ordinal Arithmetic}
 \end{mdframed}
+This page was intentionally left blank; there were not specified exercises for this section. 
 
 \newpage
 \begin{mdframed}
@@ -1566,4 +1560,107 @@ The following proof was suggested by David. H..
         \end{itemize}
     Thus, $\card(\alpha + \beta) = \card \alpha + \card \beta$.
     \end{proof}
+
+\newpage
+\begin{mdframed} 
+\section{Extra Exercises}
+\end{mdframed}
+
+Many of these exercises were collaborations with other student. They are not marked exercises in the text, however, they are useful.
+
+\subsection{Arithmetic}
+
+\begin{exercise} We show that addition for elements of $\omega$ is associative. The following proof was suggested by Aidan H. and David H., and I attribute all credit to them.  
+\end{exercise}
+    \begin{proof} We proceed by mathematical induction: By the recursion theorem there exists a function $s_m:\omega\to\omega$ such that $s_m(0)=m$ and $s_m(n^{+})=(s_m(n))^{+}$ where $m,n\in\omega$ and $s_m(n)=m+n$.First note $s_{k+m}(n)=(k+m)+n$, and similarly $s_k(m+n)=k+(m+n)$. Consider the set $T=\{n\in\omega\mid s_{k+m}(n)=s_k(m+n)\}$.
+\newline
+
+Initial case: See that $0\in T$ since $s_{k+m}(0)=k+m=s_k(m+0)=k+(m+0)=k+m$.
+\newline
+
+Inductive hypothesis: Let $n\in T$ hold. Then $s_{k+m}(n)=s_k(m+n)$.
+
+This implies $(k+m)+n=k+(m+n)$.
+
+Now $s_{k+m}(n^{+})=(k+m)+n^{+}=(s_{k+m}(n))^{+}=((k+m)+n)^{+}$.
+
+Similarly, $s_k((m+n)^{+})=k+(m+n)^{+}=(s_k(m+n))^{+}=(k+(m+n))^{+}$.
+\newline
+
+Since $s_{k+m}(n)=s_k(m+n)$ by the inductive hypothesis. We obtain
+$$(k+m)+n^{+}=((k+m)+n)^{+}=(k+(m+n))^{+}=k+(m+n)^{+}$$
+
+Note that $s_m(n)=m+n$, so $(s_m(n))^{+}=(m+n)^{+}=m+n^{+}=s_m(n^{+})$. 
+
+Thus, $(k+m)+n^{+}=k+(m+n^{+})$
+\newline
+
+Conclusion: Therefore, $n^{+}\in T$, and thus $T=\omega$, and thus addition is associative.
+    \end{proof}
+
+\begin{exercise} We prove that addition is commutative. 
+\end{exercise}
+    \begin{proof}The following proof was suggested by Aidan H. and David H., and I attribute all credit to them.
+    \par Let $B=\{m\in\omega\mid s_m(n)=s_n(m)\}$.
+    \newline 
+    Initial case: $0\in B$, since $s_0(n)=s_n(0)=n$.
+    \newline
+    Inductive hypothesis: Let $b\in B$ hold. That is, $s_b(n)=b+n=n+b=s_n(b)$. Then $s_n(b^{+})=(s_n(b))^{+}=(n+b)^{+}$, by definition. Similarly, $s_{b^{+}}(n)=(s_b(n))^{+}=(b+n)^{+}$. Then, by the inductive hypothesis, $s_{b^{+}}(n)=(s_b(n))^{+}=(s_n(b))^{+}=s_n(b^{+})$. 
+    \newline
+    Inductive conclusion: $b^{+}\in B$. Thus, by the induction principle, $B=\omega$. This implies $s_m(n)=s_n(m)$ $\forall m,n\in\omega$, and thus $m+n=n+m$ $\forall m,n\in\omega$, and thus addition is commutative.
+    \end{proof}
+
+\begin{exercise} We prove the properties of exponentiation. 
+\end{exercise}
+    \begin{proof} The following proof was suggested by Aidan H. and David H., and I attribute all credit to them.
+    \par First note $e_m:\omega\to\omega$ is a function defined as
+    $$e_m(0)=1$$
+    $$e_m(n^{+})=e_m(n)\cdot m\textnormal{\hspace{20px}where }e_m(n)=m^n\textnormal{ for }m,n\in\omega$$ 
+    I want to show $m^{(n+l)}=m^n\cdot m^l$, that is $e_m(n+l)=e_m(n)\cdot e_m(l)$ for $m,n,l\in\omega$.
+    \newline
+    Define $P_m:\omega\to\omega$ such that $P_m(0)=0$ and $P_m(n^{+})=P_m(n)+m$, and $P_m(n)=m\cdot n$ for $m,n\in\omega$.
+    First I will show $P_1(n)=n$ $\forall n\in\omega$ by induction.
+    Consider the set $B=\{n\in\omega\mid P_1(n)=n\}$.
+    Initial case: Note $0\in B$ since $P_1(0)=0$ by definition.
+    \newline
+    Inductive hypothesis: Let $n\in B$ hold, then $P_1(n)=n$.
+    Then $P_1(n^{+})=P_1(n)+1=n+1=n^{+}$.
+    \newline
+    Inductive conclusion:  Thus $n^{+}\in B$ and by principle of mathematical induction, $B=\omega$. Thus, $P_1(n)=n$ $\forall n\in\omega$.
+    \newline
+    Now to show $m^{(n+l)}=m^n\cdot m^l$.
+    Let $F=\{n\in\omega\mid e_m(n+l)=e_m(n)\cdot e_m(l)\}$.
+    \newline
+    Initial case: Note $0\in F$ since $e_m(0+l)=e_m(l)$ and
+    $e_m(0)\cdot e_m(l)=1\cdot e_m(l)=P_1(e_m(l))=e_m(l)$.
+    \newline
+    Inductive hypothesis: Let $n\in F$ hold, then $e_m(n+l)=e_m(n)\cdot e_m(l)$.
+    Then
+        \begin{align*}
+        e_m(n^{+}+l) & =e_m((n+l)^{+}) \\
+        & =e_m(n+l)\cdot m \\ 
+        & =e_m(n)\cdot e_m(l)\cdot m \\
+        & =e_m(n)\cdot m\cdot e_m(l) \\
+        & =e_m(n^{+})\cdot e_m(l)
+        \end{align*}
+    Inductive conclusion: Thus, $n^{+}\in F$, and by the principle of mathematical induction, $F=\omega$. Thus, $m^{(n+l)}=m^n\cdot m^l$ $\forall m,n,l\in\omega$.
+    \end{proof}
+    
+\begin{exercise} We prove the left distributive law. 
+\end{exercise} 
+    \begin{proof} The following proof was suggested by Aidan H. and David H., and I attribute all credit to them. 
+    \par We proceed by mathematical induction:
+    \par Initial case:
+    $$k\cdot(m+0)=k\cdot m+k\cdot0$$
+    $$k\cdot m=k\cdot m+0=k\cdot m$$
+    Inductive hypothesis: $k\cdot(mn)=k\cdot m+k\cdot n$
+    Then 
+    $$k\cdot(m+n^{+})=(k\cdot(m+n))^{+}\textnormal{ by definition of addition}$$
+    $$=(k\cdot m+k\cdot n)^{+}=k\cdot m+(k\cdot n)^{+}\textnormal{ by hypothesis and addition}$$ 
+    $$=k\cdot m+k\cdot n^{+}\textnormal{ by definition of addition}$$
+    $$\textnormal{Conclusion: }k\cdot(m+n^{+})=k\cdot m+k\cdot n^{+}$$
+    \end{proof}
+    
+    
+    
 \end{document}
