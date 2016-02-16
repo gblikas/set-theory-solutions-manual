@@ -5,6 +5,8 @@ Fall 2015
 These exercises are from Paul Halmos book Naive Set Theory, 
 This is a comprehensive list of all exercises from the book. 
 
+Depending on your computers available libraries, it is recommended to use sharelatex.com. 
+
 These exercises are here to help the self-learner;
 
 In addition, this is a raw, editable latex file. I will post pdfs.
