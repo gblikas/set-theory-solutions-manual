@@ -1,8 +1,7 @@
 # Halmos' Naive Set Theory
-##  Set Theory Term Work, 
-### Fall 2015
+##  Set Theory Term Work, Fall 2015.
 
-These exercises are from Paul Halmos book Naive Set Theory, 
+These exercises are from Paul Halmos book, "Naive Set Theory". 
 This is a comprehensive list of all exercises from the book. 
 
 Depending on your computers available libraries, it is recommended to use sharelatex.com. 
