@@ -3,6 +3,8 @@
 ℹ️ I'm looking for someone to maintain this respository for me ℹ️ 
 > If you're intrested, please DM on [twitter](https://twitter.com/gblikas_ceo). Your name and solutions will be accredited. If we could get to a complete state, I'd like to move toward publishing the solutions. 
 
+:warning: The code base is ahead of the PDF :warning:
+
 ##  Set Theory Term Work, Fall 2015
 
 These exercises are from Paul Halmos book, "Naive Set Theory". 
