@@ -1297,19 +1297,18 @@ In many of these exercises, we use induction. As pointed out in the \textit{Axio
     \par First, it is a subset. Second, it is well ordered by the definition of $\mathcal{F}$. Next, if $x \in X$, then for any $m \in M$, either $m \leq x$, $x \leq m$ or $x = m$. But, since $M$ is maximal, if $m \leq x$, then $x \in M$; otherwise, we could form $N = M \cup \{x\}$ which is a contradiction to the maximality of $M$. Thus, $M$ is the well ordered cofinal subset of $X$. 
     \end{proof}
 
-\begin{exercise} Does any such condition apply to partially ordered sets? 
-\end{exercise}
-    \begin{proof} 
-    \end{proof}
-
 \begin{exercise} We prove that a totally ordered set is well ordered iff the set of strict predecessor of each element is well ordered. 
 \end{exercise}
     \begin{proof}
         $ $\newline 
         ($\Rightarrow$) Suppose that we have a well ordered set $(X, \leq)$. Note that the set of strict predecessors of some $x \in X$ forms a subset. The rest follows from the definition.
         $ $\newline
-        ($\Leftarrow$) Suppose that $(X, \leq)$ is a partially ordered set and that for any $x \in X$ the strict initial segment $s(x)$ is well ordered. Let $J$ be a subset of $X$. Pick some $j_0 \in J$ and consider $s(j_0) = \{x \in X: x < j_0\}$. If $s(j_0) = \emptyset$, $j_0$ is the least element, and we are done. Otherwise, $s(j_0) \neq \emptyset$. But since $s(j_0)$ is well ordered, we have $J \cap s(j_0) \subset s(j_0)$ and $J \cap s(j_0) \subset J$. Implying that $J \cap s(j_0)$ has a least element in $J$, call it $z$. We note that $z$ is the least element for $J$; Otherwise, there is some $x \in J$, $x \neq z$ such that $x < z < j$ for all $j \in J$ and in particular for $j_0$. This implies that $x \in s(j_0)$. However, then we must have $x \in J \cap s(j_0)$ and so $x = z$; a contradiction. 
+        ($\Leftarrow$) Suppose that $(X, \leq)$ is a totally ordered set and that for any $x \in X$ the strict initial segment $s(x)$ is well ordered. Let $J$ be a subset of $X$. Pick some $j_0 \in J$ and consider $s(j_0) = \{x \in X: x < j_0\}$. If $s(j_0) = \emptyset$, $j_0$ is the least element, and we are done. Otherwise, $s(j_0) \neq \emptyset$. But since $s(j_0)$ is well ordered, we have $J \cap s(j_0) \subset s(j_0)$ and $J \cap s(j_0) \subset J$. Implying that $J \cap s(j_0)$ has a least element in $J$, call it $z$. We note that $z$ is the least element for $J$; Otherwise, there is some $x \in J$, $x \neq z$ such that $x < z < j$ for all $j \in J$ and in particular for $j_0$. This implies that $x \in s(j_0)$. However, then we must have $x \in J \cap s(j_0)$ and so $x = z$; a contradiction. 
     \end{proof}
+    
+\begin{exercise} Does any such condition apply to partially ordered sets? 
+\end{exercise}
+\begin{proof} It does not. Imagine a poset consisting of two disjoint chains. Any subset that bridges the chains will have no least element, even though set of strict predecessors will be well ordered.\end{proof}
 
 \begin{exercise} We prove that the well ordering theorem implies the \textit{Axiom of Choice}.
 \end{exercise}
