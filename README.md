@@ -1,5 +1,9 @@
 # Halmos' Naive Set Theory
-##  Set Theory Term Work, Fall 2015.
+
+ℹ️ I'm looking for someone to maintain this respository for me ℹ️ 
+> If you're intrested, please DM on [twitter](https://twitter.com/gblikas_ceo). Your name and solutions will be accredited. If we could get to a complete state, I'd like to move toward publishing the solutions. 
+
+##  Set Theory Term Work, Fall 2015
 
 These exercises are from Paul Halmos book, "Naive Set Theory". 
 This is a comprehensive list of all exercises from the book. 
